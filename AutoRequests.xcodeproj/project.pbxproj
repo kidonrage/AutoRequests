@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B79F7C9C80790178E09AD81 /* Pods_AutoRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABEA256A7DE6A8F905FD4D /* Pods_AutoRequests.framework */; };
+		E1BA7CC62671C730003A6FD8 /* TransportApplicationResponsePassenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */; };
+		E1BA7CC72671C730003A6FD8 /* TransportApplicationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */; };
+		E1BA7CC82671C730003A6FD8 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBE2671C730003A6FD8 /* Car.swift */; };
+		E1BA7CC92671C730003A6FD8 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBF2671C730003A6FD8 /* Passenger.swift */; };
+		E1BA7CCA2671C730003A6FD8 /* TransportApplicationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */; };
+		E1BA7CCB2671C730003A6FD8 /* TransportApplicationResponseDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */; };
+		E1BA7CCC2671C730003A6FD8 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC22671C730003A6FD8 /* Driver.swift */; };
+		E1BA7CCD2671C730003A6FD8 /* DriverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */; };
+		E1BA7CCE2671C730003A6FD8 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */; };
+		E1BA7CCF2671C730003A6FD8 /* TransportApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */; };
+		E1BA7CD22671C798003A6FD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CD12671C798003A6FD8 /* User.swift */; };
 		E1BABEF626598A510042EF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF526598A510042EF37 /* AppDelegate.swift */; };
 		E1BABEF826598A510042EF37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF726598A510042EF37 /* SceneDelegate.swift */; };
 		E1BABEFA26598A510042EF37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF926598A510042EF37 /* ViewController.swift */; };
@@ -22,6 +34,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EABEA256A7DE6A8F905FD4D /* Pods_AutoRequests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoRequests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0C3D48457C04752CE894A7 /* Pods-AutoRequests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponsePassenger.swift; sourceTree = "<group>"; };
+		E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationRequest.swift; sourceTree = "<group>"; };
+		E1BA7CBE2671C730003A6FD8 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		E1BA7CBF2671C730003A6FD8 /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponse.swift; sourceTree = "<group>"; };
+		E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponseDriver.swift; sourceTree = "<group>"; };
+		E1BA7CC22671C730003A6FD8 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverResponse.swift; sourceTree = "<group>"; };
+		E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplication.swift; sourceTree = "<group>"; };
+		E1BA7CD12671C798003A6FD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1BABEF226598A510042EF37 /* AutoRequests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoRequests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BABEF526598A510042EF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BABEF726598A510042EF37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +61,7 @@
 		E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsViewController.swift; sourceTree = "<group>"; };
 		E1BABF2626598D240042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AutoRequests/Base.lproj/PassengerFlow.storyboard; sourceTree = "<group>"; };
 		E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
+		FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +69,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B79F7C9C80790178E09AD81 /* Pods_AutoRequests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59718E0FC049AEBF33B8CA94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EABEA256A7DE6A8F905FD4D /* Pods_AutoRequests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1BA7CBB2671C730003A6FD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */,
+				E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */,
+				E1BA7CBE2671C730003A6FD8 /* Car.swift */,
+				E1BA7CBF2671C730003A6FD8 /* Passenger.swift */,
+				E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */,
+				E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */,
+				E1BA7CC22671C730003A6FD8 /* Driver.swift */,
+				E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */,
+				E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */,
+				E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */,
+				E1BA7CD12671C798003A6FD8 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E1BABEE926598A510042EF37 = {
 			isa = PBXGroup;
 			children = (
 				E1BABF2C2659E1E30042EF37 /* Extensions */,
 				E1BABEF426598A510042EF37 /* AutoRequests */,
 				E1BABEF326598A510042EF37 /* Products */,
+				F610BE37B827003D457ED2BC /* Pods */,
+				59718E0FC049AEBF33B8CA94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +124,7 @@
 		E1BABEF426598A510042EF37 /* AutoRequests */ = {
 			isa = PBXGroup;
 			children = (
+				E1BA7CBB2671C730003A6FD8 /* Models */,
 				E1BABF2B2659E1DE0042EF37 /* Tools */,
 				E1BABF1E26598CB10042EF37 /* MyRequestsListModule */,
 				E1BABF1526598C7B0042EF37 /* TransportsListModule */,
@@ -173,6 +229,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F610BE37B827003D457ED2BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E0C3D48457C04752CE894A7 /* Pods-AutoRequests.debug.xcconfig */,
+				FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1BABF0626598A680042EF37 /* Build configuration list for PBXNativeTarget "AutoRequests" */;
 			buildPhases = (
+				A99B80AD2F4C5C3E014568ED /* [CP] Check Pods Manifest.lock */,
 				E1BABEEE26598A510042EF37 /* Sources */,
 				E1BABEEF26598A510042EF37 /* Frameworks */,
 				E1BABEF026598A510042EF37 /* Resources */,
+				1149CC6FCE05E3D7EF3C71EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,18 +308,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1149CC6FCE05E3D7EF3C71EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoRequests/Pods-AutoRequests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoRequests/Pods-AutoRequests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoRequests/Pods-AutoRequests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A99B80AD2F4C5C3E014568ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoRequests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1BABEEE26598A510042EF37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BA7CCD2671C730003A6FD8 /* DriverResponse.swift in Sources */,
 				E1BABF2226598CF90042EF37 /* MyRequestsViewController.swift in Sources */,
+				E1BA7CCC2671C730003A6FD8 /* Driver.swift in Sources */,
 				E1BABF1326598C750042EF37 /* AuthViewController.swift in Sources */,
+				E1BA7CC82671C730003A6FD8 /* Car.swift in Sources */,
+				E1BA7CCE2671C730003A6FD8 /* ApiResponse.swift in Sources */,
 				E1BABEFA26598A510042EF37 /* ViewController.swift in Sources */,
+				E1BA7CC92671C730003A6FD8 /* Passenger.swift in Sources */,
+				E1BA7CCA2671C730003A6FD8 /* TransportApplicationResponse.swift in Sources */,
 				E1BABEF626598A510042EF37 /* AppDelegate.swift in Sources */,
 				E1BABF1B26598CA90042EF37 /* TransportsListViewController.swift in Sources */,
 				E1BABF2E2659E2030042EF37 /* AlertDisplayer.swift in Sources */,
+				E1BA7CCF2671C730003A6FD8 /* TransportApplication.swift in Sources */,
+				E1BA7CC62671C730003A6FD8 /* TransportApplicationResponsePassenger.swift in Sources */,
+				E1BA7CD22671C798003A6FD8 /* User.swift in Sources */,
+				E1BA7CC72671C730003A6FD8 /* TransportApplicationRequest.swift in Sources */,
 				E1BABEF826598A510042EF37 /* SceneDelegate.swift in Sources */,
+				E1BA7CCB2671C730003A6FD8 /* TransportApplicationResponseDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +532,7 @@
 		};
 		E1BABF0726598A680042EF37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E0C3D48457C04752CE894A7 /* Pods-AutoRequests.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,6 +552,7 @@
 		};
 		E1BABF0826598A680042EF37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
