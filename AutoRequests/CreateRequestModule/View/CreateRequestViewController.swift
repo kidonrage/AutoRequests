@@ -9,9 +9,11 @@ import UIKit
 
 final class CreateRequestViewController: UIViewController {
 
-    private let contentScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        return scrollView
+    private let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+
+        return sv
     }()
 
     private let dateIconContainerView: UIView = {
@@ -60,6 +62,7 @@ final class CreateRequestViewController: UIViewController {
         let imageView = UIImageView(image: UIImage(systemName: "hourglass.bottomhalf.fill"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .systemBackground
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     private let startTimeLabel: UILabel = {
@@ -80,7 +83,11 @@ final class CreateRequestViewController: UIViewController {
         return stackView
     }()
     private lazy var startTimeView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [startTimeIconContainerView, startTimeViewText])
+        let startTimeIcon = UIStackView(arrangedSubviews: [UIView(), startTimeIconContainerView, UIView()])
+        startTimeIcon.axis = .vertical
+        startTimeIcon.distribution = .equalCentering
+
+        let stackView = UIStackView(arrangedSubviews: [startTimeIcon, startTimeViewText])
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
@@ -162,8 +169,11 @@ final class CreateRequestViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
 
-        view.addSubview(contentStack)
+        view.addSubview(scrollView)
         view.addSubview(saveButtonContainer)
+
+        scrollView.addSubview(contentStack)
+
         saveButtonContainer.addSubview(saveButton)
 
         dateIconContainerView.addSubview(dateIconView)
@@ -171,6 +181,16 @@ final class CreateRequestViewController: UIViewController {
         endTimeIconContainerView.addSubview(endTimeIconView)
 
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
+
+            contentStack.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            contentStack.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
+            contentStack.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
+            contentStack.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+
             saveButtonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             saveButtonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             saveButtonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -181,21 +201,17 @@ final class CreateRequestViewController: UIViewController {
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             saveButton.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor, constant: 16),
 
-            contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            contentStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            contentStack.bottomAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
-
             dateIconView.widthAnchor.constraint(equalToConstant: 40),
             dateIconView.heightAnchor.constraint(equalTo: dateIconView.widthAnchor),
             dateIconView.centerYAnchor.constraint(equalTo: dateIconContainerView.centerYAnchor),
             dateIconView.centerXAnchor.constraint(equalTo: dateIconContainerView.centerXAnchor),
             dateIconContainerView.widthAnchor.constraint(equalTo: dateIconContainerView.heightAnchor),
 
-            startTimeIconView.widthAnchor.constraint(equalToConstant: 40),
+            startTimeIconView.widthAnchor.constraint(equalTo: startTimeIconContainerView.widthAnchor, constant: -16),
             startTimeIconView.heightAnchor.constraint(equalTo: startTimeIconView.widthAnchor),
             startTimeIconView.centerYAnchor.constraint(equalTo: startTimeIconContainerView.centerYAnchor),
             startTimeIconView.centerXAnchor.constraint(equalTo: startTimeIconContainerView.centerXAnchor),
+            startTimeIconContainerView.heightAnchor.constraint(equalToConstant: 48),
             startTimeIconContainerView.widthAnchor.constraint(equalTo: startTimeIconContainerView.heightAnchor),
 
             endTimeIconView.widthAnchor.constraint(equalToConstant: 40),
