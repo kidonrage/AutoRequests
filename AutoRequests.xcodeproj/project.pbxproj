@@ -34,6 +34,12 @@
 		E1BABF2226598CF90042EF37 /* MyRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */; };
 		E1BABF2726598D240042EF37 /* PassengerFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BABF2526598D240042EF37 /* PassengerFlow.storyboard */; };
 		E1BABF2E2659E2030042EF37 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */; };
+		E1C9687F2674978900C39E9F /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */; };
+		E1CF3B6E26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */; };
+		E1CF3B7226748EFC00F04D8C /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7126748EFC00F04D8C /* SettingSection.swift */; };
+		E1CF3B7526748F8A00F04D8C /* DriverSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */; };
+		E1CF3B7926748FA800F04D8C /* DateSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */; };
+		E1CF3B7D26748FB500F04D8C /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +73,12 @@
 		E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsViewController.swift; sourceTree = "<group>"; };
 		E1BABF2626598D240042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AutoRequests/Base.lproj/PassengerFlow.storyboard; sourceTree = "<group>"; };
 		E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
+		E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewModelProtocol.swift; sourceTree = "<group>"; };
+		E1CF3B7126748EFC00F04D8C /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
+		E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingCell.swift; sourceTree = "<group>"; };
+		E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingTableViewCell.swift; sourceTree = "<group>"; };
+		E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */,
+				E1CF3B7126748EFC00F04D8C /* SettingSection.swift */,
+				E1CF3B7726748F9500F04D8C /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,7 +142,8 @@
 		E1BA7CE32671CEF9003A6FD8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */,
+				E1CF3B6C26748AD200F04D8C /* Implementations */,
+				E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,6 +285,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E1CF3B6C26748AD200F04D8C /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		E1CF3B7726748F9500F04D8C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */,
+				E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */,
+				E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */,
+				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F610BE37B827003D457ED2BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,12 +431,18 @@
 			files = (
 				E1BA7CCD2671C730003A6FD8 /* DriverResponse.swift in Sources */,
 				E1BABF2226598CF90042EF37 /* MyRequestsViewController.swift in Sources */,
+				E1CF3B7926748FA800F04D8C /* DateSettingTableViewCell.swift in Sources */,
 				E1BA7CCC2671C730003A6FD8 /* Driver.swift in Sources */,
+				E1CF3B7D26748FB500F04D8C /* TimeTableViewCell.swift in Sources */,
 				E1BABF1326598C750042EF37 /* AuthViewController.swift in Sources */,
+				E1CF3B7526748F8A00F04D8C /* DriverSettingCell.swift in Sources */,
 				E1BA7CC82671C730003A6FD8 /* Car.swift in Sources */,
 				E1BA7CCE2671C730003A6FD8 /* ApiResponse.swift in Sources */,
+				E1CF3B6E26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift in Sources */,
 				E1BA7CED2671FABA003A6FD8 /* SettingIconView.swift in Sources */,
 				E1BABEFA26598A510042EF37 /* ViewController.swift in Sources */,
+				E1C9687F2674978900C39E9F /* SettingTableViewCell.swift in Sources */,
+				E1CF3B7226748EFC00F04D8C /* SettingSection.swift in Sources */,
 				E1BA7CC92671C730003A6FD8 /* Passenger.swift in Sources */,
 				E1BA7CE92671CF19003A6FD8 /* CreateRequestViewController.swift in Sources */,
 				E1BA7CCA2671C730003A6FD8 /* TransportApplicationResponse.swift in Sources */,

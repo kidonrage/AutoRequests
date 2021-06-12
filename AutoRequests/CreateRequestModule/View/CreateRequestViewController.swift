@@ -9,102 +9,22 @@ import UIKit
 
 final class CreateRequestViewController: UIViewController {
 
-    private let scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
+    // MARK: - Visual Components
+    private lazy var tableView: UITableView = {
+        let tv = UITableView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
 
-        return sv
-    }()
+        tv.dataSource = self
+        tv.delegate = self
 
-    private let dateIconView = SettingIconView(imageSystemName: "calendar", backgroundColor: .systemRed)
-    private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Дата поездки"
-        return label
-    }()
-    private let datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .date
-        picker.locale = Locale(identifier: "ru-RU")
-        return picker
-    }()
-    private lazy var dateViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [dateLabel, datePicker])
-        stackView.axis = .vertical
-        return stackView
-    }()
-    private lazy var dateView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [dateIconView, dateViewText])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        return stackView
-    }()
+        tv.register(DriverSettingTableViewCell.self, forCellReuseIdentifier: DriverSettingTableViewCell.cellId)
+        tv.register(DateSettingTableViewCell.self, forCellReuseIdentifier: DateSettingTableViewCell.cellId)
+        tv.register(TimeSettingTableViewCell.self, forCellReuseIdentifier: TimeSettingTableViewCell.cellId)
 
-    private let startTimeIconView = SettingIconView(imageSystemName: "hourglass.bottomhalf.fill", backgroundColor: .systemYellow)
-    private let startTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Время начала поездки"
-        return label
-    }()
-    private let startTimePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .time
-        picker.locale = Locale(identifier: "ru-RU")
-        return picker
-    }()
-    private lazy var startTimeViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [startTimeLabel, startTimePicker])
-        stackView.axis = .vertical
-        return stackView
-    }()
-    private lazy var startTimeView: UIStackView = {
-        let startTimeIcon = UIStackView(arrangedSubviews: [UIView(), startTimeIconView, UIView()])
-        startTimeIcon.axis = .vertical
-        startTimeIcon.distribution = .equalCentering
+        tv.backgroundColor = .lightGray
+        tv.contentInset = .init(top: 8, left: 0, bottom: 16, right: 0)
 
-        let stackView = UIStackView(arrangedSubviews: [startTimeIcon, startTimeViewText])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        return stackView
-    }()
-
-    private let endTimeIconView = SettingIconView(imageSystemName: "hourglass.tophalf.fill", backgroundColor: .systemGreen)
-    private let endTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Время конца поездки"
-        return label
-    }()
-    private let endTimePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .time
-        picker.locale = Locale(identifier: "ru-RU")
-        return picker
-    }()
-    private lazy var endTimeViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [endTimeLabel, endTimePicker])
-        stackView.axis = .vertical
-        return stackView
-    }()
-    private lazy var endTimeView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [endTimeIconView, endTimeViewText])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        return stackView
-    }()
-
-    private lazy var contentStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [UIView(), dateView, startTimeView, endTimeView, UIView()])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-
-        stackView.alignment = .fill
-        stackView.distribution = .equalCentering
-        stackView.axis = .vertical
-        stackView.spacing = 16
-
-        return stackView
+        return tv
     }()
 
     private let saveButtonContainer: UIView = {
@@ -124,6 +44,21 @@ final class CreateRequestViewController: UIViewController {
         return button
     }()
 
+    // MARK: - Private Properties
+    private let viewModel: CreateRequestViewModelProtocol
+
+    // MARK: - Initializers
+    init(viewModel: CreateRequestViewModelProtocol) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -135,24 +70,12 @@ final class CreateRequestViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
 
-        view.addSubview(scrollView)
+        view.addSubview(tableView)
         view.addSubview(saveButtonContainer)
-
-        scrollView.addSubview(contentStack)
 
         saveButtonContainer.addSubview(saveButton)
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
-
-            contentStack.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            contentStack.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
-            contentStack.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
-            contentStack.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-
             saveButtonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             saveButtonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             saveButtonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -163,15 +86,60 @@ final class CreateRequestViewController: UIViewController {
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             saveButton.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor, constant: 16),
 
-            dateIconView.widthAnchor.constraint(equalToConstant: 48),
-            dateIconView.heightAnchor.constraint(equalTo: dateIconView.widthAnchor),
-
-            startTimeIconView.heightAnchor.constraint(equalToConstant: 48),
-            startTimeIconView.widthAnchor.constraint(equalTo: startTimeIconView.heightAnchor),
-
-            endTimeIconView.widthAnchor.constraint(equalToConstant: 48),
-            endTimeIconView.heightAnchor.constraint(equalTo: endTimeIconView.widthAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
         ])
     }
+
+}
+
+
+// MARK: - UITableViewDataSource
+extension CreateRequestViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let setting = SettingSection(rawValue: indexPath.section)
+
+        let cell: UITableViewCell
+
+        switch setting {
+        case .driver:
+            cell = tableView.dequeueReusableCell(withIdentifier: DriverSettingTableViewCell.cellId, for: indexPath)
+        case .date:
+            cell = tableView.dequeueReusableCell(withIdentifier: DateSettingTableViewCell.cellId, for: indexPath)
+        case .time:
+            cell = tableView.dequeueReusableCell(withIdentifier: TimeSettingTableViewCell.cellId, for: indexPath)
+        default:
+            cell = UITableViewCell()
+        }
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+}
+
+
+// MARK: - UITableViewDelegate
+extension CreateRequestViewController: UITableViewDelegate {
+
+
 
 }

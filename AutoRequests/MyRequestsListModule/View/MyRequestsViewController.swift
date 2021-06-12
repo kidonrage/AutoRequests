@@ -16,7 +16,7 @@ class MyRequestsViewController: UITableViewController {
     }
 
     @objc private func add() {
-        let createRequestVC = CreateRequestViewController()
+        let createRequestVC = CreateRequestViewController(viewModel: CreateRequestViewModel())
 
         navigationController?.pushViewController(createRequestVC, animated: true)
     }
