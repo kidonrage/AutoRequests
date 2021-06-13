@@ -28,9 +28,15 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     private let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
+
+        let locale = Locale(identifier: "ru-RU")
+
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .inline
-        picker.locale = Locale(identifier: "ru-RU")
+        picker.locale = locale
+        picker.minimumDate = Date()
+        picker.calendar.locale = locale
+        
         return picker
     }()
     private lazy var dateViewText: UIStackView = {
@@ -85,9 +91,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - UITableViewCell
     public override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        return
     }
 
     // MARK: - Public Methods

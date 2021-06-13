@@ -13,7 +13,7 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
     private let startTimeIconView = SettingIconView(imageSystemName: "hourglass.bottomhalf.fill", backgroundColor: .systemYellow)
     private let startTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Время начала поездки"
+        label.text = "Начало поездки"
         return label
     }()
     private let startTimePicker: UIDatePicker = {
@@ -22,13 +22,17 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         picker.datePickerMode = .time
         picker.preferredDatePickerStyle = .inline
         picker.locale = Locale(identifier: "ru-RU")
+        picker.minuteInterval = 10
+
+        picker.minimumDate = Date()
+        picker.maximumDate = Date().addingTimeInterval(18000)
+
         return picker
     }()
     private lazy var startTimeViewText: UIStackView = {
-        let pickerView = UIStackView(arrangedSubviews: [startTimePicker, UIView()])
-
-        let stackView = UIStackView(arrangedSubviews: [startTimeLabel, pickerView])
-        stackView.axis = .vertical
+        let stackView = UIStackView(arrangedSubviews: [startTimeLabel, startTimePicker])
+        stackView.axis = .horizontal
+        stackView.spacing = 8
         return stackView
     }()
     private lazy var startTimeView: UIStackView = {
@@ -45,7 +49,7 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
     private let endTimeIconView = SettingIconView(imageSystemName: "hourglass.tophalf.fill", backgroundColor: .systemGreen)
     private let endTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Время конца поездки"
+        label.text = "Конец поездки"
         return label
     }()
     private let endTimePicker: UIDatePicker = {
@@ -54,13 +58,16 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         picker.datePickerMode = .time
         picker.preferredDatePickerStyle = .inline
         picker.locale = Locale(identifier: "ru-RU")
+        picker.minuteInterval = 10
+
         return picker
     }()
     private lazy var endTimeViewText: UIStackView = {
-        let pickerView = UIStackView(arrangedSubviews: [endTimePicker, UIView()])
+        let stackView = UIStackView(arrangedSubviews: [endTimeLabel, endTimePicker])
 
-        let stackView = UIStackView(arrangedSubviews: [endTimeLabel, pickerView])
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+
         return stackView
     }()
     private lazy var endTimeView: UIStackView = {
@@ -114,18 +121,12 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    // MARK: - UITableViewCell
     public override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        return
     }
 
+    // MARK: - Constants
     public static let cellId = "TimeSettingTableViewCell"
 
 }
