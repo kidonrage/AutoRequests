@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DriverSettingTableViewCell: SettingTableViewCell {
+public final class DriverSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Visual Components
     private let driverIconView = SettingIconView(imageSystemName: "person", backgroundColor: .systemGray)
@@ -87,17 +87,17 @@ final class DriverSettingTableViewCell: SettingTableViewCell {
     }
 
     // MARK: - UITableViewCell
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
     // MARK: - Constants
-    static let cellId = "DriverSettingTableViewCell"
+    public static let cellId = "DriverSettingTableViewCell"
 
 }

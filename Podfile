@@ -8,5 +8,8 @@ target 'AutoRequests' do
   # Pods for AutoRequests
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'RxSwift'
+  pod 'RxRelay'
+  pod 'RxCocoa'
 
 end

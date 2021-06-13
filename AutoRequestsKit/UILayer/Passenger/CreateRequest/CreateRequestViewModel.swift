@@ -7,6 +7,8 @@
 
 import Foundation
 
-final class CreateRequestViewModel: CreateRequestViewModelProtocol {
-    
+public final class CreateRequestViewModel {
+
+    public init() {}
+
 }

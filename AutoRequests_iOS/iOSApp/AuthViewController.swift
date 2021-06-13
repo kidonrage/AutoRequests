@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AutoRequestsUIKit
 
 class AuthViewController: UIViewController {
 

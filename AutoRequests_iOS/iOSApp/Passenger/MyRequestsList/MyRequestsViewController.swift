@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AutoRequestsKit
 
 class MyRequestsViewController: UITableViewController {
 

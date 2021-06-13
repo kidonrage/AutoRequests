@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol AlertDisplayer: class {
+public protocol AlertDisplayer: class {
 
     func display(title: String?, message: String?, actions: [UIAlertAction]?)
 
 }
 
-extension AlertDisplayer where Self: UIViewController {
+public extension AlertDisplayer where Self: UIViewController {
 
     func display(title: String?, message: String?, actions: [UIAlertAction]?) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)

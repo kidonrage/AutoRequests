@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import AutoRequestsKit
 
-class DateSettingTableViewCell: SettingTableViewCell {
+public class DateSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Visual Components
     private let dateIconView = SettingIconView(imageSystemName: "calendar", backgroundColor: .systemRed)
@@ -20,6 +21,7 @@ class DateSettingTableViewCell: SettingTableViewCell {
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .inline
         picker.locale = Locale(identifier: "ru-RU")
         return picker
     }()
@@ -41,6 +43,8 @@ class DateSettingTableViewCell: SettingTableViewCell {
 
         return stackView
     }()
+
+    // MARK: - Private Properties
 
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -64,13 +68,13 @@ class DateSettingTableViewCell: SettingTableViewCell {
     }
 
     // MARK: - UITableViewCell
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
     // MARK: - Constants
-    static let cellId = "DateSettingTableViewCell"
+    public static let cellId = "DateSettingTableViewCell"
 
 }

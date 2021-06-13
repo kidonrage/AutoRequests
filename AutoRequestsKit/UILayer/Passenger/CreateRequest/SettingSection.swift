@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SettingSection: Int {
+public enum SettingSection: Int {
 
     case driver = 0
     case date = 1

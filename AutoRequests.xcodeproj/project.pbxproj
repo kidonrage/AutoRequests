@@ -8,43 +8,101 @@
 
 /* Begin PBXBuildFile section */
 		2B79F7C9C80790178E09AD81 /* Pods_AutoRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABEA256A7DE6A8F905FD4D /* Pods_AutoRequests.framework */; };
-		E1BA7CC62671C730003A6FD8 /* TransportApplicationResponsePassenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */; };
-		E1BA7CC72671C730003A6FD8 /* TransportApplicationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */; };
-		E1BA7CC82671C730003A6FD8 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBE2671C730003A6FD8 /* Car.swift */; };
-		E1BA7CC92671C730003A6FD8 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBF2671C730003A6FD8 /* Passenger.swift */; };
-		E1BA7CCA2671C730003A6FD8 /* TransportApplicationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */; };
-		E1BA7CCB2671C730003A6FD8 /* TransportApplicationResponseDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */; };
-		E1BA7CCC2671C730003A6FD8 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC22671C730003A6FD8 /* Driver.swift */; };
-		E1BA7CCD2671C730003A6FD8 /* DriverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */; };
-		E1BA7CCE2671C730003A6FD8 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */; };
-		E1BA7CCF2671C730003A6FD8 /* TransportApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */; };
-		E1BA7CD22671C798003A6FD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CD12671C798003A6FD8 /* User.swift */; };
-		E1BA7CE52671CF07003A6FD8 /* CreateRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */; };
-		E1BA7CE92671CF19003A6FD8 /* CreateRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */; };
-		E1BA7CED2671FABA003A6FD8 /* SettingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */; };
+		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
+		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E18700B52675C17200BF6D82 /* AutoRequestsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E18700B32675C17200BF6D82 /* AutoRequestsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E18700B82675C17200BF6D82 /* AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; };
+		E18700B92675C17200BF6D82 /* AutoRequestsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E18700C82675C18000BF6D82 /* AutoRequestsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E18700C62675C18000BF6D82 /* AutoRequestsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E18700CB2675C18000BF6D82 /* AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; };
+		E18700CC2675C18000BF6D82 /* AutoRequestsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */; };
+		E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18700EA2675C27100BF6D82 /* MyRequestsListViewModel.swift */; };
+		E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */; };
+		E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */; };
+		E18700FF2675C2EB00BF6D82 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1226598C750042EF37 /* AuthViewController.swift */; };
+		E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */; };
+		E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */; };
+		E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */; };
+		E18701172675C46700BF6D82 /* DriverSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */; };
+		E18701182675C46700BF6D82 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */; };
+		E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */; };
+		E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7126748EFC00F04D8C /* SettingSection.swift */; };
+		E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */; };
+		E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */; };
+		E18701292675C4C900BF6D82 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBF2671C730003A6FD8 /* Passenger.swift */; };
+		E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */; };
+		E187012B2675C4C900BF6D82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CD12671C798003A6FD8 /* User.swift */; };
+		E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */; };
+		E187012D2675C4C900BF6D82 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBE2671C730003A6FD8 /* Car.swift */; };
+		E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */; };
+		E187012F2675C4C900BF6D82 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC22671C730003A6FD8 /* Driver.swift */; };
+		E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */; };
+		E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */; };
+		E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */; };
 		E1BABEF626598A510042EF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF526598A510042EF37 /* AppDelegate.swift */; };
 		E1BABEF826598A510042EF37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF726598A510042EF37 /* SceneDelegate.swift */; };
-		E1BABEFA26598A510042EF37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF926598A510042EF37 /* ViewController.swift */; };
 		E1BABEFD26598A510042EF37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BABEFB26598A510042EF37 /* Main.storyboard */; };
 		E1BABEFF26598A680042EF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1BABEFE26598A680042EF37 /* Assets.xcassets */; };
 		E1BABF0226598A680042EF37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BABF0026598A680042EF37 /* LaunchScreen.storyboard */; };
 		E1BABF0C26598BE00042EF37 /* DriverFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BABF0A26598BE00042EF37 /* DriverFlow.storyboard */; };
-		E1BABF1326598C750042EF37 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1226598C750042EF37 /* AuthViewController.swift */; };
-		E1BABF1B26598CA90042EF37 /* TransportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */; };
-		E1BABF2226598CF90042EF37 /* MyRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */; };
 		E1BABF2726598D240042EF37 /* PassengerFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1BABF2526598D240042EF37 /* PassengerFlow.storyboard */; };
-		E1BABF2E2659E2030042EF37 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */; };
-		E1C9687F2674978900C39E9F /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */; };
-		E1CF3B6E26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */; };
-		E1CF3B7226748EFC00F04D8C /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7126748EFC00F04D8C /* SettingSection.swift */; };
-		E1CF3B7526748F8A00F04D8C /* DriverSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */; };
-		E1CF3B7926748FA800F04D8C /* DateSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */; };
-		E1CF3B7D26748FB500F04D8C /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E18700A22675C10D00BF6D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E187009C2675C10D00BF6D82;
+			remoteInfo = AutoRequests_iOS;
+		};
+		E18700B62675C17200BF6D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18700B02675C17200BF6D82;
+			remoteInfo = AutoRequestsUIKit;
+		};
+		E18700C92675C18000BF6D82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18700C32675C18000BF6D82;
+			remoteInfo = AutoRequestsKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E18700A92675C10D00BF6D82 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E18700B92675C17200BF6D82 /* AutoRequestsUIKit.framework in Embed Frameworks */,
+				E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */,
+				E18700CC2675C18000BF6D82 /* AutoRequestsKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1EABEA256A7DE6A8F905FD4D /* Pods_AutoRequests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoRequests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0C3D48457C04752CE894A7 /* Pods-AutoRequests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.debug.xcconfig"; sourceTree = "<group>"; };
+		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
+		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequestsUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18700B32675C17200BF6D82 /* AutoRequestsUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequestsUIKit.h; sourceTree = "<group>"; };
+		E18700B42675C17200BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequestsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18700C62675C18000BF6D82 /* AutoRequestsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequestsKit.h; sourceTree = "<group>"; };
+		E18700C72675C18000BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18700EA2675C27100BF6D82 /* MyRequestsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsListViewModel.swift; sourceTree = "<group>"; };
 		E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponsePassenger.swift; sourceTree = "<group>"; };
 		E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationRequest.swift; sourceTree = "<group>"; };
 		E1BA7CBE2671C730003A6FD8 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -62,7 +120,6 @@
 		E1BABEF226598A510042EF37 /* AutoRequests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoRequests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1BABEF526598A510042EF37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1BABEF726598A510042EF37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1BABEF926598A510042EF37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1BABEFC26598A510042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1BABEFE26598A680042EF37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1BABF0126598A680042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,7 +131,6 @@
 		E1BABF2626598D240042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AutoRequests/Base.lproj/PassengerFlow.storyboard; sourceTree = "<group>"; };
 		E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
 		E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewModelProtocol.swift; sourceTree = "<group>"; };
 		E1CF3B7126748EFC00F04D8C /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
 		E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingCell.swift; sourceTree = "<group>"; };
 		E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,11 +139,35 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E187009A2675C10D00BF6D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700AE2675C17200BF6D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700C12675C18000BF6D82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1BABEEF26598A510042EF37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2B79F7C9C80790178E09AD81 /* Pods_AutoRequests.framework in Frameworks */,
+				E18700B82675C17200BF6D82 /* AutoRequestsUIKit.framework in Frameworks */,
+				E18700CB2675C18000BF6D82 /* AutoRequestsKit.framework in Frameworks */,
+				E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +182,91 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E1BA7CBB2671C730003A6FD8 /* Models */ = {
+		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */,
+				E18700A02675C10D00BF6D82 /* Info.plist */,
+				E18700AB2675C15300BF6D82 /* iOSApp */,
+			);
+			path = AutoRequests_iOS;
+			sourceTree = "<group>";
+		};
+		E18700AB2675C15300BF6D82 /* iOSApp */ = {
+			isa = PBXGroup;
+			children = (
+				E1BABF1226598C750042EF37 /* AuthViewController.swift */,
+				E18700EF2675C2A000BF6D82 /* Driver */,
+				E18700F02675C2A500BF6D82 /* Passenger */,
+			);
+			path = iOSApp;
+			sourceTree = "<group>";
+		};
+		E18700B22675C17200BF6D82 /* AutoRequestsUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E18700B32675C17200BF6D82 /* AutoRequestsUIKit.h */,
+				E18700B42675C17200BF6D82 /* Info.plist */,
+				E187010D2675C3EE00BF6D82 /* Reusable */,
+			);
+			path = AutoRequestsUIKit;
+			sourceTree = "<group>";
+		};
+		E18700C52675C18000BF6D82 /* AutoRequestsKit */ = {
+			isa = PBXGroup;
+			children = (
+				E18700C62675C18000BF6D82 /* AutoRequestsKit.h */,
+				E18700C72675C18000BF6D82 /* Info.plist */,
+				E18700D42675C1A300BF6D82 /* DataLayer */,
+				E18700D32675C19E00BF6D82 /* UILayer */,
+			);
+			path = AutoRequestsKit;
+			sourceTree = "<group>";
+		};
+		E18700D32675C19E00BF6D82 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				E18700D72675C1C800BF6D82 /* Passenger */,
+				E18700D62675C1C300BF6D82 /* Driver */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		E18700D42675C1A300BF6D82 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E18700E72675C24E00BF6D82 /* Model */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		E18700D52675C1B200BF6D82 /* CreateRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */,
+				E1CF3B7126748EFC00F04D8C /* SettingSection.swift */,
+			);
+			path = CreateRequest;
+			sourceTree = "<group>";
+		};
+		E18700D62675C1C300BF6D82 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				E18700E82675C25500BF6D82 /* TransportsList */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		E18700D72675C1C800BF6D82 /* Passenger */ = {
+			isa = PBXGroup;
+			children = (
+				E18700E92675C26000BF6D82 /* MyRequestsList */,
+				E18700D52675C1B200BF6D82 /* CreateRequest */,
+			);
+			path = Passenger;
+			sourceTree = "<group>";
+		};
+		E18700E72675C24E00BF6D82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */,
@@ -117,50 +281,93 @@
 				E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */,
 				E1BA7CD12671C798003A6FD8 /* User.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		E1BA7CDE2671CEDD003A6FD8 /* CreateRequestModule */ = {
+		E18700E82675C25500BF6D82 /* TransportsList */ = {
 			isa = PBXGroup;
 			children = (
-				E1BA7CE32671CEF9003A6FD8 /* ViewModel */,
-				E1BA7CE22671CEF4003A6FD8 /* View */,
 			);
-			path = CreateRequestModule;
+			path = TransportsList;
 			sourceTree = "<group>";
 		};
-		E1BA7CE22671CEF4003A6FD8 /* View */ = {
+		E18700E92675C26000BF6D82 /* MyRequestsList */ = {
+			isa = PBXGroup;
+			children = (
+				E18700EA2675C27100BF6D82 /* MyRequestsListViewModel.swift */,
+			);
+			path = MyRequestsList;
+			sourceTree = "<group>";
+		};
+		E18700EF2675C2A000BF6D82 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				E18700F32675C2B900BF6D82 /* TransportsList */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		E18700F02675C2A500BF6D82 /* Passenger */ = {
+			isa = PBXGroup;
+			children = (
+				E18700F22675C2B200BF6D82 /* CreateRequest */,
+				E18700F12675C2AC00BF6D82 /* MyRequestsList */,
+			);
+			path = Passenger;
+			sourceTree = "<group>";
+		};
+		E18700F12675C2AC00BF6D82 /* MyRequestsList */ = {
+			isa = PBXGroup;
+			children = (
+				E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */,
+			);
+			path = MyRequestsList;
+			sourceTree = "<group>";
+		};
+		E18700F22675C2B200BF6D82 /* CreateRequest */ = {
 			isa = PBXGroup;
 			children = (
 				E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */,
-				E1CF3B7126748EFC00F04D8C /* SettingSection.swift */,
-				E1CF3B7726748F9500F04D8C /* Components */,
 			);
-			path = View;
+			path = CreateRequest;
 			sourceTree = "<group>";
 		};
-		E1BA7CE32671CEF9003A6FD8 /* ViewModel */ = {
+		E18700F32675C2B900BF6D82 /* TransportsList */ = {
 			isa = PBXGroup;
 			children = (
-				E1CF3B6C26748AD200F04D8C /* Implementations */,
-				E1CF3B6D26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift */,
+				E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */,
 			);
-			path = ViewModel;
+			path = TransportsList;
 			sourceTree = "<group>";
 		};
-		E1BA7CEB2671FAA1003A6FD8 /* Components */ = {
+		E187010D2675C3EE00BF6D82 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */,
+				E187010E2675C3F600BF6D82 /* UIKit */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		E187010E2675C3F600BF6D82 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */,
+				E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */,
+				E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */,
+				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
 				E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */,
 			);
-			path = Components;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		E1BABEE926598A510042EF37 = {
 			isa = PBXGroup;
 			children = (
-				E1BABF2C2659E1E30042EF37 /* Extensions */,
 				E1BABEF426598A510042EF37 /* AutoRequests */,
+				E187009E2675C10D00BF6D82 /* AutoRequests_iOS */,
+				E18700B22675C17200BF6D82 /* AutoRequestsUIKit */,
+				E18700C52675C18000BF6D82 /* AutoRequestsKit */,
 				E1BABEF326598A510042EF37 /* Products */,
 				F610BE37B827003D457ED2BC /* Pods */,
 				59718E0FC049AEBF33B8CA94 /* Frameworks */,
@@ -171,6 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				E1BABEF226598A510042EF37 /* AutoRequests.app */,
+				E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */,
+				E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */,
+				E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,130 +388,16 @@
 		E1BABEF426598A510042EF37 /* AutoRequests */ = {
 			isa = PBXGroup;
 			children = (
-				E1BA7CEB2671FAA1003A6FD8 /* Components */,
-				E1BA7CDE2671CEDD003A6FD8 /* CreateRequestModule */,
-				E1BA7CBB2671C730003A6FD8 /* Models */,
-				E1BABF2B2659E1DE0042EF37 /* Tools */,
-				E1BABF1E26598CB10042EF37 /* MyRequestsListModule */,
-				E1BABF1526598C7B0042EF37 /* TransportsListModule */,
-				E1BABF0F26598C5C0042EF37 /* AuthModule */,
 				E1BABF0326598A680042EF37 /* Info.plist */,
 				E1BABEF526598A510042EF37 /* AppDelegate.swift */,
 				E1BABEF726598A510042EF37 /* SceneDelegate.swift */,
-				E1BABEF926598A510042EF37 /* ViewController.swift */,
 				E1BABEFE26598A680042EF37 /* Assets.xcassets */,
 				E1BABF0A26598BE00042EF37 /* DriverFlow.storyboard */,
-				E1BABF2526598D240042EF37 /* PassengerFlow.storyboard */,
 				E1BABF0026598A680042EF37 /* LaunchScreen.storyboard */,
 				E1BABEFB26598A510042EF37 /* Main.storyboard */,
+				E1BABF2526598D240042EF37 /* PassengerFlow.storyboard */,
 			);
 			path = AutoRequests;
-			sourceTree = "<group>";
-		};
-		E1BABF0F26598C5C0042EF37 /* AuthModule */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF1026598C630042EF37 /* View */,
-				E1BABF1126598C670042EF37 /* ViewModel */,
-			);
-			path = AuthModule;
-			sourceTree = "<group>";
-		};
-		E1BABF1026598C630042EF37 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF1226598C750042EF37 /* AuthViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E1BABF1126598C670042EF37 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E1BABF1526598C7B0042EF37 /* TransportsListModule */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF1926598C9C0042EF37 /* VIew */,
-				E1BABF1726598C920042EF37 /* ViewModel */,
-			);
-			path = TransportsListModule;
-			sourceTree = "<group>";
-		};
-		E1BABF1726598C920042EF37 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E1BABF1926598C9C0042EF37 /* VIew */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */,
-			);
-			path = VIew;
-			sourceTree = "<group>";
-		};
-		E1BABF1E26598CB10042EF37 /* MyRequestsListModule */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF1F26598CC10042EF37 /* View */,
-				E1BABF2026598CEA0042EF37 /* ViewModel */,
-			);
-			path = MyRequestsListModule;
-			sourceTree = "<group>";
-		};
-		E1BABF1F26598CC10042EF37 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E1BABF2026598CEA0042EF37 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E1BABF2B2659E1DE0042EF37 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
-		E1BABF2C2659E1E30042EF37 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E1CF3B6C26748AD200F04D8C /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
-				E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */,
-			);
-			path = Implementations;
-			sourceTree = "<group>";
-		};
-		E1CF3B7726748F9500F04D8C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */,
-				E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */,
-				E1CF3B7C26748FB500F04D8C /* TimeTableViewCell.swift */,
-				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		F610BE37B827003D457ED2BC /* Pods */ = {
@@ -315,7 +411,88 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E18700982675C10D00BF6D82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700AC2675C17200BF6D82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18700B52675C17200BF6D82 /* AutoRequestsUIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700BF2675C18000BF6D82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18700C82675C18000BF6D82 /* AutoRequestsKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		E187009C2675C10D00BF6D82 /* AutoRequests_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18700A62675C10D00BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequests_iOS" */;
+			buildPhases = (
+				E18700982675C10D00BF6D82 /* Headers */,
+				E18700992675C10D00BF6D82 /* Sources */,
+				E187009A2675C10D00BF6D82 /* Frameworks */,
+				E187009B2675C10D00BF6D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoRequests_iOS;
+			productName = AutoRequests_iOS;
+			productReference = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E18700B02675C17200BF6D82 /* AutoRequestsUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18700BA2675C17200BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequestsUIKit" */;
+			buildPhases = (
+				E18700AC2675C17200BF6D82 /* Headers */,
+				E18700AD2675C17200BF6D82 /* Sources */,
+				E18700AE2675C17200BF6D82 /* Frameworks */,
+				E18700AF2675C17200BF6D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoRequestsUIKit;
+			productName = AutoRequestsUIKit;
+			productReference = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E18700C32675C18000BF6D82 /* AutoRequestsKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18700CD2675C18000BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequestsKit" */;
+			buildPhases = (
+				E18700BF2675C18000BF6D82 /* Headers */,
+				E18700C02675C18000BF6D82 /* Sources */,
+				E18700C12675C18000BF6D82 /* Frameworks */,
+				E18700C22675C18000BF6D82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoRequestsKit;
+			productName = AutoRequestsKit;
+			productReference = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E1BABEF126598A510042EF37 /* AutoRequests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1BABF0626598A680042EF37 /* Build configuration list for PBXNativeTarget "AutoRequests" */;
@@ -325,10 +502,14 @@
 				E1BABEEF26598A510042EF37 /* Frameworks */,
 				E1BABEF026598A510042EF37 /* Resources */,
 				1149CC6FCE05E3D7EF3C71EE /* [CP] Embed Pods Frameworks */,
+				E18700A92675C10D00BF6D82 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E18700A32675C10D00BF6D82 /* PBXTargetDependency */,
+				E18700B72675C17200BF6D82 /* PBXTargetDependency */,
+				E18700CA2675C18000BF6D82 /* PBXTargetDependency */,
 			);
 			name = AutoRequests;
 			productName = AutoRequests;
@@ -344,6 +525,15 @@
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					E187009C2675C10D00BF6D82 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					E18700B02675C17200BF6D82 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					E18700C32675C18000BF6D82 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					E1BABEF126598A510042EF37 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -363,11 +553,35 @@
 			projectRoot = "";
 			targets = (
 				E1BABEF126598A510042EF37 /* AutoRequests */,
+				E187009C2675C10D00BF6D82 /* AutoRequests_iOS */,
+				E18700B02675C17200BF6D82 /* AutoRequestsUIKit */,
+				E18700C32675C18000BF6D82 /* AutoRequestsKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E187009B2675C10D00BF6D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700AF2675C17200BF6D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700C22675C18000BF6D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1BABEF026598A510042EF37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,41 +639,79 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E18700992675C10D00BF6D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */,
+				E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */,
+				E18700FF2675C2EB00BF6D82 /* AuthViewController.swift in Sources */,
+				E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700AD2675C17200BF6D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */,
+				E18701182675C46700BF6D82 /* TimeTableViewCell.swift in Sources */,
+				E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */,
+				E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */,
+				E18701172675C46700BF6D82 /* DriverSettingCell.swift in Sources */,
+				E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18700C02675C18000BF6D82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */,
+				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
+				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
+				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
+				E187012F2675C4C900BF6D82 /* Driver.swift in Sources */,
+				E187012D2675C4C900BF6D82 /* Car.swift in Sources */,
+				E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */,
+				E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */,
+				E18701292675C4C900BF6D82 /* Passenger.swift in Sources */,
+				E187012B2675C4C900BF6D82 /* User.swift in Sources */,
+				E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */,
+				E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */,
+				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
+				E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1BABEEE26598A510042EF37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1BA7CCD2671C730003A6FD8 /* DriverResponse.swift in Sources */,
-				E1BABF2226598CF90042EF37 /* MyRequestsViewController.swift in Sources */,
-				E1CF3B7926748FA800F04D8C /* DateSettingTableViewCell.swift in Sources */,
-				E1BA7CCC2671C730003A6FD8 /* Driver.swift in Sources */,
-				E1CF3B7D26748FB500F04D8C /* TimeTableViewCell.swift in Sources */,
-				E1BABF1326598C750042EF37 /* AuthViewController.swift in Sources */,
-				E1CF3B7526748F8A00F04D8C /* DriverSettingCell.swift in Sources */,
-				E1BA7CC82671C730003A6FD8 /* Car.swift in Sources */,
-				E1BA7CCE2671C730003A6FD8 /* ApiResponse.swift in Sources */,
-				E1CF3B6E26748AEA00F04D8C /* CreateRequestViewModelProtocol.swift in Sources */,
-				E1BA7CED2671FABA003A6FD8 /* SettingIconView.swift in Sources */,
-				E1BABEFA26598A510042EF37 /* ViewController.swift in Sources */,
-				E1C9687F2674978900C39E9F /* SettingTableViewCell.swift in Sources */,
-				E1CF3B7226748EFC00F04D8C /* SettingSection.swift in Sources */,
-				E1BA7CC92671C730003A6FD8 /* Passenger.swift in Sources */,
-				E1BA7CE92671CF19003A6FD8 /* CreateRequestViewController.swift in Sources */,
-				E1BA7CCA2671C730003A6FD8 /* TransportApplicationResponse.swift in Sources */,
 				E1BABEF626598A510042EF37 /* AppDelegate.swift in Sources */,
-				E1BABF1B26598CA90042EF37 /* TransportsListViewController.swift in Sources */,
-				E1BABF2E2659E2030042EF37 /* AlertDisplayer.swift in Sources */,
-				E1BA7CCF2671C730003A6FD8 /* TransportApplication.swift in Sources */,
-				E1BA7CC62671C730003A6FD8 /* TransportApplicationResponsePassenger.swift in Sources */,
-				E1BA7CD22671C798003A6FD8 /* User.swift in Sources */,
-				E1BA7CE52671CF07003A6FD8 /* CreateRequestViewModel.swift in Sources */,
-				E1BA7CC72671C730003A6FD8 /* TransportApplicationRequest.swift in Sources */,
 				E1BABEF826598A510042EF37 /* SceneDelegate.swift in Sources */,
-				E1BA7CCB2671C730003A6FD8 /* TransportApplicationResponseDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E18700A32675C10D00BF6D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E187009C2675C10D00BF6D82 /* AutoRequests_iOS */;
+			targetProxy = E18700A22675C10D00BF6D82 /* PBXContainerItemProxy */;
+		};
+		E18700B72675C17200BF6D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18700B02675C17200BF6D82 /* AutoRequestsUIKit */;
+			targetProxy = E18700B62675C17200BF6D82 /* PBXContainerItemProxy */;
+		};
+		E18700CA2675C18000BF6D82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18700C32675C18000BF6D82 /* AutoRequestsKit */;
+			targetProxy = E18700C92675C18000BF6D82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E1BABEFB26598A510042EF37 /* Main.storyboard */ = {
@@ -497,6 +749,168 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E18700A72675C10D00BF6D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequests_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vladEliseev.AutoRequests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E18700A82675C10D00BF6D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequests_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vladEliseev.AutoRequests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E18700BB2675C17200BF6D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequestsUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladEliseev.AutoRequestsUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E18700BC2675C17200BF6D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequestsUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladEliseev.AutoRequestsUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E18700CE2675C18000BF6D82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequestsKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladEliseev.AutoRequestsKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E18700CF2675C18000BF6D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = RNXT6P5KC8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoRequestsKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladEliseev.AutoRequestsKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E1BABF0426598A680042EF37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -617,6 +1031,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E0C3D48457C04752CE894A7 /* Pods-AutoRequests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,6 +1052,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -656,6 +1072,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E18700A62675C10D00BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequests_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18700A72675C10D00BF6D82 /* Debug */,
+				E18700A82675C10D00BF6D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E18700BA2675C17200BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequestsUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18700BB2675C17200BF6D82 /* Debug */,
+				E18700BC2675C17200BF6D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E18700CD2675C18000BF6D82 /* Build configuration list for PBXNativeTarget "AutoRequestsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18700CE2675C18000BF6D82 /* Debug */,
+				E18700CF2675C18000BF6D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1BABEED26598A510042EF37 /* Build configuration list for PBXProject "AutoRequests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

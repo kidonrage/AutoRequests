@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AutoRequestsKit
+import AutoRequestsUIKit
 
 final class CreateRequestViewController: UIViewController {
 
@@ -21,8 +23,10 @@ final class CreateRequestViewController: UIViewController {
         tv.register(DateSettingTableViewCell.self, forCellReuseIdentifier: DateSettingTableViewCell.cellId)
         tv.register(TimeSettingTableViewCell.self, forCellReuseIdentifier: TimeSettingTableViewCell.cellId)
 
-        tv.backgroundColor = .lightGray
+        tv.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         tv.contentInset = .init(top: 8, left: 0, bottom: 16, right: 0)
+
+        tv.separatorStyle = .none
 
         return tv
     }()
@@ -45,10 +49,10 @@ final class CreateRequestViewController: UIViewController {
     }()
 
     // MARK: - Private Properties
-    private let viewModel: CreateRequestViewModelProtocol
+    private let viewModel: CreateRequestViewModel
 
     // MARK: - Initializers
-    init(viewModel: CreateRequestViewModelProtocol) {
+    init(viewModel: CreateRequestViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -128,6 +132,10 @@ extension CreateRequestViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
