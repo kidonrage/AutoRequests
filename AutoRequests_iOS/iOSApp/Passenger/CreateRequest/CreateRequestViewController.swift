@@ -50,10 +50,12 @@ final class CreateRequestViewController: UIViewController {
 
     // MARK: - Private Properties
     private let viewModel: CreateRequestViewModel
+    private let driverSelectorVC: DriverSelectorViewController
 
     // MARK: - Initializers
     init(viewModel: CreateRequestViewModel) {
         self.viewModel = viewModel
+        self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel.driverSettingViewModel)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -121,6 +123,16 @@ final class CreateRequestViewController: UIViewController {
         return timeSettingCell
     }
 
+    private func getDriverSettingCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let driverSettingCell = tableView.dequeueReusableCell(withIdentifier: DriverSettingTableViewCell.cellId, for: indexPath) as? DriverSettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        driverSettingCell.configure(with: viewModel.driverSettingViewModel)
+
+        return driverSettingCell
+    }
+
 }
 
 
@@ -142,7 +154,7 @@ extension CreateRequestViewController: UITableViewDataSource {
 
         switch setting {
         case .driver:
-            cell = tableView.dequeueReusableCell(withIdentifier: DriverSettingTableViewCell.cellId, for: indexPath)
+            cell = getDriverSettingCell(for: indexPath)
         case .date:
             cell = getDateSettingCell(for: indexPath)
         case .time:
@@ -172,6 +184,18 @@ extension CreateRequestViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension CreateRequestViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let setting = SettingSection(rawValue: indexPath.section)
 
+        guard
+            setting == SettingSection.driver,
+            let shouldOpenOptions = try? viewModel.driverSettingViewModel.driverOptions.value().count > 0,
+            shouldOpenOptions
+        else {
+            return
+        }
+
+        present(driverSelectorVC, animated: true, completion: nil)
+    }
 
 }

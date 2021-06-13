@@ -25,6 +25,10 @@ public struct Driver: Codable {
     /** Тип пользователя в системе */
     public var type: ModelType?
 
+    public var displayName: String {
+        return (lastName ?? "Unknown") + " " + (firstName ?? "Unknown")
+    }
+
     public init(_id: Int64? = nil, login: String? = nil, firstName: String? = nil, lastName: String? = nil, patronymic: String? = nil, type: ModelType? = nil) {
         self._id = _id
         self.login = login

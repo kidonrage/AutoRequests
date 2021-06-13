@@ -12,6 +12,7 @@ public final class CreateRequestViewModel {
 
     public let dateSettingViewModel = DateSettingViewModel()
     public let timeSettingViewModel = TimeSettingViewModel()
+    public let driverSettingViewModel = DriverSettingViewModel()
     
     public init() {}
 

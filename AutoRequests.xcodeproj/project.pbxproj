@@ -11,8 +11,11 @@
 		5F8C55C92B97FDF77E42C802 /* Pods_AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906E9CC5663EBFA90757AE9A /* Pods_AutoRequests_iOS.framework */; };
 		80DBC41BE16BBC3A03AE8E2A /* Pods_AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E63A1EE2E6CB64959C52837 /* Pods_AutoRequestsUIKit.framework */; };
 		BAAFF30AEC3C97FDE0CD1AB3 /* Pods_AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887F054FC5E996658F2FA521 /* Pods_AutoRequestsKit.framework */; };
+		E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */; };
 		E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */; };
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
+		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
+		E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,7 +33,7 @@
 		E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */; };
 		E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */; };
 		E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */; };
-		E18701172675C46700BF6D82 /* DriverSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */; };
+		E18701172675C46700BF6D82 /* DriverSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */; };
 		E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */; };
 		E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */; };
 		E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7126748EFC00F04D8C /* SettingSection.swift */; };
@@ -107,8 +110,11 @@
 		B92DD511988F700B60385C04 /* Pods-AutoRequestsKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequestsKit.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequestsKit/Pods-AutoRequestsKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D29F30896E96B5A520A102BB /* Pods-AutoRequests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOptionTableViewCell.swift; sourceTree = "<group>"; };
 		E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
+		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
+		E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSelectorViewController.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +154,7 @@
 		E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
 		E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E1CF3B7126748EFC00F04D8C /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
-		E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingCell.swift; sourceTree = "<group>"; };
+		E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingTableViewCell.swift; sourceTree = "<group>"; };
 		FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +208,15 @@
 				906E9CC5663EBFA90757AE9A /* Pods_AutoRequests_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E14FD0132675EEE80003CDDE /* DriverSelector */ = {
+			isa = PBXGroup;
+			children = (
+				E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */,
+				E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */,
+			);
+			path = DriverSelector;
 			sourceTree = "<group>";
 		};
 		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
@@ -269,6 +284,7 @@
 				E1CF3B7126748EFC00F04D8C /* SettingSection.swift */,
 				E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */,
 				E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */,
+				E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */,
 			);
 			path = CreateRequest;
 			sourceTree = "<group>";
@@ -334,6 +350,7 @@
 		E18700F02675C2A500BF6D82 /* Passenger */ = {
 			isa = PBXGroup;
 			children = (
+				E14FD0132675EEE80003CDDE /* DriverSelector */,
 				E18700F22675C2B200BF6D82 /* CreateRequest */,
 				E18700F12675C2AC00BF6D82 /* MyRequestsList */,
 			);
@@ -376,7 +393,7 @@
 		E187010E2675C3F600BF6D82 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E1CF3B7426748F8A00F04D8C /* DriverSettingCell.swift */,
+				E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */,
 				E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */,
 				E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */,
 				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
@@ -745,6 +762,8 @@
 				E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */,
 				E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */,
 				E18700FF2675C2EB00BF6D82 /* AuthViewController.swift in Sources */,
+				E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */,
+				E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */,
 				E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,7 +776,7 @@
 				E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */,
 				E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */,
 				E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */,
-				E18701172675C46700BF6D82 /* DriverSettingCell.swift in Sources */,
+				E18701172675C46700BF6D82 /* DriverSettingTableViewCell.swift in Sources */,
 				E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,6 +791,7 @@
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
 				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
 				E187012F2675C4C900BF6D82 /* Driver.swift in Sources */,
+				E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */,
 				E187012D2675C4C900BF6D82 /* Car.swift in Sources */,
 				E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */,
 				E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */,

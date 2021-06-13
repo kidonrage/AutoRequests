@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RxSwift
+
+import AutoRequestsKit
 
 public final class DriverSettingTableViewCell: SettingTableViewCell {
 
@@ -16,12 +19,22 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
         label.text = "Водитель"
         return label
     }()
+    private let hintLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.numberOfLines = 0
+        return label
+    }()
     private lazy var driverView: UIStackView = {
         let driverIcon = UIStackView(arrangedSubviews: [UIView(), driverIconView, UIView()])
         driverIcon.axis = .vertical
         driverIcon.distribution = .equalCentering
 
-        let stackView = UIStackView(arrangedSubviews: [driverIcon, driverLabel])
+        let driverText = UIStackView(arrangedSubviews: [UIView(), driverLabel, hintLabel, UIView()])
+        driverText.axis = .vertical
+        driverText.distribution = .equalCentering
+
+        let stackView = UIStackView(arrangedSubviews: [driverIcon, driverText])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
@@ -62,6 +75,10 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
         return stackView
     }()
 
+    // MARK: - Private Properties
+    private var viewModel: DriverSettingViewModel!
+    private let bag = DisposeBag()
+
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -95,6 +112,34 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    // MARK: - Public Methods
+    public func configure(with viewModel: DriverSettingViewModel) {
+        self.viewModel = viewModel
+
+        bindViewModel()
+    }
+
+    // MARK: - Private Methods
+    private func bindViewModel() {
+        viewModel.selectedCar
+            .map { $0 == nil }
+            .bind(to: carView.rx.isHidden, divider.rx.isHidden)
+            .disposed(by: bag)
+
+        Observable
+            .combineLatest(viewModel.selectedDriver, viewModel.driverOptions)
+            .subscribe(onNext: { [weak self] selectedDriver, driversOptions in
+                if selectedDriver != nil {
+
+                } else {
+                    let isAnyOptions = driversOptions.count > 0
+
+                    self?.hintLabel.text = isAnyOptions ? "Нажмите, чтобы выбрать" : "Не найдено ни одного водителя на такие дату и время"
+                    self?.hintLabel.textColor = isAnyOptions ? .systemGreen : .systemRed
+                }
+            }).disposed(by: bag)
     }
 
     // MARK: - Constants
