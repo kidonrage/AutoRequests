@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 public final class CreateRequestViewModel {
+
+    private let selectedDate = BehaviorSubject<Date>(value: Date())
 
     public init() {}
 
