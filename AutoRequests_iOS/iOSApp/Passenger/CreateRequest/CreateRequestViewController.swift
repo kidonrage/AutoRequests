@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 import AutoRequestsKit
 import AutoRequestsUIKit
 
@@ -43,13 +44,13 @@ final class CreateRequestViewController: UIViewController {
 
         button.layer.cornerRadius = 4
         button.setTitle("Сохранить", for: .normal)
-        button.backgroundColor = .systemGreen
 
         return button
     }()
 
     // MARK: - Private Properties
     private let viewModel: CreateRequestViewModel
+    private let bag = DisposeBag()
     private let driverSelectorVC: DriverSelectorViewController
 
     // MARK: - Initializers
@@ -101,6 +102,12 @@ final class CreateRequestViewController: UIViewController {
     }
 
     private func bindViewModel() {
+        viewModel.isRequestAvailableToSave
+            .subscribe(onNext: { [weak self] isEnabled in
+                self?.saveButton.isEnabled = isEnabled
+                self?.saveButton.backgroundColor = isEnabled ? .systemGreen : .systemGray
+            })
+            .disposed(by: bag)
     }
 
     private func getDateSettingCell(for indexPath: IndexPath) -> UITableViewCell {
