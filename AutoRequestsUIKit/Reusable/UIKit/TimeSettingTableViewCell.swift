@@ -1,11 +1,14 @@
 //
-//  TimeTableViewCell.swift
+//  TimeSettingTableViewCell.swift
 //  AutoRequests
 //
 //  Created by Vlad Eliseev on 12.06.2021.
 //
 
 import UIKit
+import RxSwift
+
+import AutoRequestsKit
 
 public final class TimeSettingTableViewCell: SettingTableViewCell {
 
@@ -19,13 +22,11 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
     private let startTimePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
+
         picker.datePickerMode = .time
         picker.preferredDatePickerStyle = .inline
         picker.locale = Locale(identifier: "ru-RU")
         picker.minuteInterval = 10
-
-        picker.minimumDate = Date()
-        picker.maximumDate = Date().addingTimeInterval(18000)
 
         return picker
     }()
@@ -97,6 +98,10 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         return stackView
     }()
 
+    // MARK: - Private Properties
+    private var viewModel: TimeSettingViewModel!
+    private let bag = DisposeBag()
+
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -124,6 +129,47 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
     // MARK: - UITableViewCell
     public override func setSelected(_ selected: Bool, animated: Bool) {
         return
+    }
+
+    // MARK: - Public Methods
+    public func configure(with viewModel: TimeSettingViewModel) {
+        self.viewModel = viewModel
+
+        bindViewModel()
+    }
+
+    // MARK: - Private Methods
+    private func bindViewModel() {
+        viewModel.selectedStartTime
+            .bind(to: startTimePicker.rx.date)
+            .disposed(by: bag)
+        startTimePicker.rx.date
+            .bind(to: viewModel.selectedStartTime)
+            .disposed(by: bag)
+
+
+        viewModel.selectedEndTime
+            .bind(to: endTimePicker.rx.date)
+            .disposed(by: bag)
+        endTimePicker.rx.date
+            .bind(to: viewModel.selectedEndTime)
+            .disposed(by: bag)
+
+        viewModel.selectedEndTime.subscribe(onNext: { date in print("next end date", date)}).disposed(by: bag)
+        viewModel.selectedStartTime.subscribe(onNext: { date in print("next start date", date)}).disposed(by: bag)
+
+        Observable.combineLatest(
+            startTimePicker.rx.date,
+            viewModel.selectedEndTime).subscribe(onNext: { [weak self] startTime, endTime in
+
+                let formatter = DateFormatter()
+                formatter.locale = Locale(identifier: "ru-RU")
+                formatter.dateFormat = "E, d MMM y HH:MM:ss"
+                print(formatter.string(from: startTime), formatter.string(from: endTime), endTime < startTime)
+            if endTime < startTime {
+                self?.viewModel.selectedEndTime.onNext(startTime)
+            }
+        }).disposed(by: bag)
     }
 
     // MARK: - Constants

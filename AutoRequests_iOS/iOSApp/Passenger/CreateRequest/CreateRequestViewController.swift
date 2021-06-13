@@ -101,6 +101,26 @@ final class CreateRequestViewController: UIViewController {
     private func bindViewModel() {
     }
 
+    private func getDateSettingCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let dateSettingCell = tableView.dequeueReusableCell(withIdentifier: DateSettingTableViewCell.cellId, for: indexPath) as? DateSettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        dateSettingCell.configure(with: viewModel.dateSettingViewModel)
+
+        return dateSettingCell
+    }
+
+    private func getTimeSettingCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let timeSettingCell = tableView.dequeueReusableCell(withIdentifier: TimeSettingTableViewCell.cellId, for: indexPath) as? TimeSettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        timeSettingCell.configure(with: viewModel.timeSettingViewModel)
+
+        return timeSettingCell
+    }
+
 }
 
 
@@ -124,14 +144,9 @@ extension CreateRequestViewController: UITableViewDataSource {
         case .driver:
             cell = tableView.dequeueReusableCell(withIdentifier: DriverSettingTableViewCell.cellId, for: indexPath)
         case .date:
-            guard let dateSettingCell = tableView.dequeueReusableCell(withIdentifier: DateSettingTableViewCell.cellId, for: indexPath) as? DateSettingTableViewCell else {
-                cell = UITableViewCell()
-                break
-            }
-            dateSettingCell.configure(with: viewModel.dateSettingViewModel)
-            cell = dateSettingCell
+            cell = getDateSettingCell(for: indexPath)
         case .time:
-            cell = tableView.dequeueReusableCell(withIdentifier: TimeSettingTableViewCell.cellId, for: indexPath)
+            cell = getTimeSettingCell(for: indexPath)
         default:
             cell = UITableViewCell()
         }
