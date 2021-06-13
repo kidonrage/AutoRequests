@@ -7,6 +7,8 @@
 
 import UIKit
 import AutoRequestsKit
+import RxCocoa
+import RxSwift
 
 public class DateSettingTableViewCell: SettingTableViewCell {
 
@@ -15,6 +17,12 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.text = "Дата поездки"
+        return label
+    }()
+    private let selectedDateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .systemRed
         return label
     }()
     private let datePicker: UIDatePicker = {
@@ -26,8 +34,9 @@ public class DateSettingTableViewCell: SettingTableViewCell {
         return picker
     }()
     private lazy var dateViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [dateLabel, datePicker])
+        let stackView = UIStackView(arrangedSubviews: [UIView(), dateLabel, selectedDateLabel, UIView()])
         stackView.axis = .vertical
+        stackView.distribution = .equalCentering
         return stackView
     }()
     private lazy var dateView: UIStackView = {
@@ -35,16 +44,23 @@ public class DateSettingTableViewCell: SettingTableViewCell {
         dateIcon.axis = .vertical
         dateIcon.distribution = .equalCentering
 
-        let stackView = UIStackView(arrangedSubviews: [dateIcon, dateViewText])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let headerView = UIStackView(arrangedSubviews: [dateIcon, dateViewText])
+        headerView.translatesAutoresizingMaskIntoConstraints = false
 
-        stackView.axis = .horizontal
+        headerView.axis = .horizontal
+        headerView.spacing = 8
+
+        let stackView = UIStackView(arrangedSubviews: [headerView, datePicker])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
         stackView.spacing = 8
 
         return stackView
     }()
 
     // MARK: - Private Properties
+    private var viewModel: DateSettingViewModel!
+    private let bag = DisposeBag()
 
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -72,6 +88,25 @@ public class DateSettingTableViewCell: SettingTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    // MARK: - Public Methods
+    public func configure(with viewModel: DateSettingViewModel) {
+        self.viewModel = viewModel
+
+        bindViewModel()
+    }
+
+    // MARK: - Private Methods
+    private func bindViewModel() {
+        datePicker.rx.date.bind(to: viewModel.selectedDate).disposed(by: bag)
+
+        viewModel.selectedDate.map { (date) -> String in
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "ru-RU")
+            formatter.dateFormat = "E, d MMM y"
+            return formatter.string(from: date)
+        }.bind(to: selectedDateLabel.rx.text).disposed(by: bag)
     }
 
     // MARK: - Constants

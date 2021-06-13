@@ -69,6 +69,7 @@ final class CreateRequestViewController: UIViewController {
         title = "Новая заявка"
 
         setupUI()
+        bindViewModel()
     }
 
     private func setupUI() {
@@ -97,6 +98,9 @@ final class CreateRequestViewController: UIViewController {
         ])
     }
 
+    private func bindViewModel() {
+    }
+
 }
 
 
@@ -120,7 +124,12 @@ extension CreateRequestViewController: UITableViewDataSource {
         case .driver:
             cell = tableView.dequeueReusableCell(withIdentifier: DriverSettingTableViewCell.cellId, for: indexPath)
         case .date:
-            cell = tableView.dequeueReusableCell(withIdentifier: DateSettingTableViewCell.cellId, for: indexPath)
+            guard let dateSettingCell = tableView.dequeueReusableCell(withIdentifier: DateSettingTableViewCell.cellId, for: indexPath) as? DateSettingTableViewCell else {
+                cell = UITableViewCell()
+                break
+            }
+            dateSettingCell.configure(with: viewModel.dateSettingViewModel)
+            cell = dateSettingCell
         case .time:
             cell = tableView.dequeueReusableCell(withIdentifier: TimeSettingTableViewCell.cellId, for: indexPath)
         default:

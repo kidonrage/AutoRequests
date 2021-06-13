@@ -10,8 +10,8 @@ import RxSwift
 
 public final class CreateRequestViewModel {
 
-    private let selectedDate = BehaviorSubject<Date>(value: Date())
-
+    public let dateSettingViewModel = DateSettingViewModel()
+    
     public init() {}
 
 }

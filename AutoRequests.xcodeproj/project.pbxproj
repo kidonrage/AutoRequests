@@ -11,6 +11,7 @@
 		5F8C55C92B97FDF77E42C802 /* Pods_AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906E9CC5663EBFA90757AE9A /* Pods_AutoRequests_iOS.framework */; };
 		80DBC41BE16BBC3A03AE8E2A /* Pods_AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E63A1EE2E6CB64959C52837 /* Pods_AutoRequestsUIKit.framework */; };
 		BAAFF30AEC3C97FDE0CD1AB3 /* Pods_AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887F054FC5E996658F2FA521 /* Pods_AutoRequestsKit.framework */; };
+		E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -105,6 +106,7 @@
 		B92DD511988F700B60385C04 /* Pods-AutoRequestsKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequestsKit.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequestsKit/Pods-AutoRequestsKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D29F30896E96B5A520A102BB /* Pods-AutoRequests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewModel.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */,
 				E1CF3B7126748EFC00F04D8C /* SettingSection.swift */,
+				E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */,
 			);
 			path = CreateRequest;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
+				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
 				E187012F2675C4C900BF6D82 /* Driver.swift in Sources */,
 				E187012D2675C4C900BF6D82 /* Car.swift in Sources */,
 				E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */,
