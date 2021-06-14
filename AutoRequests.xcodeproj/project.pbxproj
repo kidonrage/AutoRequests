@@ -34,6 +34,8 @@
 		E16DAE77267779D400208CD1 /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE76267779D400208CD1 /* UserSessionDataStore.swift */; };
 		E16DAE7B26777A7400208CD1 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE7A26777A7400208CD1 /* AuthRemoteAPI.swift */; };
 		E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */; };
+		E16DAE8726777DB100208CD1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8626777DB100208CD1 /* AuthViewModel.swift */; };
+		E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -47,7 +49,7 @@
 		E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18700EA2675C27100BF6D82 /* MyRequestsListViewModel.swift */; };
 		E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */; };
 		E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */; };
-		E18700FF2675C2EB00BF6D82 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1226598C750042EF37 /* AuthViewController.swift */; };
+		E18700FF2675C2EB00BF6D82 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF1226598C750042EF37 /* SignInViewController.swift */; };
 		E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */; };
 		E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */; };
 		E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */; };
@@ -189,6 +191,8 @@
 		E16DAE76267779D400208CD1 /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
 		E16DAE7A26777A7400208CD1 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
 		E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAuthRemoteAPI.swift; sourceTree = "<group>"; };
+		E16DAE8626777DB100208CD1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserSessionDataStore.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,7 +225,7 @@
 		E1BABF0126598A680042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1BABF0326598A680042EF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1BABF0B26598BE00042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AutoRequests/Base.lproj/DriverFlow.storyboard; sourceTree = "<group>"; };
-		E1BABF1226598C750042EF37 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		E1BABF1226598C750042EF37 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E1BABF1A26598CA90042EF37 /* TransportsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsListViewController.swift; sourceTree = "<group>"; };
 		E1BABF2126598CF90042EF37 /* MyRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsViewController.swift; sourceTree = "<group>"; };
 		E1BABF2626598D240042EF37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AutoRequests/Base.lproj/PassengerFlow.storyboard; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				E16DAE76267779D400208CD1 /* UserSessionDataStore.swift */,
+				E16DAE8B2677833100208CD1 /* Implementations */,
 			);
 			path = UserSessionStore;
 			sourceTree = "<group>";
@@ -366,6 +371,14 @@
 			path = Implementations;
 			sourceTree = "<group>";
 		};
+		E16DAE8B2677833100208CD1 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
 		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +392,7 @@
 		E18700AB2675C15300BF6D82 /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
-				E1BABF1226598C750042EF37 /* AuthViewController.swift */,
+				E1BABF1226598C750042EF37 /* SignInViewController.swift */,
 				E18700EF2675C2A000BF6D82 /* Driver */,
 				E18700F02675C2A500BF6D82 /* Passenger */,
 			);
@@ -410,8 +423,9 @@
 		E18700D32675C19E00BF6D82 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
-				E18700D72675C1C800BF6D82 /* Passenger */,
+				E16DAE8626777DB100208CD1 /* AuthViewModel.swift */,
 				E18700D62675C1C300BF6D82 /* Driver */,
+				E18700D72675C1C800BF6D82 /* Passenger */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -911,7 +925,7 @@
 			files = (
 				E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */,
 				E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */,
-				E18700FF2675C2EB00BF6D82 /* AuthViewController.swift in Sources */,
+				E18700FF2675C2EB00BF6D82 /* SignInViewController.swift in Sources */,
 				E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */,
 				E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */,
 				E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */,
@@ -944,6 +958,7 @@
 				E16DAE582677766A00208CD1 /* UserSession.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
+				E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */,
 				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
 				E187012F2675C4C900BF6D82 /* Driver.swift in Sources */,
 				E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */,
@@ -961,6 +976,7 @@
 				E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */,
 				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
+				E16DAE8726777DB100208CD1 /* AuthViewModel.swift in Sources */,
 				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
 				E16DAE77267779D400208CD1 /* UserSessionDataStore.swift in Sources */,
 				E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */,

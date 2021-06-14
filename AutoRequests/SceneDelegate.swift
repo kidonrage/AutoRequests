@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AutoRequests_iOS
+import AutoRequestsKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        let window = UIWindow(windowScene: windowScene)
+
+        let dataStore = FakeUserSessionDataStore(hasToken: false)
+        let remoteAPI = FakeAuthRemoteAPI()
+        let viewModel = SignInViewModel(userSessionRepository: AutoRequestsUserSessionRepository(dataStore: dataStore, remoteAPI: remoteAPI))
+        let signInViewController = SignInViewController(viewModel: viewModel)
+
+        self.window = window
+
+        window.rootViewController = UINavigationController(rootViewController: signInViewController)
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

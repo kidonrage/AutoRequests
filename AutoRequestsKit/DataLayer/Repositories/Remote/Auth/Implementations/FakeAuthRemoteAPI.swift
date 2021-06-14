@@ -8,10 +8,13 @@
 import Foundation
 import PromiseKit
 
-class FakeAuthRemoteAPI: AuthRemoteAPI {
+public class FakeAuthRemoteAPI: AuthRemoteAPI {
+
+    // MARK: - Initializers
+    public init() {}
 
     // MARK: - Public Methods
-    func signIn(login: String, password: String) -> Promise<UserSession> {
+    public func signIn(login: String, password: String) -> Promise<UserSession> {
         let isDriver = login == "driver" && password == "driver"
         let isPassenger = login == "passenger" && password == "passenger"
 
