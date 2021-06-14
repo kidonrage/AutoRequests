@@ -33,7 +33,15 @@ final class CreateRequestViewController: UIViewController {
 
         return tv
     }()
+    
+    private let saveButtonDivider: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
 
+        view.backgroundColor = .systemGray
+
+        return view
+    }()
     private let saveButtonContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,19 +85,54 @@ final class CreateRequestViewController: UIViewController {
         bindViewModel()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleKeyboardShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleKeyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+
+    // MARK: - Private Methods
     private func setupUI() {
         view.backgroundColor = .white
+
+        let dismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tableView.addGestureRecognizer(dismissKeyboardGesture)
 
         view.addSubview(tableView)
         view.addSubview(saveButtonContainer)
 
         saveButtonContainer.addSubview(saveButton)
+        saveButtonContainer.addSubview(saveButtonDivider)
 
         NSLayoutConstraint.activate([
             saveButtonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             saveButtonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             saveButtonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             saveButtonContainer.heightAnchor.constraint(equalToConstant: 80),
+
+            saveButtonDivider.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
+            saveButtonDivider.trailingAnchor.constraint(equalTo: saveButtonContainer.trailingAnchor),
+            saveButtonDivider.leadingAnchor.constraint(equalTo: saveButtonContainer.leadingAnchor),
+            saveButtonDivider.heightAnchor.constraint(equalToConstant: 1),
 
             saveButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             saveButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
@@ -164,6 +207,35 @@ final class CreateRequestViewController: UIViewController {
         addressSettingCell.configure(with: viewModel)
 
         return addressSettingCell
+    }
+
+    @objc private func dismissKeyboard() {
+        tableView.endEditing(true)
+    }
+
+    @objc private func handleKeyboardWillHide(_ notification: Notification) {
+        let contentInset = UIEdgeInsets.zero
+
+        setTableViewInsets(contentInset)
+    }
+
+    @objc private func handleKeyboardShow(_ notification: Notification) {
+        guard
+            let userInfo = notification.userInfo as NSDictionary?,
+            let keyboardSize = (userInfo.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue)?
+            .cgRectValue.size
+        else {
+            return
+        }
+
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+
+        setTableViewInsets(contentInset)
+    }
+
+    private func setTableViewInsets(_ insets: UIEdgeInsets) {
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
     }
 
 }
