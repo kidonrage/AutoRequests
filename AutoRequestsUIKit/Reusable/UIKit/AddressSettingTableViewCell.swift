@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 
+import AutoRequestsKit
+
 public final class AddressSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Visual Components
@@ -44,7 +46,11 @@ public final class AddressSettingTableViewCell: SettingTableViewCell {
     }()
 
     // MARK: - Private Properties
-//    private var viewModel: DriverSettingViewModel!
+    private var viewModel: AddressSettingViewModelProtocol! {
+        didSet {
+            bindViewModel()
+        }
+    }
     private let bag = DisposeBag()
 
     // MARK: - Initializers
@@ -71,6 +77,17 @@ public final class AddressSettingTableViewCell: SettingTableViewCell {
     // MARK: - UITableView
     public override func setSelected(_ selected: Bool, animated: Bool) {
         return
+    }
+
+    // MARK: - Public Methods
+    public func configure(with viewModel: AddressSettingViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Private Methods
+    private func bindViewModel() {
+        viewModel.selectedAddress.bind(to: addressField.rx.text).disposed(by: bag)
+        addressField.rx.text.bind(to: viewModel.selectedAddress).disposed(by: bag)
     }
 
     // MARK: - Constants

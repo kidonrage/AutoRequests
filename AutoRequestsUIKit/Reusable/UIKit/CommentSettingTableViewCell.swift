@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 
+import AutoRequestsKit
+
 public final class CommentSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Visual Components
@@ -44,7 +46,7 @@ public final class CommentSettingTableViewCell: SettingTableViewCell {
     }()
 
     // MARK: - Private Properties
-//    private var viewModel: DriverSettingViewModel!
+    private var viewModel: CommentSettingViewModelProtocol!
     private let bag = DisposeBag()
 
     // MARK: - Initializers
@@ -74,6 +76,18 @@ public final class CommentSettingTableViewCell: SettingTableViewCell {
     public override func setSelected(_ selected: Bool, animated: Bool) {
         return
     }
+
+    // MARK: - Public Methods
+    public func configure(with viewModel: CommentSettingViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Private Methods
+    private func bindViewModel() {
+        viewModel.comment.bind(to: commentTextView.rx.text).disposed(by: bag)
+        commentTextView.rx.text.bind(to: viewModel.comment).disposed(by: bag)
+    }
+
 
     // MARK: - Constants
     public static let cellId = "CommentSettingTableViewCell"

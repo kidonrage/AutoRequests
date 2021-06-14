@@ -10,8 +10,6 @@ import RxSwift
 
 public final class TimeSettingViewModel {
 
-    public let selectedStartTime = BehaviorSubject<Date>(value: Date())
-    public let selectedEndTime = BehaviorSubject<Date>(value: Date())
     public let timeOptions = BehaviorSubject<[String]>(value: ["13:00 – 14:00", "14:00 – 15:00"])
     public let selectedTimeIndex = BehaviorSubject<Int?>(value: nil)
 

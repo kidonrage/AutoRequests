@@ -101,6 +101,8 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
             contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 
+            divider.heightAnchor.constraint(equalToConstant: 1),
+
             driverIconView.widthAnchor.constraint(equalToConstant: 40),
             driverIconView.heightAnchor.constraint(equalTo: driverIconView.widthAnchor),
 

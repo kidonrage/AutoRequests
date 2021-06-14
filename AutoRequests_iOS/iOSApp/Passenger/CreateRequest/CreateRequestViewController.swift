@@ -151,6 +151,8 @@ final class CreateRequestViewController: UIViewController {
             return UITableViewCell()
         }
 
+        commentSettingCell.configure(with: viewModel)
+
         return commentSettingCell
     }
 
@@ -158,6 +160,8 @@ final class CreateRequestViewController: UIViewController {
         guard let addressSettingCell = tableView.dequeueReusableCell(withIdentifier: AddressSettingTableViewCell.cellId, for: indexPath) as? AddressSettingTableViewCell else {
             return UITableViewCell()
         }
+
+        addressSettingCell.configure(with: viewModel)
 
         return addressSettingCell
     }

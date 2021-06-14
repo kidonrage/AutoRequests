@@ -14,6 +14,14 @@
 		E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */; };
 		E13EB81B2676503600D39B55 /* AddressSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */; };
 		E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */; };
+		E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB8272677297E00D39B55 /* AddressSettingViewModelProtocol.swift */; };
+		E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB82C26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift */; };
+		E13EB83126772CB600D39B55 /* AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; };
+		E13EB83226772CB600D39B55 /* AutoRequestsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E13EB83826772CCB00D39B55 /* AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; };
+		E13EB83926772CCB00D39B55 /* AutoRequestsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E13EB83C26772CCB00D39B55 /* AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; };
+		E13EB83D26772CCB00D39B55 /* AutoRequestsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */; };
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
 		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
@@ -61,6 +69,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E13EB83326772CB600D39B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18700C32675C18000BF6D82;
+			remoteInfo = AutoRequestsKit;
+		};
+		E13EB83A26772CCB00D39B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18700C32675C18000BF6D82;
+			remoteInfo = AutoRequestsKit;
+		};
+		E13EB83E26772CCB00D39B55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18700B02675C17200BF6D82;
+			remoteInfo = AutoRequestsUIKit;
+		};
 		E18700A22675C10D00BF6D82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1BABEEA26598A510042EF37 /* Project object */;
@@ -85,6 +114,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E13EB83526772CB600D39B55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E13EB83226772CB600D39B55 /* AutoRequestsKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E13EB84026772CCB00D39B55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E13EB83D26772CCB00D39B55 /* AutoRequestsUIKit.framework in Embed Frameworks */,
+				E13EB83926772CCB00D39B55 /* AutoRequestsKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E18700A92675C10D00BF6D82 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +167,8 @@
 		E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOptionTableViewCell.swift; sourceTree = "<group>"; };
 		E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingTableViewCell.swift; sourceTree = "<group>"; };
+		E13EB8272677297E00D39B55 /* AddressSettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSettingViewModelProtocol.swift; sourceTree = "<group>"; };
+		E13EB82C26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingViewModelProtocol.swift; sourceTree = "<group>"; };
 		E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
@@ -169,6 +223,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13EB83826772CCB00D39B55 /* AutoRequestsKit.framework in Frameworks */,
+				E13EB83C26772CCB00D39B55 /* AutoRequestsUIKit.framework in Frameworks */,
 				5F8C55C92B97FDF77E42C802 /* Pods_AutoRequests_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13EB83126772CB600D39B55 /* AutoRequestsKit.framework in Frameworks */,
 				80DBC41BE16BBC3A03AE8E2A /* Pods_AutoRequestsUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +346,8 @@
 				E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */,
 				E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */,
 				E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */,
+				E13EB8272677297E00D39B55 /* AddressSettingViewModelProtocol.swift */,
+				E13EB82C26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift */,
 			);
 			path = CreateRequest;
 			sourceTree = "<group>";
@@ -501,10 +560,13 @@
 				E18700992675C10D00BF6D82 /* Sources */,
 				E187009A2675C10D00BF6D82 /* Frameworks */,
 				E187009B2675C10D00BF6D82 /* Resources */,
+				E13EB84026772CCB00D39B55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E13EB83B26772CCB00D39B55 /* PBXTargetDependency */,
+				E13EB83F26772CCB00D39B55 /* PBXTargetDependency */,
 			);
 			name = AutoRequests_iOS;
 			productName = AutoRequests_iOS;
@@ -520,10 +582,12 @@
 				E18700AD2675C17200BF6D82 /* Sources */,
 				E18700AE2675C17200BF6D82 /* Frameworks */,
 				E18700AF2675C17200BF6D82 /* Resources */,
+				E13EB83526772CB600D39B55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E13EB83426772CB600D39B55 /* PBXTargetDependency */,
 			);
 			name = AutoRequestsUIKit;
 			productName = AutoRequestsUIKit;
@@ -795,6 +859,7 @@
 			files = (
 				E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */,
 				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
+				E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
 				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
@@ -809,6 +874,7 @@
 				E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */,
 				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
+				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
 				E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +891,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E13EB83426772CB600D39B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18700C32675C18000BF6D82 /* AutoRequestsKit */;
+			targetProxy = E13EB83326772CB600D39B55 /* PBXContainerItemProxy */;
+		};
+		E13EB83B26772CCB00D39B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18700C32675C18000BF6D82 /* AutoRequestsKit */;
+			targetProxy = E13EB83A26772CCB00D39B55 /* PBXContainerItemProxy */;
+		};
+		E13EB83F26772CCB00D39B55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18700B02675C17200BF6D82 /* AutoRequestsUIKit */;
+			targetProxy = E13EB83E26772CCB00D39B55 /* PBXContainerItemProxy */;
+		};
 		E18700A32675C10D00BF6D82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E187009C2675C10D00BF6D82 /* AutoRequests_iOS */;
