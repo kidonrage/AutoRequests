@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AutoRequestsKit
 
 class MyRequestsViewController: UITableViewController {
 
@@ -16,7 +17,9 @@ class MyRequestsViewController: UITableViewController {
     }
 
     @objc private func add() {
+        let createRequestVC = CreateRequestViewController(viewModel: CreateRequestViewModel())
 
+        navigationController?.pushViewController(createRequestVC, animated: true)
     }
 
 }

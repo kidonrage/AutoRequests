@@ -10,7 +10,7 @@
         <!--Ближайшие транспортировки-->
         <scene sceneID="0Jp-a6-HeD">
             <objects>
-                <tableViewController title="Ближайшие транспортировки" id="lOY-ly-5Eu" sceneMemberID="viewController">
+                <tableViewController title="Ближайшие транспортировки" id="lOY-ly-5Eu" customClass="TransportsListViewController" customModule="AutoRequests_iOS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gVX-Ds-DxR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
