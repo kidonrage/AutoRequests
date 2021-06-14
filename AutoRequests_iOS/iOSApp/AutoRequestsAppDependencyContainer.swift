@@ -82,7 +82,8 @@ public final class AutoRequestsAppDependencyContainer {
     }
 
     private func makeSignInViewModel() -> SignInViewModel {
-        return SignInViewModel(userSessionRepository: sharedUserSessionRepository)
+        return SignInViewModel(userSessionRepository: sharedUserSessionRepository,
+                               signedInResponder: sharedMainViewModel)
     }
 
     // Signed In

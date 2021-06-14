@@ -494,13 +494,13 @@
 		E18700D32675C19E00BF6D82 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				E16DAEC32677B62300208CD1 /* LaunchViewModel.swift */,
 				E16DAEB72677AFE600208CD1 /* MainView.swift */,
 				E16DAEAE2677AF6E00208CD1 /* MainViewModel.swift */,
+				E16DAEBD2677B09D00208CD1 /* NotSignedInResponder.swift */,
+				E16DAEBA2677B09200208CD1 /* SignedInResponder.swift */,
 				E16DAEB22677AF7E00208CD1 /* Onboarding */,
 				E16DAEB32677AF8400208CD1 /* SignedIn */,
-				E16DAEBA2677B09200208CD1 /* SignedInResponder.swift */,
-				E16DAEBD2677B09D00208CD1 /* NotSignedInResponder.swift */,
-				E16DAEC32677B62300208CD1 /* LaunchViewModel.swift */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";

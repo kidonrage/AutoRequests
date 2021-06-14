@@ -13,6 +13,7 @@ public class SignInViewModel {
 
     // MARK: - Private Properties
     private let userSessionRepository: UserSessionRepository
+    private let signedInResponder: SignedInResponder
 
     // MARK: - Public Properties
     public let isSignInButtonEnabled: Observable<Bool>
@@ -22,8 +23,10 @@ public class SignInViewModel {
     public let errorMessage = BehaviorRelay<String?>(value: nil)
 
     // MARK: - Initializers
-    public init(userSessionRepository: UserSessionRepository) {
+    public init(userSessionRepository: UserSessionRepository,
+                signedInResponder: SignedInResponder) {
         self.userSessionRepository = userSessionRepository
+        self.signedInResponder = signedInResponder
 
         isSignInButtonEnabled = Observable.combineLatest(login, password).map { !$0.isEmpty && !$1.isEmpty }
     }
@@ -34,8 +37,8 @@ public class SignInViewModel {
         isNetworkActivityInProgress.accept(true)
 
         userSessionRepository.signIn(login: login.value, password: password.value)
-            .done { (userSession) in
-                print("Logged In \(userSession.profile.name) with id \(userSession.profile.id)")
+            .done { [weak self] (userSession) in
+                self?.signedInResponder.handleSignedIn(to: userSession)
             }
             .catch { [weak self] (error) in
                 self?.errorMessage.accept(error.localizedDescription)
