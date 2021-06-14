@@ -23,6 +23,8 @@ final class CreateRequestViewController: UIViewController {
         tv.register(DriverSettingTableViewCell.self, forCellReuseIdentifier: DriverSettingTableViewCell.cellId)
         tv.register(DateSettingTableViewCell.self, forCellReuseIdentifier: DateSettingTableViewCell.cellId)
         tv.register(TimeSettingTableViewCell.self, forCellReuseIdentifier: TimeSettingTableViewCell.cellId)
+        tv.register(AddressSettingTableViewCell.self, forCellReuseIdentifier: AddressSettingTableViewCell.cellId)
+        tv.register(CommentSettingTableViewCell.self, forCellReuseIdentifier: CommentSettingTableViewCell.cellId)
 
         tv.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         tv.contentInset = .init(top: 8, left: 0, bottom: 16, right: 0)
@@ -108,6 +110,10 @@ final class CreateRequestViewController: UIViewController {
                 self?.saveButton.backgroundColor = isEnabled ? .systemGreen : .systemGray
             })
             .disposed(by: bag)
+
+        viewModel.driverSettingViewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
+            self?.tableView.reloadData()
+        }).disposed(by: bag)
     }
 
     private func getDateSettingCell(for indexPath: IndexPath) -> UITableViewCell {
@@ -140,6 +146,22 @@ final class CreateRequestViewController: UIViewController {
         return driverSettingCell
     }
 
+    private func getCommentSettingCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let commentSettingCell = tableView.dequeueReusableCell(withIdentifier: CommentSettingTableViewCell.cellId, for: indexPath) as? CommentSettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        return commentSettingCell
+    }
+
+    private func getAddressSettingCell(for indexPath: IndexPath) -> UITableViewCell {
+        guard let addressSettingCell = tableView.dequeueReusableCell(withIdentifier: AddressSettingTableViewCell.cellId, for: indexPath) as? AddressSettingTableViewCell else {
+            return UITableViewCell()
+        }
+
+        return addressSettingCell
+    }
+
 }
 
 
@@ -147,7 +169,7 @@ final class CreateRequestViewController: UIViewController {
 extension CreateRequestViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 5
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -166,6 +188,10 @@ extension CreateRequestViewController: UITableViewDataSource {
             cell = getDateSettingCell(for: indexPath)
         case .time:
             cell = getTimeSettingCell(for: indexPath)
+        case .comment:
+            cell = getCommentSettingCell(for: indexPath)
+        case .address:
+            cell = getAddressSettingCell(for: indexPath)
         default:
             cell = UITableViewCell()
         }

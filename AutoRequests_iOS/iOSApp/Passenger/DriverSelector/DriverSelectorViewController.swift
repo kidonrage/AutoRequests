@@ -64,10 +64,19 @@ public final class DriverSelectorViewController: UIViewController {
         viewModel.driverOptions.bind(
             to: optionsTable.rx.items(
                 cellIdentifier:  DriverOptionTableViewCell.cellId,
-                cellType: UITableViewCell.self)) { row, model, cell in
+                cellType: UITableViewCell.self)) { [weak self] row, model, cell in
             cell.textLabel?.text = model.displayName
             cell.detailTextLabel?.text = "Toyota Corolla 2017"
+
+            if let selectedDriver = try? self?.viewModel.selectedDriver.value() {
+                cell.accessoryType = model._id == selectedDriver._id ? .checkmark : .none
+            }
         }.disposed(by: bag)
+
+        optionsTable.rx.itemSelected.subscribe(onNext: { [weak self] (selectedIndexPath) in
+            self?.viewModel.handleSelectDriver(on: selectedIndexPath)
+            self?.optionsTable.reloadData()
+        }).disposed(by: bag)
     }
 
 }

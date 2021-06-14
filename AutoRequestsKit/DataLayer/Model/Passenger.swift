@@ -15,7 +15,7 @@ public struct Passenger: Codable {
         case driver = "driver"
         case passenger = "passenger"
     }
-    public var _id: Int64?
+    public var _id: Int64
     /** Отчество */
     public var login: String?
     public var firstName: String?
@@ -25,7 +25,7 @@ public struct Passenger: Codable {
     /** Тип пользователя в системе */
     public var type: ModelType?
 
-    public init(_id: Int64? = nil, login: String? = nil, firstName: String? = nil, lastName: String? = nil, patronymic: String? = nil, type: ModelType? = nil) {
+    public init(_id: Int64, login: String? = nil, firstName: String? = nil, lastName: String? = nil, patronymic: String? = nil, type: ModelType? = nil) {
         self._id = _id
         self.login = login
         self.firstName = firstName

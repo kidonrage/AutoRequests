@@ -7,118 +7,70 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 import AutoRequestsKit
 
 public final class TimeSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Visual Components
-    private let startTimeIconView = SettingIconView(imageSystemName: "hourglass.bottomhalf.fill", backgroundColor: .systemYellow)
-    private let startTimeLabel: UILabel = {
+    private let timeIconView = SettingIconView(imageSystemName: "timer", backgroundColor: .systemYellow)
+    private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Начало поездки"
+        label.text = "Время поездки"
         return label
     }()
-    private let startTimePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-
-        picker.datePickerMode = .time
-        picker.preferredDatePickerStyle = .inline
-        picker.locale = Locale(identifier: "ru-RU")
-        picker.minuteInterval = 10
-
+    private let timePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.delegate = nil
+        picker.dataSource = nil
         return picker
     }()
-    private lazy var startTimeViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [startTimeLabel, startTimePicker])
+    private lazy var timeViewText: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [timeLabel, timePicker])
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
     }()
-    private lazy var startTimeView: UIStackView = {
-        let startTimeIcon = UIStackView(arrangedSubviews: [UIView(), startTimeIconView, UIView()])
-        startTimeIcon.axis = .vertical
-        startTimeIcon.distribution = .equalCentering
+    private lazy var timeView: UIStackView = {
+        let timeIcon = UIStackView(arrangedSubviews: [UIView(), timeIconView, UIView()])
+        timeIcon.axis = .vertical
+        timeIcon.distribution = .equalCentering
 
-        let stackView = UIStackView(arrangedSubviews: [startTimeIcon, startTimeViewText])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        return stackView
-    }()
+        let headerView = UIStackView(arrangedSubviews: [timeIcon, timeLabel])
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.axis = .horizontal
+        headerView.spacing = 8
 
-    private let endTimeIconView = SettingIconView(imageSystemName: "hourglass.tophalf.fill", backgroundColor: .systemGreen)
-    private let endTimeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Конец поездки"
-        return label
-    }()
-    private let endTimePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        picker.datePickerMode = .time
-        picker.preferredDatePickerStyle = .inline
-        picker.locale = Locale(identifier: "ru-RU")
-        picker.minuteInterval = 10
-
-        return picker
-    }()
-    private lazy var endTimeViewText: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [endTimeLabel, endTimePicker])
-
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-
-        return stackView
-    }()
-    private lazy var endTimeView: UIStackView = {
-        let endTimeIcon = UIStackView(arrangedSubviews: [UIView(), endTimeIconView, UIView()])
-        endTimeIcon.axis = .vertical
-        endTimeIcon.distribution = .equalCentering
-
-        let stackView = UIStackView(arrangedSubviews: [endTimeIcon, endTimeViewText])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        return stackView
-    }()
-
-    private let divider: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        return view
-    }()
-
-    private lazy var contentStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [startTimeView, divider, endTimeView])
+        let stackView = UIStackView(arrangedSubviews: [headerView, timePicker])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
-        stackView.spacing = 8
         stackView.axis = .vertical
-
+        stackView.spacing = 8
         return stackView
     }()
+
 
     // MARK: - Private Properties
     private var viewModel: TimeSettingViewModel!
     private let bag = DisposeBag()
 
+
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        contentView.addSubview(contentStack)
+        contentView.addSubview(timeView)
 
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            contentStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            timeView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            timeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            timeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            timeView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 
-            endTimeIconView.widthAnchor.constraint(equalToConstant: 48),
-            endTimeIconView.heightAnchor.constraint(equalTo: endTimeIconView.widthAnchor),
+            timePicker.heightAnchor.constraint(equalToConstant: 120),
 
-            startTimeIconView.widthAnchor.constraint(equalToConstant: 48),
-            startTimeIconView.heightAnchor.constraint(equalTo: startTimeIconView.widthAnchor),
+            timeIconView.widthAnchor.constraint(equalToConstant: 40),
+            timeIconView.heightAnchor.constraint(equalTo: timeIconView.widthAnchor),
         ])
     }
 
@@ -126,10 +78,19 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+
     // MARK: - UITableViewCell
     public override func setSelected(_ selected: Bool, animated: Bool) {
         return
     }
+
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+
+        timePicker.delegate = nil
+        timePicker.dataSource = nil
+    }
+
 
     // MARK: - Public Methods
     public func configure(with viewModel: TimeSettingViewModel) {
@@ -138,39 +99,24 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         bindViewModel()
     }
 
+
     // MARK: - Private Methods
     private func bindViewModel() {
-        viewModel.selectedStartTime
-            .bind(to: startTimePicker.rx.date)
-            .disposed(by: bag)
-        startTimePicker.rx.date
-            .bind(to: viewModel.selectedStartTime)
-            .disposed(by: bag)
-
-
-        viewModel.selectedEndTime
-            .bind(to: endTimePicker.rx.date)
-            .disposed(by: bag)
-        endTimePicker.rx.date
-            .bind(to: viewModel.selectedEndTime)
-            .disposed(by: bag)
-
-        viewModel.selectedEndTime.subscribe(onNext: { date in print("next end date", date)}).disposed(by: bag)
-        viewModel.selectedStartTime.subscribe(onNext: { date in print("next start date", date)}).disposed(by: bag)
-
-        Observable.combineLatest(
-            startTimePicker.rx.date,
-            viewModel.selectedEndTime).subscribe(onNext: { [weak self] startTime, endTime in
-
-                let formatter = DateFormatter()
-                formatter.locale = Locale(identifier: "ru-RU")
-                formatter.dateFormat = "E, d MMM y HH:MM:ss"
-                print(formatter.string(from: startTime), formatter.string(from: endTime), endTime < startTime)
-            if endTime < startTime {
-                self?.viewModel.selectedEndTime.onNext(startTime)
+        viewModel.timeOptions
+            .bind(to: timePicker.rx.itemTitles) { (row, element) in
+                return element
             }
+            .disposed(by: bag)
+
+        timePicker.rx.itemSelected.subscribe(onNext: { [weak self] (row: Int, component: Int) in
+            self?.viewModel.selectedTimeIndex.onNext(row)
+        }).disposed(by: bag)
+
+        viewModel.selectedTimeIndex.subscribe(onNext: { [weak self] index in
+            self?.timePicker.selectRow(index ?? 0, inComponent: 0, animated: false)
         }).disposed(by: bag)
     }
+
 
     // MARK: - Constants
     public static let cellId = "TimeSettingTableViewCell"

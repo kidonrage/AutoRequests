@@ -47,12 +47,22 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
         label.text = "Автомобиль"
         return label
     }()
+    private let carNumberLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .systemGray
+        return label
+    }()
     private lazy var carView: UIStackView = {
         let carIcon = UIStackView(arrangedSubviews: [UIView(), carIconView, UIView()])
         carIcon.axis = .vertical
         carIcon.distribution = .equalCentering
 
-        let stackView = UIStackView(arrangedSubviews: [carIcon, carLabel])
+        let carText = UIStackView(arrangedSubviews: [UIView(), carLabel, carNumberLabel, UIView()])
+        carText.axis = .vertical
+        carText.distribution = .equalCentering
+
+        let stackView = UIStackView(arrangedSubviews: [carIcon, carText])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.spacing = 8
@@ -91,10 +101,10 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
             contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 
-            driverIconView.widthAnchor.constraint(equalToConstant: 48),
+            driverIconView.widthAnchor.constraint(equalToConstant: 40),
             driverIconView.heightAnchor.constraint(equalTo: driverIconView.widthAnchor),
 
-            carIconView.widthAnchor.constraint(equalToConstant: 48),
+            carIconView.widthAnchor.constraint(equalToConstant: 40),
             carIconView.heightAnchor.constraint(equalTo: carIconView.widthAnchor),
         ])
     }
@@ -124,15 +134,25 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
     // MARK: - Private Methods
     private func bindViewModel() {
         viewModel.selectedCar
-            .map { $0 == nil }
-            .bind(to: carView.rx.isHidden, divider.rx.isHidden)
+            .subscribe(onNext: { [weak self] car in
+                guard let selectedCar = car else {
+                    self?.carView.rx.isHidden.onNext(true)
+                    return
+                }
+
+                self?.carView.rx.isHidden.onNext(false)
+                self?.carLabel.text = selectedCar.name
+                self?.carNumberLabel.text = selectedCar.govNumber
+            })
             .disposed(by: bag)
 
         Observable
             .combineLatest(viewModel.selectedDriver, viewModel.driverOptions)
-            .subscribe(onNext: { [weak self] selectedDriver, driversOptions in
-                if selectedDriver != nil {
-
+            .subscribe(onNext: { [weak self] driver, driversOptions in
+                if let selectedDriver = driver {
+                    self?.driverLabel.text = selectedDriver.displayName
+                    self?.hintLabel.text = selectedDriver.phone
+                    self?.hintLabel.textColor = .systemGray
                 } else {
                     let isAnyOptions = driversOptions.count > 0
 

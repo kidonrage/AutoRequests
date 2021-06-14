@@ -80,7 +80,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
             dateView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             dateView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 
-            dateIconView.widthAnchor.constraint(equalToConstant: 48),
+            dateIconView.widthAnchor.constraint(equalToConstant: 40),
             dateIconView.heightAnchor.constraint(equalTo: dateIconView.widthAnchor)
         ])
     }

@@ -12,6 +12,8 @@
 		80DBC41BE16BBC3A03AE8E2A /* Pods_AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E63A1EE2E6CB64959C52837 /* Pods_AutoRequestsUIKit.framework */; };
 		BAAFF30AEC3C97FDE0CD1AB3 /* Pods_AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887F054FC5E996658F2FA521 /* Pods_AutoRequestsKit.framework */; };
 		E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */; };
+		E13EB81B2676503600D39B55 /* AddressSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */; };
+		E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */; };
 		E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */; };
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
 		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
@@ -111,6 +113,8 @@
 		D29F30896E96B5A520A102BB /* Pods-AutoRequests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOptionTableViewCell.swift; sourceTree = "<group>"; };
+		E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSettingTableViewCell.swift; sourceTree = "<group>"; };
+		E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
@@ -393,11 +397,13 @@
 		E187010E2675C3F600BF6D82 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */,
+				E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */,
 				E1CF3B7826748FA800F04D8C /* DateSettingTableViewCell.swift */,
-				E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */,
-				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
+				E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */,
 				E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */,
+				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
+				E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */,
+				E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -772,9 +778,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */,
 				E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */,
 				E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */,
 				E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */,
+				E13EB81B2676503600D39B55 /* AddressSettingTableViewCell.swift in Sources */,
 				E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */,
 				E18701172675C46700BF6D82 /* DriverSettingTableViewCell.swift in Sources */,
 				E187010F2675C44B00BF6D82 /* SettingIconView.swift in Sources */,
