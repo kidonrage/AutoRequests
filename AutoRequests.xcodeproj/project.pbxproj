@@ -26,6 +26,10 @@
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
 		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
 		E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */; };
+		E16DAE482677740D00208CD1 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE472677740D00208CD1 /* UserSessionRepository.swift */; };
+		E16DAE582677766A00208CD1 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE572677766A00208CD1 /* UserSession.swift */; };
+		E16DAE692677781400208CD1 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE682677781400208CD1 /* UserProfile.swift */; };
+		E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -173,6 +177,10 @@
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSelectorViewController.swift; sourceTree = "<group>"; };
+		E16DAE472677740D00208CD1 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		E16DAE572677766A00208CD1 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		E16DAE682677781400208CD1 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserSession.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -280,6 +288,32 @@
 			path = DriverSelector;
 			sourceTree = "<group>";
 		};
+		E16DAE46267773F200208CD1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAE472677740D00208CD1 /* UserSessionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E16DAE61267777EB00208CD1 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */,
+				E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */,
+				E1BA7CBE2671C730003A6FD8 /* Car.swift */,
+				E1BA7CBF2671C730003A6FD8 /* Passenger.swift */,
+				E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */,
+				E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */,
+				E1BA7CC22671C730003A6FD8 /* Driver.swift */,
+				E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */,
+				E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */,
+				E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */,
+				E1BA7CD12671C798003A6FD8 /* User.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +367,7 @@
 		E18700D42675C1A300BF6D82 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E16DAE46267773F200208CD1 /* Repositories */,
 				E18700E72675C24E00BF6D82 /* Model */,
 			);
 			path = DataLayer;
@@ -372,17 +407,10 @@
 		E18700E72675C24E00BF6D82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */,
-				E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */,
-				E1BA7CBE2671C730003A6FD8 /* Car.swift */,
-				E1BA7CBF2671C730003A6FD8 /* Passenger.swift */,
-				E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */,
-				E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */,
-				E1BA7CC22671C730003A6FD8 /* Driver.swift */,
-				E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */,
-				E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */,
-				E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */,
-				E1BA7CD12671C798003A6FD8 /* User.swift */,
+				E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */,
+				E16DAE682677781400208CD1 /* UserProfile.swift */,
+				E16DAE572677766A00208CD1 /* UserSession.swift */,
+				E16DAE61267777EB00208CD1 /* Generated */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -860,6 +888,7 @@
 				E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */,
 				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
 				E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */,
+				E16DAE582677766A00208CD1 /* UserSession.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
 				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
@@ -868,10 +897,13 @@
 				E187012D2675C4C900BF6D82 /* Car.swift in Sources */,
 				E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */,
 				E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */,
+				E16DAE482677740D00208CD1 /* UserSessionRepository.swift in Sources */,
 				E18701292675C4C900BF6D82 /* Passenger.swift in Sources */,
 				E187012B2675C4C900BF6D82 /* User.swift in Sources */,
 				E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */,
+				E16DAE692677781400208CD1 /* UserProfile.swift in Sources */,
 				E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */,
+				E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */,
 				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
 				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
