@@ -34,9 +34,21 @@
 		E16DAE77267779D400208CD1 /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE76267779D400208CD1 /* UserSessionDataStore.swift */; };
 		E16DAE7B26777A7400208CD1 /* AuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE7A26777A7400208CD1 /* AuthRemoteAPI.swift */; };
 		E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */; };
-		E16DAE8726777DB100208CD1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8626777DB100208CD1 /* AuthViewModel.swift */; };
+		E16DAE8726777DB100208CD1 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8626777DB100208CD1 /* SignInViewModel.swift */; };
 		E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */; };
 		E16DAE912677921E00208CD1 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE902677921E00208CD1 /* NiblessViewController.swift */; };
+		E16DAE952677942700208CD1 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE942677942700208CD1 /* SpinnerViewController.swift */; };
+		E16DAE9A26779A0300208CD1 /* NetworkActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE9926779A0300208CD1 /* NetworkActivityButton.swift */; };
+		E16DAE9D2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE9C2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift */; };
+		E16DAEA02677AE0300208CD1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE9F2677AE0300208CD1 /* MainViewController.swift */; };
+		E16DAEA72677AF2C00208CD1 /* SignedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEA62677AF2C00208CD1 /* SignedInViewController.swift */; };
+		E16DAEAB2677AF4E00208CD1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEAA2677AF4E00208CD1 /* LaunchViewController.swift */; };
+		E16DAEAF2677AF6E00208CD1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEAE2677AF6E00208CD1 /* MainViewModel.swift */; };
+		E16DAEB82677AFE600208CD1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEB72677AFE600208CD1 /* MainView.swift */; };
+		E16DAEBB2677B09200208CD1 /* SignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEBA2677B09200208CD1 /* SignedInResponder.swift */; };
+		E16DAEBE2677B09D00208CD1 /* NotSignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEBD2677B09D00208CD1 /* NotSignedInResponder.swift */; };
+		E16DAEC12677B3EB00208CD1 /* ViewControllerContainment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEC02677B3EB00208CD1 /* ViewControllerContainment.swift */; };
+		E16DAEC42677B62300208CD1 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAEC32677B62300208CD1 /* LaunchViewModel.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -192,9 +204,21 @@
 		E16DAE76267779D400208CD1 /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
 		E16DAE7A26777A7400208CD1 /* AuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPI.swift; sourceTree = "<group>"; };
 		E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAuthRemoteAPI.swift; sourceTree = "<group>"; };
-		E16DAE8626777DB100208CD1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E16DAE8626777DB100208CD1 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserSessionDataStore.swift; sourceTree = "<group>"; };
 		E16DAE902677921E00208CD1 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		E16DAE942677942700208CD1 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		E16DAE9926779A0300208CD1 /* NetworkActivityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityButton.swift; sourceTree = "<group>"; };
+		E16DAE9C2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsAppDependencyContainer.swift; sourceTree = "<group>"; };
+		E16DAE9F2677AE0300208CD1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E16DAEA62677AF2C00208CD1 /* SignedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInViewController.swift; sourceTree = "<group>"; };
+		E16DAEAA2677AF4E00208CD1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		E16DAEAE2677AF6E00208CD1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E16DAEB72677AFE600208CD1 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E16DAEBA2677B09200208CD1 /* SignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInResponder.swift; sourceTree = "<group>"; };
+		E16DAEBD2677B09D00208CD1 /* NotSignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSignedInResponder.swift; sourceTree = "<group>"; };
+		E16DAEC02677B3EB00208CD1 /* ViewControllerContainment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContainment.swift; sourceTree = "<group>"; };
+		E16DAEC32677B62300208CD1 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -389,6 +413,41 @@
 			path = NiblessComponents;
 			sourceTree = "<group>";
 		};
+		E16DAEA22677AE0900208CD1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E1BABF1226598C750042EF37 /* SignInViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E16DAEA52677AF1500208CD1 /* SignedIn */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAEA62677AF2C00208CD1 /* SignedInViewController.swift */,
+				E18700EF2675C2A000BF6D82 /* Driver */,
+				E18700F02675C2A500BF6D82 /* Passenger */,
+			);
+			path = SignedIn;
+			sourceTree = "<group>";
+		};
+		E16DAEB22677AF7E00208CD1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAE8626777DB100208CD1 /* SignInViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E16DAEB32677AF8400208CD1 /* SignedIn */ = {
+			isa = PBXGroup;
+			children = (
+				E18700D62675C1C300BF6D82 /* Driver */,
+				E18700D72675C1C800BF6D82 /* Passenger */,
+			);
+			path = SignedIn;
+			sourceTree = "<group>";
+		};
 		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,9 +461,11 @@
 		E18700AB2675C15300BF6D82 /* iOSApp */ = {
 			isa = PBXGroup;
 			children = (
-				E1BABF1226598C750042EF37 /* SignInViewController.swift */,
-				E18700EF2675C2A000BF6D82 /* Driver */,
-				E18700F02675C2A500BF6D82 /* Passenger */,
+				E16DAE9C2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift */,
+				E16DAEAA2677AF4E00208CD1 /* LaunchViewController.swift */,
+				E16DAE9F2677AE0300208CD1 /* MainViewController.swift */,
+				E16DAEA22677AE0900208CD1 /* Onboarding */,
+				E16DAEA52677AF1500208CD1 /* SignedIn */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -433,9 +494,13 @@
 		E18700D32675C19E00BF6D82 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
-				E16DAE8626777DB100208CD1 /* AuthViewModel.swift */,
-				E18700D62675C1C300BF6D82 /* Driver */,
-				E18700D72675C1C800BF6D82 /* Passenger */,
+				E16DAEB72677AFE600208CD1 /* MainView.swift */,
+				E16DAEAE2677AF6E00208CD1 /* MainViewModel.swift */,
+				E16DAEB22677AF7E00208CD1 /* Onboarding */,
+				E16DAEB32677AF8400208CD1 /* SignedIn */,
+				E16DAEBA2677B09200208CD1 /* SignedInResponder.swift */,
+				E16DAEBD2677B09D00208CD1 /* NotSignedInResponder.swift */,
+				E16DAEC32677B62300208CD1 /* LaunchViewModel.swift */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -551,9 +616,10 @@
 		E187010D2675C3EE00BF6D82 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				E16DAE8F2677920E00208CD1 /* NiblessComponents */,
 				E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */,
+				E16DAE8F2677920E00208CD1 /* NiblessComponents */,
 				E187010E2675C3F600BF6D82 /* UIKit */,
+				E16DAEC02677B3EB00208CD1 /* ViewControllerContainment.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -568,6 +634,8 @@
 				E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */,
 				E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */,
 				E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */,
+				E16DAE942677942700208CD1 /* SpinnerViewController.swift */,
+				E16DAE9926779A0300208CD1 /* NetworkActivityButton.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -935,11 +1003,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18701062675C2FF00BF6D82 /* CreateRequestViewController.swift in Sources */,
+				E16DAEAB2677AF4E00208CD1 /* LaunchViewController.swift in Sources */,
 				E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */,
+				E16DAE9D2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift in Sources */,
 				E18700FF2675C2EB00BF6D82 /* SignInViewController.swift in Sources */,
 				E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */,
 				E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */,
 				E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */,
+				E16DAEA72677AF2C00208CD1 /* SignedInViewController.swift in Sources */,
+				E16DAEA02677AE0300208CD1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,10 +1019,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16DAE9A26779A0300208CD1 /* NetworkActivityButton.swift in Sources */,
+				E16DAEC12677B3EB00208CD1 /* ViewControllerContainment.swift in Sources */,
 				E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */,
 				E16DAE912677921E00208CD1 /* NiblessViewController.swift in Sources */,
 				E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */,
 				E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */,
+				E16DAE952677942700208CD1 /* SpinnerViewController.swift in Sources */,
 				E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */,
 				E13EB81B2676503600D39B55 /* AddressSettingTableViewCell.swift in Sources */,
 				E18701162675C46700BF6D82 /* DateSettingTableViewCell.swift in Sources */,
@@ -968,6 +1043,9 @@
 				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
 				E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */,
 				E16DAE582677766A00208CD1 /* UserSession.swift in Sources */,
+				E16DAEBE2677B09D00208CD1 /* NotSignedInResponder.swift in Sources */,
+				E16DAEAF2677AF6E00208CD1 /* MainViewModel.swift in Sources */,
+				E16DAEC42677B62300208CD1 /* LaunchViewModel.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsListViewModel.swift in Sources */,
 				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
 				E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */,
@@ -983,13 +1061,15 @@
 				E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */,
 				E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */,
 				E16DAE692677781400208CD1 /* UserProfile.swift in Sources */,
+				E16DAEBB2677B09200208CD1 /* SignedInResponder.swift in Sources */,
 				E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */,
 				E16DAE712677791400208CD1 /* AutoRequestsUserSessionRepository.swift in Sources */,
 				E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */,
 				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
-				E16DAE8726777DB100208CD1 /* AuthViewModel.swift in Sources */,
+				E16DAE8726777DB100208CD1 /* SignInViewModel.swift in Sources */,
 				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
+				E16DAEB82677AFE600208CD1 /* MainView.swift in Sources */,
 				E16DAE77267779D400208CD1 /* UserSessionDataStore.swift in Sources */,
 				E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */,
 			);

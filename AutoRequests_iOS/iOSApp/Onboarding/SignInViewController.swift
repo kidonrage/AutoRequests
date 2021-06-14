@@ -41,8 +41,8 @@ public class SignInViewController: NiblessViewController {
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         return view
     }()
-    private let signInButton: UIButton = {
-        let button = UIButton()
+    private let signInButton: NetworkActivityButton = {
+        let button = NetworkActivityButton()
         button.setTitle("Войти", for: .normal)
         button.layer.cornerRadius = 8
         return button
@@ -81,7 +81,7 @@ public class SignInViewController: NiblessViewController {
 
         super.init()
     }
-    
+
     // MARK: - UIViewController
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,10 +206,28 @@ public class SignInViewController: NiblessViewController {
 
         viewModel.isSignInButtonEnabled
             .subscribe(onNext: { [weak self] isEnabled in
-                self?.signInButton.rx.isEnabled.onNext(isEnabled)
-                self?.signInButton.rx.backgroundColor.onNext(isEnabled ? .systemBlue : .systemGray)
+                self?.setSignInButtonEnabled(isEnabled)
             })
             .disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress.subscribe(onNext: { [weak self] inProgress in
+            self?.loginField.isEnabled = !inProgress
+            self?.passwordField.isEnabled = !inProgress
+            self?.signInButton.setActivityIndicatorActive(inProgress)
+        }).disposed(by: bag)
+
+        viewModel.errorMessage.subscribe(onNext: { [weak self] message in
+            guard let errorMessage = message else {
+                return
+            }
+
+            self?.display(title: "Ошибка", message: errorMessage, actions: nil)
+        }).disposed(by: bag)
+    }
+
+    private func setSignInButtonEnabled(_ isEnabled: Bool) {
+        signInButton.rx.isEnabled.onNext(isEnabled)
+        signInButton.rx.backgroundColor.onNext(isEnabled ? .systemBlue : .systemGray)
     }
 
 }

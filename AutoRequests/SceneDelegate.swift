@@ -12,6 +12,7 @@ import AutoRequestsKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private let dependencyContainer = AutoRequestsAppDependencyContainer()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,15 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-
-        let dataStore = FakeUserSessionDataStore(hasToken: false)
-        let remoteAPI = FakeAuthRemoteAPI()
-        let viewModel = SignInViewModel(userSessionRepository: AutoRequestsUserSessionRepository(dataStore: dataStore, remoteAPI: remoteAPI))
-        let signInViewController = SignInViewController(viewModel: viewModel)
-
         self.window = window
 
-        window.rootViewController = UINavigationController(rootViewController: signInViewController)
+        let rootViewController = dependencyContainer.makeMainViewController()
+
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }
 
