@@ -36,6 +36,7 @@
 		E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */; };
 		E16DAE8726777DB100208CD1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8626777DB100208CD1 /* AuthViewModel.swift */; };
 		E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */; };
+		E16DAE912677921E00208CD1 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE902677921E00208CD1 /* NiblessViewController.swift */; };
 		E18700A12675C10D00BF6D82 /* AutoRequests_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18700A42675C10D00BF6D82 /* AutoRequests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; };
 		E18700A52675C10D00BF6D82 /* AutoRequests_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -193,6 +194,7 @@
 		E16DAE8326777B0C00208CD1 /* FakeAuthRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAuthRemoteAPI.swift; sourceTree = "<group>"; };
 		E16DAE8626777DB100208CD1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		E16DAE8C2677836600208CD1 /* FakeUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserSessionDataStore.swift; sourceTree = "<group>"; };
+		E16DAE902677921E00208CD1 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
 		E187009D2675C10D00BF6D82 /* AutoRequests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoRequests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187009F2675C10D00BF6D82 /* AutoRequests_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequests_iOS.h; sourceTree = "<group>"; };
 		E18700A02675C10D00BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -379,6 +381,14 @@
 			path = Implementations;
 			sourceTree = "<group>";
 		};
+		E16DAE8F2677920E00208CD1 /* NiblessComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAE902677921E00208CD1 /* NiblessViewController.swift */,
+			);
+			path = NiblessComponents;
+			sourceTree = "<group>";
+		};
 		E187009E2675C10D00BF6D82 /* AutoRequests_iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +551,7 @@
 		E187010D2675C3EE00BF6D82 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				E16DAE8F2677920E00208CD1 /* NiblessComponents */,
 				E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */,
 				E187010E2675C3F600BF6D82 /* UIKit */,
 			);
@@ -937,6 +948,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */,
+				E16DAE912677921E00208CD1 /* NiblessViewController.swift in Sources */,
 				E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */,
 				E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */,
 				E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */,

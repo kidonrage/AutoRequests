@@ -10,7 +10,7 @@ import RxSwift
 import AutoRequestsUIKit
 import AutoRequestsKit
 
-public class SignInViewController: UIViewController {
+public class SignInViewController: NiblessViewController {
 
     // MARK: - VisualComponents
     private let loginField: UITextField = {
@@ -79,13 +79,9 @@ public class SignInViewController: UIViewController {
     public init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    
     // MARK: - UIViewController
     public override func viewDidLoad() {
         super.viewDidLoad()
