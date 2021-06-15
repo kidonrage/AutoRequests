@@ -10,38 +10,48 @@ import PromiseKit
 
 public class FakeUserSessionDataStore: UserSessionDataStore {
 
-  // MARK: - Properties
-  let hasToken: Bool
+    // MARK: - Properties
+    let tokenSavedForUserType: UserType?
 
-  // MARK: - Methods
-  public init(hasToken: Bool) {
-    self.hasToken = hasToken
-  }
-
-  public func save(userSession: UserSession) -> Promise<(UserSession)> {
-    return .value(userSession)
-  }
-
-  public func delete(userSession: UserSession) -> Promise<(UserSession)> {
-    return .value(userSession)
-  }
-
-  public func readUserSession() -> Promise<UserSession?> {
-    switch hasToken {
-    case true:
-      return runHasToken()
-    case false:
-      return runDoesNotHaveToken()
+    // MARK: - Methods
+    public init(tokenSavedForUserType: UserType) {
+        self.tokenSavedForUserType = tokenSavedForUserType
     }
-  }
 
-  public func runHasToken() -> Promise<UserSession?> {
-    let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .passenger)
-    let remoteSession = RemoteUserSession(token: "000000")
-    return .value(UserSession(profile: profile, remoteSession: remoteSession))
-  }
+    public func save(userSession: UserSession) -> Promise<(UserSession)> {
+        return .value(userSession)
+    }
 
-  func runDoesNotHaveToken() -> Promise<UserSession?> {
-    return .value(nil)
-  }
+    public func delete(userSession: UserSession) -> Promise<(UserSession)> {
+        return .value(userSession)
+    }
+
+    public func readUserSession() -> Promise<UserSession?> {
+        guard let tokenSavedForUserType = self.tokenSavedForUserType else {
+            return runDoesNotHaveToken()
+        }
+
+        switch tokenSavedForUserType {
+        case .passenger:
+            return runPassengerHasToken()
+        case .driver:
+            return runDriverHasToken()
+        }
+    }
+
+    public func runPassengerHasToken() -> Promise<UserSession?> {
+        let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .passenger)
+        let remoteSession = RemoteUserSession(token: "000000")
+        return .value(UserSession(profile: profile, remoteSession: remoteSession))
+    }
+
+    public func runDriverHasToken() -> Promise<UserSession?> {
+        let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .driver)
+        let remoteSession = RemoteUserSession(token: "000000")
+        return .value(UserSession(profile: profile, remoteSession: remoteSession))
+    }
+
+    func runDoesNotHaveToken() -> Promise<UserSession?> {
+        return .value(nil)
+    }
 }

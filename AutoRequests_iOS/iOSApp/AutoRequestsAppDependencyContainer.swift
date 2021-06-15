@@ -25,7 +25,7 @@ public final class AutoRequestsAppDependencyContainer {
         }
 
         func makeUserSessionDataStore() -> UserSessionDataStore {
-            return FakeUserSessionDataStore(hasToken: false)
+            return FakeUserSessionDataStore(tokenSavedForUserType: .passenger)
         }
 
         func makeAuthRemoteAPI() -> AuthRemoteAPI {
