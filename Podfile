@@ -7,6 +7,7 @@ def common_pods
   pod 'RxSwift'
   pod 'RxRelay'
   pod 'RxCocoa'
+  pod 'PromiseKit'
 end
 
 target 'AutoRequests' do
