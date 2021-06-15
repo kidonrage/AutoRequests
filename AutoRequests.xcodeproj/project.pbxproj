@@ -13,6 +13,7 @@
 		BAAFF30AEC3C97FDE0CD1AB3 /* Pods_AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887F054FC5E996658F2FA521 /* Pods_AutoRequestsKit.framework */; };
 		E130C85B267864A50026042E /* DriverNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAED52678623700208CD1 /* DriverNavigationController.swift */; };
 		E130C85F267864F40026042E /* PassengerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C85E267864F40026042E /* PassengerNavigationController.swift */; };
+		E130C86326786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */; };
 		E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */; };
 		E13EB81B2676503600D39B55 /* AddressSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */; };
 		E13EB823267654EA00D39B55 /* CommentSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */; };
@@ -192,6 +193,7 @@
 		D29F30896E96B5A520A102BB /* Pods-AutoRequests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.debug.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E130C85E267864F40026042E /* PassengerNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerNavigationController.swift; sourceTree = "<group>"; };
+		E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsSignedInDependencyContainer.swift; sourceTree = "<group>"; };
 		E13EB8152675F8C500D39B55 /* DriverOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOptionTableViewCell.swift; sourceTree = "<group>"; };
 		E13EB81A2676503600D39B55 /* AddressSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		E16DAEA52677AF1500208CD1 /* SignedIn */ = {
 			isa = PBXGroup;
 			children = (
+				E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */,
 				E16DAEA62677AF2C00208CD1 /* SignedInViewController.swift */,
 				E18700EF2675C2A000BF6D82 /* Driver */,
 				E18700F02675C2A500BF6D82 /* Passenger */,
@@ -1018,6 +1021,7 @@
 				E130C85B267864A50026042E /* DriverNavigationController.swift in Sources */,
 				E18700FB2675C2E800BF6D82 /* MyRequestsViewController.swift in Sources */,
 				E16DAE9D2677ACFB00208CD1 /* AutoRequestsAppDependencyContainer.swift in Sources */,
+				E130C86326786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift in Sources */,
 				E18700FF2675C2EB00BF6D82 /* SignInViewController.swift in Sources */,
 				E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */,
 				E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */,

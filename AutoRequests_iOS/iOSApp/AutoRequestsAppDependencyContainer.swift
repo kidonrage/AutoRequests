@@ -88,43 +88,13 @@ public final class AutoRequestsAppDependencyContainer {
 
     // Signed In
     private func makeSignedInViewController(userSession: UserSession) -> SignedInViewController {
-        let viewModel = makeSignedInViewModel(userSession: userSession)
+        let container = makeSignedInDependencyContainer(userSession: userSession)
 
-        return SignedInViewController(viewModel: viewModel,
-                                      driverNavigationVCFactory: makeDriverNavigationViewController,
-                                      passengerNavigationVCFactory: makePassengerNavigationViewController)
+        return container.makeSignedInViewController()
     }
 
-    private func makeSignedInViewModel(userSession: UserSession) -> SignedInViewModel {
-        return SignedInViewModel(userSession: userSession)
+    private func makeSignedInDependencyContainer(userSession: UserSession) -> AutoRequestsSignedInDependencyContainer {
+        return AutoRequestsSignedInDependencyContainer(userSession: userSession,
+                                                       appDependencyContainer: self)
     }
-
-    // Driver
-    private func makeDriverNavigationViewController() -> DriverNavigationController {
-        let transportsListVC = makeTransportListViewController()
-
-        return DriverNavigationController(transportsListVC: transportsListVC)
-    }
-
-    private func makeTransportListViewController() -> TransportsListViewController {
-        return TransportsListViewController()
-    }
-
-    // Passenger
-    private func makePassengerNavigationViewController() -> PassengerNavigationController {
-        let createRequestVC = makeCreateRequestViewController()
-
-        return PassengerNavigationController(createRequestVC: createRequestVC)
-    }
-
-    private func makeCreateRequestViewController() -> CreateRequestViewController {
-        let viewModel = makeCreateRequestViewModel()
-
-        return CreateRequestViewController(viewModel: viewModel)
-    }
-
-    private func makeCreateRequestViewModel() -> CreateRequestViewModel {
-        return CreateRequestViewModel()
-    }
-
 }
