@@ -67,34 +67,13 @@ public final class AutoRequestsSignedInDependencyContainer {
 
     // Passenger
     private func makePassengerNavigationViewController() -> PassengerNavigationController {
-        let passengerTransportRequestsVC = makePassengerTransportRequestsViewController()
+        let passengerContainer = makePassengerDependencyContainer()
 
-        return PassengerNavigationController(passengerTransportRequestsVC: passengerTransportRequestsVC)
+        return passengerContainer.makePassengerNavigationViewController()
     }
 
-    private func makePassengerTransportRequestsViewController() -> PassengerTransportRequestsViewController {
-        let viewModel = makeUserTransportRequestsViewModel()
-        let createRequestViewControllerFactory = {
-            return self.makeCreateRequestViewController()
-        }
-
-        return PassengerTransportRequestsViewController(viewModel: viewModel,
-                                                        createRequestViewControllerFactory: createRequestViewControllerFactory)
+    private func makePassengerDependencyContainer() -> AutoRequestsPassengerDependencyContainer {
+        return AutoRequestsPassengerDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
     }
-
-    private func makeUserTransportRequestsViewModel() -> UserTransportRequestsViewModel {
-        return UserTransportRequestsViewModel(transportRequestsRepository: sharedTransportRequestsRepository)
-    }
-
-    private func makeCreateRequestViewController() -> CreateRequestViewController {
-        let viewModel = makeCreateRequestViewModel()
-
-        return CreateRequestViewController(viewModel: viewModel)
-    }
-
-    private func makeCreateRequestViewModel() -> CreateRequestViewModel {
-        return CreateRequestViewModel()
-    }
-    
 
 }
