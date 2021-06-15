@@ -101,6 +101,7 @@
 		E1D8B8DE2678771600AF9716 /* PassengerTransportRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8DD2678771600AF9716 /* PassengerTransportRequestTableViewCell.swift */; };
 		E1D8B8E326787B6E00AF9716 /* TransportRequestValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8E226787B6E00AF9716 /* TransportRequestValueView.swift */; };
 		E1D8B8E92678A06D00AF9716 /* AutoRequestsPassengerDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8E82678A06D00AF9716 /* AutoRequestsPassengerDependencyContainer.swift */; };
+		E1D8B8EF2678A5B900AF9716 /* AutoRequestsDriverDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8EE2678A5B900AF9716 /* AutoRequestsDriverDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +286,7 @@
 		E1D8B8DD2678771600AF9716 /* PassengerTransportRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerTransportRequestTableViewCell.swift; sourceTree = "<group>"; };
 		E1D8B8E226787B6E00AF9716 /* TransportRequestValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestValueView.swift; sourceTree = "<group>"; };
 		E1D8B8E82678A06D00AF9716 /* AutoRequestsPassengerDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsPassengerDependencyContainer.swift; sourceTree = "<group>"; };
+		E1D8B8EE2678A5B900AF9716 /* AutoRequestsDriverDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsDriverDependencyContainer.swift; sourceTree = "<group>"; };
 		FFD5BAD0794E65F07A7CA0BD /* Pods-AutoRequests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests/Pods-AutoRequests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -623,6 +625,7 @@
 		E18700EF2675C2A000BF6D82 /* Driver */ = {
 			isa = PBXGroup;
 			children = (
+				E1D8B8EE2678A5B900AF9716 /* AutoRequestsDriverDependencyContainer.swift */,
 				E16DAED52678623700208CD1 /* DriverNavigationController.swift */,
 				E18700F32675C2B900BF6D82 /* TransportsList */,
 			);
@@ -1072,6 +1075,7 @@
 				E13EB8162675F8C500D39B55 /* DriverOptionTableViewCell.swift in Sources */,
 				E18700F42675C2CC00BF6D82 /* TransportsListViewController.swift in Sources */,
 				E16DAEA72677AF2C00208CD1 /* SignedInViewController.swift in Sources */,
+				E1D8B8EF2678A5B900AF9716 /* AutoRequestsDriverDependencyContainer.swift in Sources */,
 				E130C85F267864F40026042E /* PassengerNavigationController.swift in Sources */,
 				E16DAEA02677AE0300208CD1 /* MainViewController.swift in Sources */,
 			);

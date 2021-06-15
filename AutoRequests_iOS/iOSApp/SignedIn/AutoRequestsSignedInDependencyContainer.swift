@@ -56,13 +56,13 @@ public final class AutoRequestsSignedInDependencyContainer {
 
     // Driver
     private func makeDriverNavigationViewController() -> DriverNavigationController {
-        let transportsListVC = makeTransportListViewController()
+        let driverContainer = makeDriverDependencyContainer()
 
-        return DriverNavigationController(transportsListVC: transportsListVC)
+        return driverContainer.makeDriverNavigationViewController()
     }
 
-    private func makeTransportListViewController() -> TransportsListViewController {
-        return TransportsListViewController()
+    private func makeDriverDependencyContainer() -> AutoRequestsDriverDependencyContainer {
+        return AutoRequestsDriverDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
     }
 
     // Passenger
