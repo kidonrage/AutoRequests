@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pxU-cg-nwq">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,35 +9,35 @@
         <!--Ближайшие транспортировки-->
         <scene sceneID="dSK-UK-Bls">
             <objects>
-                <tableViewController title="Ближайшие транспортировки" id="pxU-cg-nwq" customClass="MyRequestsViewController" customModule="AutoRequests_iOS" sceneMemberID="viewController">
+                <tableViewController title="Ближайшие транспортировки" id="pxU-cg-nwq" customClass="PassengerTransportRequestsViewController" customModule="AutoRequests_iOS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jFB-wt-zoB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Сегодня" id="nIC-Z1-OoY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="3oK-Cs-nor">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3oK-Cs-nor" id="jUx-47-uJd">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="569" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-KX-pIE">
-                                                    <rect key="frame" x="16" y="16" width="351" height="48"/>
+                                                    <rect key="frame" x="16" y="16" width="537" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-KB-w2s">
-                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Водитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAO-n7-Ff3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="27.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Иванов И.И." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDA-dF-gPD">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="102" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="288" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -46,7 +45,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G07-Vx-23c">
-                                                            <rect key="frame" x="118" y="0.0" width="97" height="48"/>
+                                                            <rect key="frame" x="304" y="0.0" width="97" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipX-X5-FCY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="27.5"/>
@@ -63,7 +62,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-h2-8D3">
-                                                            <rect key="frame" x="231" y="0.0" width="120" height="48"/>
+                                                            <rect key="frame" x="417" y="0.0" width="120" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Время" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-U1-yTl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="27.5"/>
@@ -98,14 +97,14 @@
                             <tableViewSection headerTitle="Завтра" id="ULe-nK-Gs6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="XML-4e-5uA">
-                                        <rect key="frame" x="0.0" y="164" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="164" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XML-4e-5uA" id="RJm-y6-jkM">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="569" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RPb-Zp-oFc">
-                                                    <rect key="frame" x="16" y="16" width="351" height="48"/>
+                                                    <rect key="frame" x="16" y="16" width="537" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gp2-rh-ghR">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="48"/>
@@ -128,16 +127,16 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WAW-A4-k0w">
-                                                            <rect key="frame" x="116" y="0.0" width="99" height="48"/>
+                                                            <rect key="frame" x="116" y="0.0" width="285" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EL-E2-qla">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="27.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="27.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mercedec G20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2P-N0-cWj">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="99" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="27.5" width="285" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -145,7 +144,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qli-ug-HSP">
-                                                            <rect key="frame" x="231" y="0.0" width="120" height="48"/>
+                                                            <rect key="frame" x="417" y="0.0" width="120" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Время" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7x-tX-WaG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="27.5"/>

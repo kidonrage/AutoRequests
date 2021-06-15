@@ -18,13 +18,25 @@ public final class AutoRequestsSignedInDependencyContainer {
     private let userSession: UserSession
     // Long-lived dependencies
     private let signedInViewModel: SignedInViewModel
+    private let sharedTransportRequestsRepository: TransportRequestsRepository
 
     // MARK: - Initializers
     public init(userSession: UserSession, appDependencyContainer: AutoRequestsAppDependencyContainer) {
+        func makeTransportRequestsRepository() -> TransportRequestsRepository {
+            let remoteAPI = makeTransportRequestsRemoteAPI()
+
+            return AutoRequestsTransportRequestsRepository(remoteAPI: remoteAPI)
+        }
+
+        func makeTransportRequestsRemoteAPI() -> TransportRequestsRemoteAPI {
+            return FakeTransportRequestsRemoteAPI(userSession: userSession)
+        }
+
         func makeSignedInViewModel() -> SignedInViewModel {
             return SignedInViewModel(userSession: userSession)
         }
 
+        self.sharedTransportRequestsRepository = makeTransportRequestsRepository()
         self.signedInViewModel = makeSignedInViewModel()
 
         self.userSession = userSession
@@ -55,9 +67,19 @@ public final class AutoRequestsSignedInDependencyContainer {
 
     // Passenger
     private func makePassengerNavigationViewController() -> PassengerNavigationController {
-        let createRequestVC = makeCreateRequestViewController()
+        let passengerTransportRequestsVC = makePassengerTransportRequestsViewController()
 
-        return PassengerNavigationController(createRequestVC: createRequestVC)
+        return PassengerNavigationController(passengerTransportRequestsVC: passengerTransportRequestsVC)
+    }
+
+    private func makePassengerTransportRequestsViewController() -> PassengerTransportRequestsViewController {
+        let viewModel = makeUserTransportRequestsViewModel()
+
+        return PassengerTransportRequestsViewController(viewModel: viewModel)
+    }
+
+    private func makeUserTransportRequestsViewModel() -> UserTransportRequestsViewModel {
+        return UserTransportRequestsViewModel(transportRequestsRepository: sharedTransportRequestsRepository)
     }
 
     private func makeCreateRequestViewController() -> CreateRequestViewController {
@@ -69,5 +91,6 @@ public final class AutoRequestsSignedInDependencyContainer {
     private func makeCreateRequestViewModel() -> CreateRequestViewModel {
         return CreateRequestViewModel()
     }
+    
 
 }
