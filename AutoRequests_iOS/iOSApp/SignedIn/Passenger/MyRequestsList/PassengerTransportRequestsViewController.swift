@@ -21,12 +21,19 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
     }()
 
     // MARK: - Private Properties
+    // ViewModel
     private let viewModel: UserTransportRequestsViewModel
     private let bag = DisposeBag()
+    // Child View Controllers
+    private var createRequestVC: CreateRequestViewController?
+    // Factories
+    private let makeCreateRequestVC: () -> CreateRequestViewController
 
     // MARK: - Initializers
-    public init(viewModel: UserTransportRequestsViewModel) {
+    public init(viewModel: UserTransportRequestsViewModel,
+                createRequestViewControllerFactory: @escaping () -> CreateRequestViewController) {
         self.viewModel = viewModel
+        self.makeCreateRequestVC = createRequestViewControllerFactory
 
         super.init()
     }
@@ -73,7 +80,14 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
     }
 
     @objc private func add() {
-        let createRequestVC = CreateRequestViewController(viewModel: CreateRequestViewModel())
+        let createRequestVC: CreateRequestViewController
+
+        if let selfCreateRequestVC = self.createRequestVC {
+            createRequestVC = selfCreateRequestVC
+        } else {
+            createRequestVC = makeCreateRequestVC()
+            self.createRequestVC = createRequestVC
+        }
 
         navigationController?.pushViewController(createRequestVC, animated: true)
     }

@@ -16,7 +16,10 @@ public final class PassengerTransportRequestTableViewCell: UITableViewCell {
     private let dateView = TransportRequestValueView(valueName: "Дата", value: nil)
     private let timeView = TransportRequestValueView(valueName: "Время", value: nil)
     private lazy var contentStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [driverView, carView, dateView, timeView])
+        let dateTimeView = UIStackView(arrangedSubviews: [dateView, timeView])
+        dateTimeView.spacing = 8
+
+        let stackView = UIStackView(arrangedSubviews: [driverView, carView, dateTimeView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         stackView.axis = .vertical
@@ -49,10 +52,10 @@ public final class PassengerTransportRequestTableViewCell: UITableViewCell {
         contentView.addSubview(contentStack)
 
         NSLayoutConstraint.activate([
-            contentStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            contentStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            contentStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            contentStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            contentStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
         ])
     }
 
