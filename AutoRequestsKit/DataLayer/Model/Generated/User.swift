@@ -24,14 +24,3 @@ public struct User: Codable {
     public var type: UserType
 
 }
-
-
-// MARK: - UserType
-extension User {
-
-    public enum UserType: String, Codable {
-        case driver = "driver"
-        case passenger = "passenger"
-    }
-
-}

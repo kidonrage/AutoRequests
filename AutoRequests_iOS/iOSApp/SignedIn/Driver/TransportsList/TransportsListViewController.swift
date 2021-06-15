@@ -6,24 +6,31 @@
 //
 
 import UIKit
+import AutoRequestsUIKit
 
-class TransportsListViewController: UITableViewController {
+public final class TransportsListViewController: NiblessViewController {
 
-    override func viewDidLoad() {
+    private let transportsListTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
+    private func setupUI() {
+        view.addSubview(transportsListTableView)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        NSLayoutConstraint.activate([
+            transportsListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            transportsListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            transportsListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            transportsListTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
     }
-    */
 
 }

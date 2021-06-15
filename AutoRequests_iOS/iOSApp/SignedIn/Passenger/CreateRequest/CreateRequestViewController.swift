@@ -10,7 +10,7 @@ import RxSwift
 import AutoRequestsKit
 import AutoRequestsUIKit
 
-final class CreateRequestViewController: UIViewController {
+public final class CreateRequestViewController: UIViewController {
 
     // MARK: - Visual Components
     private lazy var tableView: UITableView = {
@@ -76,7 +76,7 @@ final class CreateRequestViewController: UIViewController {
     }
 
     // MARK: - UIViewController
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Новая заявка"
@@ -85,7 +85,7 @@ final class CreateRequestViewController: UIViewController {
         bindViewModel()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         NotificationCenter.default.addObserver(
@@ -102,7 +102,7 @@ final class CreateRequestViewController: UIViewController {
         )
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -244,15 +244,15 @@ final class CreateRequestViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CreateRequestViewController: UITableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = SettingSection(rawValue: indexPath.section)
 
         let cell: UITableViewCell
@@ -275,15 +275,15 @@ extension CreateRequestViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 8))
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 8
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 
@@ -293,7 +293,7 @@ extension CreateRequestViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension CreateRequestViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let setting = SettingSection(rawValue: indexPath.section)
 
         guard
