@@ -9,12 +9,12 @@ import UIKit
 
 public final class PassengerNavigationController: UINavigationController {
 
-    private let createRequestVC: CreateRequestViewController
+    private let passengerTransportRequestsVC: PassengerTransportRequestsViewController
 
-    public init(createRequestVC: CreateRequestViewController) {
-        self.createRequestVC = createRequestVC
+    public init(passengerTransportRequestsVC: PassengerTransportRequestsViewController) {
+        self.passengerTransportRequestsVC = passengerTransportRequestsVC
 
-        super.init(rootViewController: createRequestVC)
+        super.init(rootViewController: passengerTransportRequestsVC)
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -18,13 +18,25 @@ public final class AutoRequestsSignedInDependencyContainer {
     private let userSession: UserSession
     // Long-lived dependencies
     private let signedInViewModel: SignedInViewModel
+    private let sharedTransportRequestsRepository: TransportRequestsRepository
 
     // MARK: - Initializers
     public init(userSession: UserSession, appDependencyContainer: AutoRequestsAppDependencyContainer) {
+        func makeTransportRequestsRepository() -> TransportRequestsRepository {
+            let remoteAPI = makeTransportRequestsRemoteAPI()
+
+            return AutoRequestsTransportRequestsRepository(remoteAPI: remoteAPI)
+        }
+
+        func makeTransportRequestsRemoteAPI() -> TransportRequestsRemoteAPI {
+            return FakeTransportRequestsRemoteAPI(userSession: userSession)
+        }
+
         func makeSignedInViewModel() -> SignedInViewModel {
             return SignedInViewModel(userSession: userSession)
         }
 
+        self.sharedTransportRequestsRepository = makeTransportRequestsRepository()
         self.signedInViewModel = makeSignedInViewModel()
 
         self.userSession = userSession
@@ -55,19 +67,13 @@ public final class AutoRequestsSignedInDependencyContainer {
 
     // Passenger
     private func makePassengerNavigationViewController() -> PassengerNavigationController {
-        let createRequestVC = makeCreateRequestViewController()
+        let passengerContainer = makePassengerDependencyContainer()
 
-        return PassengerNavigationController(createRequestVC: createRequestVC)
+        return passengerContainer.makePassengerNavigationViewController()
     }
 
-    private func makeCreateRequestViewController() -> CreateRequestViewController {
-        let viewModel = makeCreateRequestViewModel()
-
-        return CreateRequestViewController(viewModel: viewModel)
-    }
-
-    private func makeCreateRequestViewModel() -> CreateRequestViewModel {
-        return CreateRequestViewModel()
+    private func makePassengerDependencyContainer() -> AutoRequestsPassengerDependencyContainer {
+        return AutoRequestsPassengerDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
     }
 
 }

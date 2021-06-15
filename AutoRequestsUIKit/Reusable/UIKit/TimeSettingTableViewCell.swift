@@ -20,10 +20,10 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         label.text = "Время поездки"
         return label
     }()
-    private let timePicker: UIPickerView = {
+    private lazy var timePicker: UIPickerView = {
         let picker = UIPickerView()
-        picker.delegate = nil
-        picker.dataSource = nil
+        picker.delegate = self
+        picker.dataSource = self
         return picker
     }()
     private lazy var timeViewText: UIStackView = {
@@ -84,14 +84,6 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
         return
     }
 
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-
-        timePicker.delegate = nil
-        timePicker.dataSource = nil
-    }
-
-
     // MARK: - Public Methods
     public func configure(with viewModel: TimeSettingViewModel) {
         self.viewModel = viewModel
@@ -103,22 +95,43 @@ public final class TimeSettingTableViewCell: SettingTableViewCell {
     // MARK: - Private Methods
     private func bindViewModel() {
         viewModel.timeOptions
-            .bind(to: timePicker.rx.itemTitles) { (row, element) in
-                return element
-            }
-            .disposed(by: bag)
+            .subscribe(onNext: { [weak self] updatedOptions in
+                self?.timePicker.reloadAllComponents()
+            }).disposed(by: bag)
 
-        timePicker.rx.itemSelected.subscribe(onNext: { [weak self] (row: Int, component: Int) in
-            self?.viewModel.selectedTimeIndex.onNext(row)
-        }).disposed(by: bag)
-
-        viewModel.selectedTimeIndex.subscribe(onNext: { [weak self] index in
-            self?.timePicker.selectRow(index ?? 0, inComponent: 0, animated: false)
-        }).disposed(by: bag)
+        timePicker.selectRow(viewModel.selectedTimeIndex.value ?? 0, inComponent: 0, animated: false)
     }
 
 
     // MARK: - Constants
     public static let cellId = "TimeSettingTableViewCell"
+
+}
+
+
+// MARK: - UIPickerViewDataSource
+extension TimeSettingTableViewCell: UIPickerViewDataSource {
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.timeOptions.value.count
+    }
+
+}
+
+
+// MARK: - UIPickerViewDelegate
+extension TimeSettingTableViewCell: UIPickerViewDelegate {
+
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.timeOptions.value[row]
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selectedTimeIndex.accept(row)
+    }
 
 }
