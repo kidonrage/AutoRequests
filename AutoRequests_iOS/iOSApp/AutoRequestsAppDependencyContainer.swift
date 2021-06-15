@@ -88,7 +88,13 @@ public final class AutoRequestsAppDependencyContainer {
 
     // Signed In
     private func makeSignedInViewController(userSession: UserSession) -> SignedInViewController {
-        return SignedInViewController()
+        let container = makeSignedInDependencyContainer(userSession: userSession)
+
+        return container.makeSignedInViewController()
     }
 
+    private func makeSignedInDependencyContainer(userSession: UserSession) -> AutoRequestsSignedInDependencyContainer {
+        return AutoRequestsSignedInDependencyContainer(userSession: userSession,
+                                                       appDependencyContainer: self)
+    }
 }

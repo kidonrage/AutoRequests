@@ -36,7 +36,7 @@ public class FakeUserSessionDataStore: UserSessionDataStore {
   }
 
   public func runHasToken() -> Promise<UserSession?> {
-    let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99")
+    let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .passenger)
     let remoteSession = RemoteUserSession(token: "000000")
     return .value(UserSession(profile: profile, remoteSession: remoteSession))
   }

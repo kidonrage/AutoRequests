@@ -53,21 +53,36 @@ public final class MainViewController: NiblessViewController {
         let signInViewController = makeSignInViewController()
         signInViewController.modalPresentationStyle = .fullScreen
         present(signInViewController, animated: true) { [weak self] in
-          guard let strongSelf = self else {
-            return
-          }
+            guard let strongSelf = self else {
+                return
+            }
 
-          strongSelf.remove(childViewController: strongSelf.launchViewController)
-          if let signedInViewController = strongSelf.signedInViewController {
-            strongSelf.remove(childViewController: signedInViewController)
-            strongSelf.signedInViewController = nil
-          }
+            strongSelf.remove(childViewController: strongSelf.launchViewController)
+            if let signedInViewController = strongSelf.signedInViewController {
+                strongSelf.remove(childViewController: signedInViewController)
+                strongSelf.signedInViewController = nil
+            }
         }
         self.signInViewController = signInViewController
     }
 
     private func presentSignedIn(userSession: UserSession) {
-        fatalError("TODO: Реализовать Signed In флоу")
+        remove(childViewController: launchViewController)
+
+        let signedInViewControllerToPresent: SignedInViewController
+        if let vc = self.signedInViewController {
+            signedInViewControllerToPresent = vc
+        } else {
+            signedInViewControllerToPresent = makeSignedInViewController(userSession)
+            self.signedInViewController = signedInViewControllerToPresent
+        }
+
+        addFullScreen(childViewController: signedInViewControllerToPresent)
+
+        if signInViewController?.presentingViewController != nil {
+            signInViewController = nil
+            dismiss(animated: true)
+        }
     }
 
     private func bindViewModel() {
@@ -79,17 +94,17 @@ public final class MainViewController: NiblessViewController {
     private func present(_ view: MainView) {
         switch view {
         case .launching:
-           presentLaunching()
+            presentLaunching()
         case .signIn:
             if signedInViewController?.presentingViewController == nil {
-              if presentedViewController != nil {
-                // Дисмиссим когда совершаем выход.
-                dismiss(animated: true) { [weak self] in
-                    self?.presentSignIn()
+                if presentedViewController != nil {
+                    // Дисмиссим когда совершаем выход.
+                    dismiss(animated: true) { [weak self] in
+                        self?.presentSignIn()
+                    }
+                } else {
+                    presentSignIn()
                 }
-              } else {
-                presentSignIn()
-              }
             }
         case .signedIn(let userSession):
             presentSignedIn(userSession: userSession)

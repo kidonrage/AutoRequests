@@ -13,5 +13,6 @@ public struct UserProfile {
     public let id: String
     public let name: String
     public let mobileNumber: String
+    public let type: UserType
 
 }
