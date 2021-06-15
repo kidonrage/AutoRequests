@@ -104,6 +104,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     // MARK: - Private Methods
     private func bindViewModel() {
         datePicker.rx.date.bind(to: viewModel.selectedDate).disposed(by: bag)
+        viewModel.selectedDate.bind(to: datePicker.rx.date).disposed(by: bag)
 
         viewModel.selectedDate.map { (date) -> String in
             let formatter = DateFormatter()

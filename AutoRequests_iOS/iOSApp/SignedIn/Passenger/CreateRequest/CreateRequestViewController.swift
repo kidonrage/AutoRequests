@@ -115,6 +115,7 @@ public final class CreateRequestViewController: UIViewController {
         view.backgroundColor = .white
 
         let dismissKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        dismissKeyboardGesture.cancelsTouchesInView = false
         tableView.addGestureRecognizer(dismissKeyboardGesture)
 
         view.addSubview(tableView)
