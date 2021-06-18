@@ -27,7 +27,24 @@ final class AutoRequestsDriverDependencyContainer {
 
     // MARK: - Private Methods
     private func makeTransportListViewController() -> TransportsListViewController {
-        return TransportsListViewController()
+        let viewModel = makeTransportsListViewModel()
+
+        return TransportsListViewController(viewModel: viewModel,
+                                            requestDetailsViewControllerFactory: makeRequestDetailsViewController(request:))
+    }
+
+    private func makeTransportsListViewModel() -> TransportsListViewModel {
+        return TransportsListViewModel(transportRequestsRepository: transportRequestsRepository)
+    }
+
+    private func makeRequestDetailsViewController(request: TransportRequest) -> RequestDetailsViewController {
+        let viewModel = makeRequestDetailsViewModel(request: request)
+
+        return RequestDetailsViewController(viewModel: viewModel)
+    }
+
+    private func makeRequestDetailsViewModel(request: TransportRequest) -> RequestDetailsViewModel {
+        return RequestDetailsViewModel()
     }
 
 }

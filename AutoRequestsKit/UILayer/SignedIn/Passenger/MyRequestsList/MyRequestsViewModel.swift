@@ -8,7 +8,7 @@
 import Foundation
 import RxRelay
 
-public final class UserTransportRequestsViewModel {
+public class UserTransportRequestsViewModel {
 
     // MARK: - Public Properties
     public let myRequests = BehaviorRelay<[TransportRequest]>(value: [])
