@@ -17,6 +17,7 @@ public final class TransportRequestValueView: UIStackView {
     }()
     private let valueLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
 //        label.font = .boldSystemFont(ofSize: 14)
         return label
     }()
