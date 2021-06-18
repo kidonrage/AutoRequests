@@ -19,6 +19,7 @@ public final class RequestDetailsViewController: NiblessViewController {
     }()
     private let passengerNameView = TransportRequestValueView(valueName: "Пассажир", value: nil)
     private let passengerPhoneView = TransportRequestValueView(valueName: "Телефон", value: nil)
+    private let addressView = TransportRequestValueView(valueName: "Адрес", value: nil)
     private let dateView = TransportRequestValueView(valueName: "Дата", value: nil)
     private let timeRangeView = TransportRequestValueView(valueName: "Время", value: nil)
     private let commentView = TransportRequestValueView(valueName: "Комментарий", value: nil)
@@ -74,7 +75,14 @@ public final class RequestDetailsViewController: NiblessViewController {
     }
 
     private func bindViewModel() {
+        let request = viewModel.request
 
+        passengerNameView.value = "Passenger Passengerov"
+        passengerPhoneView.value = "+9 (999) 999-99-99"
+        addressView.value = request.address
+        dateView.value = "07.05.1999"
+        timeRangeView.value = "17:00 - 18:00"
+        commentView.value = "Comment"
     }
 
 

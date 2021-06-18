@@ -9,6 +9,10 @@ import Foundation
 
 public final class RequestDetailsViewModel {
 
-    public init() {}
+    public let request: TransportRequest
+
+    public init(request: TransportRequest) {
+        self.request = request
+    }
 
 }
