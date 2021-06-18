@@ -44,7 +44,7 @@ final class AutoRequestsDriverDependencyContainer {
     }
 
     private func makeRequestDetailsViewModel(request: TransportRequest) -> RequestDetailsViewModel {
-        return RequestDetailsViewModel()
+        return RequestDetailsViewModel(request: request)
     }
 
 }
