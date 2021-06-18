@@ -16,6 +16,10 @@ public struct Passenger: Decodable {
     public let patronymic: String?
     public let mobileNumber: String
 
+    public var displayName: String {
+        return "\(lastName) \(firstName)\(patronymic != nil ? " \(patronymic!)" : "")"
+    }
+
     // MARK: - Public Methods
     public static func getFake() -> Passenger {
         return Passenger(id: "fakePassenger", firstName: "Passenger", lastName: "Passengerov", patronymic: "Passengerovich", mobileNumber: "+9 (999) 999-99-99")

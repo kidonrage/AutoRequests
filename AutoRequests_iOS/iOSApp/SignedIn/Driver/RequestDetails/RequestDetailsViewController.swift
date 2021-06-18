@@ -55,6 +55,8 @@ public final class RequestDetailsViewController: NiblessViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
 
+        commentView.valueLabel.numberOfLines = 0
+
         view.addSubview(contentScrollView)
 
         contentScrollView.addSubview(contentStack)
@@ -66,23 +68,22 @@ public final class RequestDetailsViewController: NiblessViewController {
             contentScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
             contentStack.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -32),
-            contentStack.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
             contentStack.leadingAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.leadingAnchor, constant: 16),
             contentStack.trailingAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.trailingAnchor, constant: -16),
-            contentStack.topAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.topAnchor, constant: 8),
-            contentStack.bottomAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.bottomAnchor),
+            contentStack.topAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.topAnchor, constant: 16),
+            contentStack.bottomAnchor.constraint(equalTo: contentScrollView.contentLayoutGuide.bottomAnchor, constant: -16),
         ])
     }
 
     private func bindViewModel() {
         let request = viewModel.request
 
-        passengerNameView.value = "Passenger Passengerov"
-        passengerPhoneView.value = "+9 (999) 999-99-99"
+        passengerNameView.value = request.passenger.displayName
+        passengerPhoneView.value = request.passenger.mobileNumber
         addressView.value = request.address
-        dateView.value = "07.05.1999"
-        timeRangeView.value = "17:00 - 18:00"
-        commentView.value = "Comment"
+        dateView.value = request.date
+        timeRangeView.value = request.timeRange
+        commentView.value = request.comment
     }
 
 

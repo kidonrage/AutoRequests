@@ -18,6 +18,7 @@ public final class PassengerTransportRequestTableViewCell: UITableViewCell {
     private lazy var contentStack: UIStackView = {
         let dateTimeView = UIStackView(arrangedSubviews: [dateView, timeView])
         dateTimeView.spacing = 8
+        dateTimeView.distribution = .fillEqually
 
         let stackView = UIStackView(arrangedSubviews: [driverView, carView, dateTimeView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
