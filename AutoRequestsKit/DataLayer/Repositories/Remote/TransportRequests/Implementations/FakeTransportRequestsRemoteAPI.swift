@@ -32,8 +32,8 @@ public final class FakeTransportRequestsRemoteAPI: TransportRequestsRemoteAPI {
         return Promise<[TransportRequest]> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 seal.fulfill([
-                    TransportRequest(passengerId: 0, address: ""),
-                    TransportRequest(passengerId: 1, address: ""),
+                    TransportRequest.getFake(),
+                    TransportRequest.getFake(),
                 ])
             }
         }
@@ -43,10 +43,10 @@ public final class FakeTransportRequestsRemoteAPI: TransportRequestsRemoteAPI {
         return Promise<[TransportRequest]> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 seal.fulfill([
-                    TransportRequest(passengerId: 0, address: ""),
-                    TransportRequest(passengerId: 1, address: ""),
-                    TransportRequest(passengerId: 2, address: ""),
-                    TransportRequest(passengerId: 3, address: ""),
+                    TransportRequest.getFake(),
+                    TransportRequest.getFake(),
+                    TransportRequest.getFake(),
+                    TransportRequest.getFake(),
                 ])
             }
         }

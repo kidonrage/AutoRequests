@@ -25,8 +25,8 @@ public final class CreateRequestViewModel: AddressSettingViewModelProtocol, Comm
 
     // MARK: - Initializers
     public init() {
-        Observable.combineLatest(driverSettingViewModel.selectedDriver, driverSettingViewModel.selectedCar, selectedAddress)
-            .map { $0 != nil && $1 != nil && !($2?.isEmpty ?? true) }
+        Observable.combineLatest(driverSettingViewModel.selectedDriver, selectedAddress)
+            .map { $0 != nil && !($1?.isEmpty ?? true) }
             .subscribe(onNext: { [weak self] in self?.isRequestAvailableToSave.onNext($0) })
             .disposed(by: bag)
     }

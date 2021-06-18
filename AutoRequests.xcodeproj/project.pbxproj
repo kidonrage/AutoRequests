@@ -14,7 +14,6 @@
 		E130C85B267864A50026042E /* DriverNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAED52678623700208CD1 /* DriverNavigationController.swift */; };
 		E130C85F267864F40026042E /* PassengerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C85E267864F40026042E /* PassengerNavigationController.swift */; };
 		E130C86326786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */; };
-		E130C86C267871710026042E /* TransportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86B267871710026042E /* TransportRequest.swift */; };
 		E130C8702678721E0026042E /* TransportRequestsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86F2678721E0026042E /* TransportRequestsRepository.swift */; };
 		E130C873267873830026042E /* AutoRequestsTransportRequestsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C872267873830026042E /* AutoRequestsTransportRequestsRepository.swift */; };
 		E130C8792678740E0026042E /* TransportRequestsRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C8782678740E0026042E /* TransportRequestsRemoteAPI.swift */; };
@@ -30,6 +29,11 @@
 		E13EB83926772CCB00D39B55 /* AutoRequestsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700C42675C18000BF6D82 /* AutoRequestsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E13EB83C26772CCB00D39B55 /* AutoRequestsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; };
 		E13EB83D26772CCB00D39B55 /* AutoRequestsUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18700B12675C17200BF6D82 /* AutoRequestsUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E14630F0267C95620042BB2D /* TransportApplicationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14630E7267C95620042BB2D /* TransportApplicationRequest.swift */; };
+		E14630F3267C95620042BB2D /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14630EA267C95620042BB2D /* RefreshTokenResponse.swift */; };
+		E14630F4267C95620042BB2D /* TransportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14630EB267C95620042BB2D /* TransportRequest.swift */; };
+		E14630F7267C95620042BB2D /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14630EE267C95620042BB2D /* LoginResponse.swift */; };
+		E14630FF267C97C40042BB2D /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14630FE267C97C40042BB2D /* Passenger.swift */; };
 		E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */; };
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
 		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
@@ -81,17 +85,6 @@
 		E18701182675C46700BF6D82 /* TimeSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7C26748FB500F04D8C /* TimeSettingTableViewCell.swift */; };
 		E18701192675C46700BF6D82 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */; };
 		E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CF3B7126748EFC00F04D8C /* SettingSection.swift */; };
-		E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */; };
-		E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */; };
-		E18701292675C4C900BF6D82 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBF2671C730003A6FD8 /* Passenger.swift */; };
-		E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */; };
-		E187012B2675C4C900BF6D82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CD12671C798003A6FD8 /* User.swift */; };
-		E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */; };
-		E187012D2675C4C900BF6D82 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBE2671C730003A6FD8 /* Car.swift */; };
-		E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */; };
-		E187012F2675C4C900BF6D82 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC22671C730003A6FD8 /* Driver.swift */; };
-		E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */; };
-		E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */; };
 		E18701412675C62600BF6D82 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABF2D2659E2030042EF37 /* AlertDisplayer.swift */; };
 		E1BABEF626598A510042EF37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF526598A510042EF37 /* AppDelegate.swift */; };
 		E1BABEF826598A510042EF37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BABEF726598A510042EF37 /* SceneDelegate.swift */; };
@@ -102,6 +95,9 @@
 		E1BEE8EB267C5B6E00606FA0 /* RequestDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE8EA267C5B6E00606FA0 /* RequestDetailsViewModel.swift */; };
 		E1BEE8EF267C5F4A00606FA0 /* DriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE8EE267C5F4A00606FA0 /* DriverView.swift */; };
 		E1BEE8F3267C609F00606FA0 /* TransportsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE8F2267C609F00606FA0 /* TransportsListViewModel.swift */; };
+		E1BEE8F9267C915900606FA0 /* BaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE8F8267C915900606FA0 /* BaseUser.swift */; };
+		E1BEE8FE267C922200606FA0 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE8FD267C922200606FA0 /* Driver.swift */; };
+		E1BEE902267C923C00606FA0 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEE901267C923C00606FA0 /* Car.swift */; };
 		E1D8B8DE2678771600AF9716 /* PassengerTransportRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8DD2678771600AF9716 /* PassengerTransportRequestTableViewCell.swift */; };
 		E1D8B8E326787B6E00AF9716 /* TransportRequestValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8E226787B6E00AF9716 /* TransportRequestValueView.swift */; };
 		E1D8B8E92678A06D00AF9716 /* AutoRequestsPassengerDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8B8E82678A06D00AF9716 /* AutoRequestsPassengerDependencyContainer.swift */; };
@@ -207,7 +203,6 @@
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E130C85E267864F40026042E /* PassengerNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerNavigationController.swift; sourceTree = "<group>"; };
 		E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsSignedInDependencyContainer.swift; sourceTree = "<group>"; };
-		E130C86B267871710026042E /* TransportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequest.swift; sourceTree = "<group>"; };
 		E130C86F2678721E0026042E /* TransportRequestsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestsRepository.swift; sourceTree = "<group>"; };
 		E130C872267873830026042E /* AutoRequestsTransportRequestsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsTransportRequestsRepository.swift; sourceTree = "<group>"; };
 		E130C8782678740E0026042E /* TransportRequestsRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestsRemoteAPI.swift; sourceTree = "<group>"; };
@@ -217,6 +212,11 @@
 		E13EB822267654EA00D39B55 /* CommentSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingTableViewCell.swift; sourceTree = "<group>"; };
 		E13EB8272677297E00D39B55 /* AddressSettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSettingViewModelProtocol.swift; sourceTree = "<group>"; };
 		E13EB82C26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSettingViewModelProtocol.swift; sourceTree = "<group>"; };
+		E14630E7267C95620042BB2D /* TransportApplicationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationRequest.swift; sourceTree = "<group>"; };
+		E14630EA267C95620042BB2D /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
+		E14630EB267C95620042BB2D /* TransportRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportRequest.swift; sourceTree = "<group>"; };
+		E14630EE267C95620042BB2D /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		E14630FE267C97C40042BB2D /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
 		E14FD0012675CD160003CDDE /* DateSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
@@ -258,17 +258,6 @@
 		E18700C62675C18000BF6D82 /* AutoRequestsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoRequestsKit.h; sourceTree = "<group>"; };
 		E18700C72675C18000BF6D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E18700EA2675C27100BF6D82 /* MyRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsViewModel.swift; sourceTree = "<group>"; };
-		E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponsePassenger.swift; sourceTree = "<group>"; };
-		E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationRequest.swift; sourceTree = "<group>"; };
-		E1BA7CBE2671C730003A6FD8 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		E1BA7CBF2671C730003A6FD8 /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
-		E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponse.swift; sourceTree = "<group>"; };
-		E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplicationResponseDriver.swift; sourceTree = "<group>"; };
-		E1BA7CC22671C730003A6FD8 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
-		E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverResponse.swift; sourceTree = "<group>"; };
-		E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
-		E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportApplication.swift; sourceTree = "<group>"; };
-		E1BA7CD12671C798003A6FD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1BA7CE42671CF07003A6FD8 /* CreateRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewModel.swift; sourceTree = "<group>"; };
 		E1BA7CE82671CF19003A6FD8 /* CreateRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewController.swift; sourceTree = "<group>"; };
 		E1BA7CEC2671FABA003A6FD8 /* SettingIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingIconView.swift; sourceTree = "<group>"; };
@@ -287,6 +276,9 @@
 		E1BEE8EA267C5B6E00606FA0 /* RequestDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsViewModel.swift; sourceTree = "<group>"; };
 		E1BEE8EE267C5F4A00606FA0 /* DriverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverView.swift; sourceTree = "<group>"; };
 		E1BEE8F2267C609F00606FA0 /* TransportsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportsListViewModel.swift; sourceTree = "<group>"; };
+		E1BEE8F8267C915900606FA0 /* BaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUser.swift; sourceTree = "<group>"; };
+		E1BEE8FD267C922200606FA0 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		E1BEE901267C923C00606FA0 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		E1C9687E2674978900C39E9F /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E1CF3B7126748EFC00F04D8C /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
 		E1CF3B7426748F8A00F04D8C /* DriverSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -370,6 +362,24 @@
 			path = Implementations;
 			sourceTree = "<group>";
 		};
+		E14630E5267C95620042BB2D /* TransportApplication */ = {
+			isa = PBXGroup;
+			children = (
+				E14630E7267C95620042BB2D /* TransportApplicationRequest.swift */,
+				E14630EB267C95620042BB2D /* TransportRequest.swift */,
+			);
+			path = TransportApplication;
+			sourceTree = "<group>";
+		};
+		E14630FB267C95EA0042BB2D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E14630EE267C95620042BB2D /* LoginResponse.swift */,
+				E14630EA267C95620042BB2D /* RefreshTokenResponse.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		E14FD0132675EEE80003CDDE /* DriverSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,24 +400,6 @@
 				E16DAE742677797F00208CD1 /* Remote */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		E16DAE61267777EB00208CD1 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				E1BA7CBC2671C730003A6FD8 /* TransportApplicationResponsePassenger.swift */,
-				E1BA7CBD2671C730003A6FD8 /* TransportApplicationRequest.swift */,
-				E1BA7CBE2671C730003A6FD8 /* Car.swift */,
-				E1BA7CBF2671C730003A6FD8 /* Passenger.swift */,
-				E1BA7CC02671C730003A6FD8 /* TransportApplicationResponse.swift */,
-				E1BA7CC12671C730003A6FD8 /* TransportApplicationResponseDriver.swift */,
-				E1BA7CC22671C730003A6FD8 /* Driver.swift */,
-				E1BA7CC32671C730003A6FD8 /* DriverResponse.swift */,
-				E1BA7CC42671C730003A6FD8 /* ApiResponse.swift */,
-				E1BA7CC52671C730003A6FD8 /* TransportApplication.swift */,
-				E1BA7CD12671C798003A6FD8 /* User.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		E16DAE732677797A00208CD1 /* Persistence */ = {
@@ -609,12 +601,13 @@
 		E18700E72675C24E00BF6D82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E1BEE901267C923C00606FA0 /* Car.swift */,
+				E1BEE8FD267C922200606FA0 /* Driver.swift */,
+				E14630FE267C97C40042BB2D /* Passenger.swift */,
 				E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */,
-				E130C86B267871710026042E /* TransportRequest.swift */,
-				E16DAE682677781400208CD1 /* UserProfile.swift */,
-				E16DAE572677766A00208CD1 /* UserSession.swift */,
-				E16DAED12678612800208CD1 /* UserType.swift */,
-				E16DAE61267777EB00208CD1 /* Generated */,
+				E14630FB267C95EA0042BB2D /* Auth */,
+				E14630E5267C95620042BB2D /* TransportApplication */,
+				E1BEE8FC267C920F00606FA0 /* User */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -761,6 +754,17 @@
 				E1BEE8EA267C5B6E00606FA0 /* RequestDetailsViewModel.swift */,
 			);
 			path = RequestDetails;
+			sourceTree = "<group>";
+		};
+		E1BEE8FC267C920F00606FA0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E16DAE572677766A00208CD1 /* UserSession.swift */,
+				E1BEE8F8267C915900606FA0 /* BaseUser.swift */,
+				E16DAE682677781400208CD1 /* UserProfile.swift */,
+				E16DAED12678612800208CD1 /* UserType.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		E1D8B8DB267876FE00AF9716 /* Views */ = {
@@ -1140,44 +1144,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				E16DAE7B26777A7400208CD1 /* AuthRemoteAPI.swift in Sources */,
-				E187012E2675C4C900BF6D82 /* ApiResponse.swift in Sources */,
-				E187012C2675C4C900BF6D82 /* DriverResponse.swift in Sources */,
+				E14630F4267C95620042BB2D /* TransportRequest.swift in Sources */,
+				E14630F7267C95620042BB2D /* LoginResponse.swift in Sources */,
 				E130C8702678721E0026042E /* TransportRequestsRepository.swift in Sources */,
 				E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */,
 				E16DAE582677766A00208CD1 /* UserSession.swift in Sources */,
+				E1BEE8FE267C922200606FA0 /* Driver.swift in Sources */,
 				E16DAEBE2677B09D00208CD1 /* NotSignedInResponder.swift in Sources */,
 				E16DAEAF2677AF6E00208CD1 /* MainViewModel.swift in Sources */,
 				E16DAEC42677B62300208CD1 /* LaunchViewModel.swift in Sources */,
 				E18700EB2675C27100BF6D82 /* MyRequestsViewModel.swift in Sources */,
 				E16DAECB26785EB200208CD1 /* SignedInViewModel.swift in Sources */,
-				E18701302675C4C900BF6D82 /* TransportApplicationResponse.swift in Sources */,
 				E16DAE8D2677836600208CD1 /* FakeUserSessionDataStore.swift in Sources */,
 				E14FD0022675CD160003CDDE /* DateSettingViewModel.swift in Sources */,
 				E1BEE8EF267C5F4A00606FA0 /* DriverView.swift in Sources */,
 				E130C873267873830026042E /* AutoRequestsTransportRequestsRepository.swift in Sources */,
-				E187012F2675C4C900BF6D82 /* Driver.swift in Sources */,
 				E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */,
 				E130C8792678740E0026042E /* TransportRequestsRemoteAPI.swift in Sources */,
-				E187012D2675C4C900BF6D82 /* Car.swift in Sources */,
-				E187012A2675C4C900BF6D82 /* TransportApplicationResponseDriver.swift in Sources */,
-				E18701282675C4C900BF6D82 /* TransportApplication.swift in Sources */,
 				E16DAE482677740D00208CD1 /* UserSessionRepository.swift in Sources */,
-				E18701292675C4C900BF6D82 /* Passenger.swift in Sources */,
-				E187012B2675C4C900BF6D82 /* User.swift in Sources */,
+				E14630F3267C95620042BB2D /* RefreshTokenResponse.swift in Sources */,
+				E1BEE902267C923C00606FA0 /* Car.swift in Sources */,
 				E16DAECE26785F0D00208CD1 /* SignedInView.swift in Sources */,
 				E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */,
+				E1BEE8F9267C915900606FA0 /* BaseUser.swift in Sources */,
 				E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */,
 				E16DAE692677781400208CD1 /* UserProfile.swift in Sources */,
 				E16DAEBB2677B09200208CD1 /* SignedInResponder.swift in Sources */,
-				E18701272675C4C900BF6D82 /* TransportApplicationRequest.swift in Sources */,
+				E14630F0267C95620042BB2D /* TransportApplicationRequest.swift in Sources */,
 				E16DAE712677791400208CD1 /* AutoRequestsUserSessionRepository.swift in Sources */,
+				E14630FF267C97C40042BB2D /* Passenger.swift in Sources */,
 				E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */,
-				E18701312675C4C900BF6D82 /* TransportApplicationResponsePassenger.swift in Sources */,
 				E1BEE8F3267C609F00606FA0 /* TransportsListViewModel.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
 				E16DAE8726777DB100208CD1 /* SignInViewModel.swift in Sources */,
 				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
-				E130C86C267871710026042E /* TransportRequest.swift in Sources */,
 				E16DAED22678612800208CD1 /* UserType.swift in Sources */,
 				E16DAEB82677AFE600208CD1 /* MainView.swift in Sources */,
 				E130C87E2678744E0026042E /* FakeTransportRequestsRemoteAPI.swift in Sources */,

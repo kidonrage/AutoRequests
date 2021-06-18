@@ -69,7 +69,7 @@ public final class DriverSelectorViewController: UIViewController {
             cell.detailTextLabel?.text = "Toyota Corolla 2017"
 
             if let selectedDriver = try? self?.viewModel.selectedDriver.value() {
-                cell.accessoryType = model._id == selectedDriver._id ? .checkmark : .none
+                cell.accessoryType = model.id == selectedDriver.id ? .checkmark : .none
             }
         }.disposed(by: bag)
 

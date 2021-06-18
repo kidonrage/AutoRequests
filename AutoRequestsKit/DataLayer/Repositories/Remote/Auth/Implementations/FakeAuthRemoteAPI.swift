@@ -32,7 +32,9 @@ public class FakeAuthRemoteAPI: AuthRemoteAPI {
         return Promise<UserSession> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 let profile = UserProfile(id: "driver",
-                                          name: "Driver Driverov",
+                                          firstName: "Driver",
+                                          lastName: "Driverov",
+                                          patronymic: "Driverovich",
                                           mobileNumber: "+9 (999) 99-99-99",
                                           type: .driver)
               let remoteUserSession = RemoteUserSession(token: "000000")
@@ -46,7 +48,9 @@ public class FakeAuthRemoteAPI: AuthRemoteAPI {
         return Promise<UserSession> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 let profile = UserProfile(id: "passenger",
-                                          name: "Passenger Passengerov",
+                                          firstName: "Passenger",
+                                          lastName: "Passengerov",
+                                          patronymic: "Passengerovich",
                                           mobileNumber: "+9 (999) 99-99-99",
                                           type: .passenger)
               let remoteUserSession = RemoteUserSession(token: "111111")
