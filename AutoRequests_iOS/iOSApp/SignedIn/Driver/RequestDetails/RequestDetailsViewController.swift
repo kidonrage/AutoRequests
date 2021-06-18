@@ -55,6 +55,7 @@ public final class RequestDetailsViewController: NiblessViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
 
+        passengerNameView.valueLabel.numberOfLines = 0
         commentView.valueLabel.numberOfLines = 0
 
         view.addSubview(contentScrollView)
