@@ -66,10 +66,12 @@ public final class DriverSelectorViewController: UIViewController {
                 cellIdentifier:  DriverOptionTableViewCell.cellId,
                 cellType: UITableViewCell.self)) { [weak self] row, model, cell in
             cell.textLabel?.text = model.displayName
-            cell.detailTextLabel?.text = "Toyota Corolla 2017"
+            cell.detailTextLabel?.text = model.car.name
 
             if let selectedDriver = self?.viewModel.selectedDriver.value {
                 cell.accessoryType = model.id == selectedDriver.id ? .checkmark : .none
+            } else {
+                cell.accessoryType = .none
             }
         }.disposed(by: bag)
 

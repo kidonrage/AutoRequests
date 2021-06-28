@@ -41,7 +41,28 @@ public final class AutoRequestsCloudDriversRemoteAPI: DriversRemoteAPI {
                     seal.reject(error)
                 }
             })
+        }
+    }
 
+    public func getAvailableTimeRangesForDriver(withId driverId: String, onDateString dateString: String) -> Promise<[String]> {
+        return Promise<[String]> { seal in
+            let parameters = [
+                "date": dateString
+            ]
+
+            let request = AF.request("http://\(domain):\(port)/api/drivers/\(driverId)/timeAvailable", method: .get, parameters: parameters, encoder: URLEncodedFormParameterEncoder(), headers: [
+                "Authorization": "Bearer \(userSession.remoteSession.accessToken)"
+            ])
+
+            request.responseDecodable(completionHandler: { (response: DataResponse<[String], AFError>) in
+                switch response.result {
+                case .success(let timeRanges):
+                    seal.fulfill(timeRanges)
+                case .failure(let error):
+                    print(error)
+                    seal.reject(error)
+                }
+            })
         }
     }
 

@@ -11,5 +11,6 @@ import PromiseKit
 public protocol DriversRemoteAPI {
 
     func getAvailableDrivers(dateString: String) -> Promise<[Driver]>
+    func getAvailableTimeRangesForDriver(withId driverId: String, onDateString dateString: String) -> Promise<[String]>
 
 }

@@ -17,6 +17,7 @@
 		E12DF2B02689F5CD00578E70 /* AutoRequestsDriversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2AF2689F5CD00578E70 /* AutoRequestsDriversRepository.swift */; };
 		E12DF2B42689F60D00578E70 /* DriversRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2B32689F60D00578E70 /* DriversRemoteAPI.swift */; };
 		E12DF2B92689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2B82689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift */; };
+		E12DF2BD268A54B100578E70 /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2BC268A54B100578E70 /* CreateRequestView.swift */; };
 		E130C85B267864A50026042E /* DriverNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAED52678623700208CD1 /* DriverNavigationController.swift */; };
 		E130C85F267864F40026042E /* PassengerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C85E267864F40026042E /* PassengerNavigationController.swift */; };
 		E130C86326786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */; };
@@ -212,6 +213,7 @@
 		E12DF2AF2689F5CD00578E70 /* AutoRequestsDriversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsDriversRepository.swift; sourceTree = "<group>"; };
 		E12DF2B32689F60D00578E70 /* DriversRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversRemoteAPI.swift; sourceTree = "<group>"; };
 		E12DF2B82689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsCloudDriversRemoteAPI.swift; sourceTree = "<group>"; };
+		E12DF2BC268A54B100578E70 /* CreateRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestView.swift; sourceTree = "<group>"; };
 		E130C85E267864F40026042E /* PassengerNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerNavigationController.swift; sourceTree = "<group>"; };
 		E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsSignedInDependencyContainer.swift; sourceTree = "<group>"; };
 		E130C86F2678721E0026042E /* TransportRequestsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestsRepository.swift; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */,
 				E13EB8272677297E00D39B55 /* AddressSettingViewModelProtocol.swift */,
 				E13EB82C26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift */,
+				E12DF2BC268A54B100578E70 /* CreateRequestView.swift */,
 			);
 			path = CreateRequest;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				E12DF2B02689F5CD00578E70 /* AutoRequestsDriversRepository.swift in Sources */,
 				E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */,
 				E16DAEBB2677B09200208CD1 /* SignedInResponder.swift in Sources */,
+				E12DF2BD268A54B100578E70 /* CreateRequestView.swift in Sources */,
 				E14630F0267C95620042BB2D /* TransportApplicationRequest.swift in Sources */,
 				E16DAE712677791400208CD1 /* AutoRequestsUserSessionRepository.swift in Sources */,
 				E14630FF267C97C40042BB2D /* Passenger.swift in Sources */,

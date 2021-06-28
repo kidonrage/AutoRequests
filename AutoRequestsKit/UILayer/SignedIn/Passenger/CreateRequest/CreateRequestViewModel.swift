@@ -22,6 +22,11 @@ public final class CreateRequestViewModel: DriverSettingViewModelProtocol, DateS
 
     public let isRequestAvailableToSave = BehaviorSubject<Bool>(value: false)
 
+    public let isNetworkActivityInProgress = BehaviorRelay<Bool>(value: false)
+    public let errorMessage = BehaviorRelay<String?>(value: nil)
+
+    public let view = BehaviorRelay<CreateRequestView>(value: .createRequest)
+
     // MARK: - Private Properties
     private let userSession: UserSession
     private let driversRepository: DriversRepository
@@ -40,6 +45,10 @@ public final class CreateRequestViewModel: DriverSettingViewModelProtocol, DateS
 
         selectedDate.subscribe(onNext: { [weak self] (selectedDate) in
             self?.refreshAvailableDrivers()
+        }).disposed(by: bag)
+
+        selectedDriver.subscribe(onNext: { [weak self] (selectedDriver) in
+            self?.refreshSelectedDriverAvailableTimeRanges()
         }).disposed(by: bag)
 
         Observable.combineLatest(selectedDriver, selectedAddress)
@@ -65,30 +74,70 @@ public final class CreateRequestViewModel: DriverSettingViewModelProtocol, DateS
                                                   timeRange: timeSettingViewModel.timeOptions.value[timeSettingViewModel.selectedTimeIndex.value ?? 0],
                                                   comment: comment.value)
 
+        isNetworkActivityInProgress.accept(true)
+
 
         autoRequestsRepository.saveTransportRequest(request: request)
-            .done { _ in
-                print("ok")
+            .done { [weak self] _ in
+                self?.view.accept(.requestCreated)
+                self?.selectedDate.accept(Date())
+                self?.selectedDriver.accept(nil)
+                self?.driverOptions.accept([])
+                self?.selectedAddress.accept("")
+                self?.comment.accept(nil)
             }
-            .catch { (error) in
-                print("not ok \(error.localizedDescription)")
+            .catch { [weak self] (error) in
+                self?.errorMessage.accept(error.localizedDescription)
+            }
+            .finally { [weak self] in
+                self?.isNetworkActivityInProgress.accept(false)
             }
     }
 
     public func handleSelectDriver(on indexPath: IndexPath) {
+        let updatedSelectedDriver = driverOptions.value[indexPath.row]
 
+        selectedDriver.accept(updatedSelectedDriver)
     }
 
     // MARK: - Private Methods
     private func refreshAvailableDrivers() {
         let formattedDateString = dateFormatter.string(from: selectedDate.value)
 
+        isNetworkActivityInProgress.accept(true)
+
         driversRepository.getAvailableDrivers(dateString: formattedDateString)
             .done { [weak self] (availableDrivers) in
                 self?.driverOptions.accept(availableDrivers)
+                self?.selectedDriver.accept(nil)
             }
-            .catch { (error) in
-                print(error.localizedDescription)
+            .catch { [weak self] (error) in
+                self?.errorMessage.accept(error.localizedDescription)
+            }
+            .finally { [weak self] in
+                self?.isNetworkActivityInProgress.accept(false)
+            }
+    }
+
+    private func refreshSelectedDriverAvailableTimeRanges() {
+        guard let driverId = selectedDriver.value?.id else {
+            timeSettingViewModel.timeOptions.accept([])
+            return
+        }
+
+        let dateString = dateFormatter.string(from: selectedDate.value)
+
+        isNetworkActivityInProgress.accept(true)
+
+        driversRepository.getAvailableTimeRangesForDriver(withId: driverId, onDateString: dateString)
+            .done { [weak self] (timeRanges) in
+                self?.timeSettingViewModel.timeOptions.accept(timeRanges)
+            }
+            .catch { [weak self] (error) in
+                self?.errorMessage.accept(error.localizedDescription)
+            }
+            .finally { [weak self] in
+                self?.isNetworkActivityInProgress.accept(false)
             }
     }
 

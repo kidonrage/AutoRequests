@@ -140,19 +140,24 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
             .subscribe(onNext: { [weak self] driver, driversOptions in
                 if let selectedDriver = driver {
                     self?.driverLabel.text = selectedDriver.displayName
+                    
                     self?.hintLabel.text = selectedDriver.mobileNumber
                     self?.hintLabel.textColor = .systemGray
 
+                    self?.divider.rx.isHidden.onNext(false)
                     self?.carView.rx.isHidden.onNext(false)
                     self?.carLabel.text = selectedDriver.car.name
                     self?.carNumberLabel.text = selectedDriver.car.govNumber
                 } else {
                     let isAnyOptions = driversOptions.count > 0
 
+                    self?.driverLabel.text = "Водитель"
+
                     // TODO: Имплементировать логику на "Не найдено ни одного водителя на такие дату и время"
                     self?.hintLabel.text = isAnyOptions ? "Нажмите, чтобы выбрать" : "Не найдено ни одного водителя на такие дату и время"
                     self?.hintLabel.textColor = isAnyOptions ? .systemGreen : .systemRed
 
+                    self?.divider.rx.isHidden.onNext(true)
                     self?.carView.rx.isHidden.onNext(true)
                 }
             }).disposed(by: bag)

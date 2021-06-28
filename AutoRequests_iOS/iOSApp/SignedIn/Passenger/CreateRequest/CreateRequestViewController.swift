@@ -10,7 +10,7 @@ import RxSwift
 import AutoRequestsKit
 import AutoRequestsUIKit
 
-public final class CreateRequestViewController: UIViewController {
+public final class CreateRequestViewController: NiblessViewController, AlertDisplayer {
 
     // MARK: - Visual Components
     private lazy var tableView: UITableView = {
@@ -48,8 +48,8 @@ public final class CreateRequestViewController: UIViewController {
 
         return view
     }()
-    private let saveButton: UIButton = {
-        let button = UIButton()
+    private let saveButton: NetworkActivityButton = {
+        let button = NetworkActivityButton()
         button.translatesAutoresizingMaskIntoConstraints = false
 
         button.layer.cornerRadius = 4
@@ -68,11 +68,7 @@ public final class CreateRequestViewController: UIViewController {
         self.viewModel = viewModel
         self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel)
 
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init()
     }
 
     // MARK: - UIViewController
@@ -113,6 +109,15 @@ public final class CreateRequestViewController: UIViewController {
 
 
     // MARK: - Private Methods
+    private func present(view: CreateRequestView) {
+        switch view {
+        case .createRequest:
+            return
+        case .requestCreated:
+            navigationController?.popViewController(animated: true)
+        }
+    }
+
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -158,7 +163,26 @@ public final class CreateRequestViewController: UIViewController {
             .disposed(by: bag)
 
         viewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
-            self?.tableView.reloadData()
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
+        }).disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress.subscribe(onNext: { [weak self] inProgress in
+//            self?.loginField.isEnabled = !inProgress
+//            self?.passwordField.isEnabled = !inProgress
+            self?.saveButton.setActivityIndicatorActive(inProgress)
+        }).disposed(by: bag)
+
+        viewModel.errorMessage.subscribe(onNext: { [weak self] message in
+            guard let errorMessage = message else {
+                return
+            }
+
+            self?.display(title: "Ошибка", message: errorMessage, actions: nil)
+        }).disposed(by: bag)
+
+        viewModel.view.subscribe(onNext: { [weak self] updatedView in
+            self?.present(view: updatedView)
         }).disposed(by: bag)
     }
 

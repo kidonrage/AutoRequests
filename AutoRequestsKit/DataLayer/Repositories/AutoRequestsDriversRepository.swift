@@ -23,4 +23,8 @@ public final class AutoRequestsDriversRepository: DriversRepository {
         return remoteAPI.getAvailableDrivers(dateString: dateString)
     }
 
+    public func getAvailableTimeRangesForDriver(withId driverId: String, onDateString dateString: String) -> Promise<[String]> {
+        return remoteAPI.getAvailableTimeRangesForDriver(withId: driverId, onDateString: dateString)
+    }
+
 }
