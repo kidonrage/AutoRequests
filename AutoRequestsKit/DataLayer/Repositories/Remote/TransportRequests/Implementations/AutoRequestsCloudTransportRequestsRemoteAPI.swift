@@ -27,17 +27,20 @@ public final class AutoRequestsCloudTransportRequestsRemoteAPI: TransportRequest
             let request = AF.request("http://\(domain):\(port)/api/transportApplications", method: .get, headers: [
                 "Authorization": "Bearer \(userSession.remoteSession.accessToken)"
             ])
-
-            request.responseDecodable(completionHandler: { (response: DataResponse<[TransportApplication], AFError>) in
-                switch response.result {
-                case .success(let transportApplications):
-                    print(transportApplications)
-                    seal.fulfill(transportApplications)
-                case .failure(let error):
-                    print(error)
-                    seal.reject(error)
-                }
-            })
+            DispatchQueue.global().async {
+                request.responseDecodable(completionHandler: { (response: DataResponse<[TransportApplication], AFError>) in
+                    switch response.result {
+                    case .success(let transportApplications):
+                        DispatchQueue.main.async {
+                            seal.fulfill(transportApplications)
+                        }
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            seal.reject(error)
+                        }
+                    }
+                })
+            }
         }
     }
 

@@ -163,8 +163,7 @@ public final class CreateRequestViewController: NiblessViewController, AlertDisp
             .disposed(by: bag)
 
         viewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
-            self?.tableView.beginUpdates()
-            self?.tableView.endUpdates()
+            self?.tableView.reloadData()
         }).disposed(by: bag)
 
         viewModel.isNetworkActivityInProgress.subscribe(onNext: { [weak self] inProgress in
