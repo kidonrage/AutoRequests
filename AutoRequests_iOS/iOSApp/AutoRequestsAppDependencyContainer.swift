@@ -29,7 +29,7 @@ public final class AutoRequestsAppDependencyContainer {
         }
 
         func makeAuthRemoteAPI() -> AuthRemoteAPI {
-            return FakeAuthRemoteAPI()
+            return AutoRequestsCloudAuthRemoteAPI()
         }
 
         func makeViewModel() -> MainViewModel {

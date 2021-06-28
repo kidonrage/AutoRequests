@@ -29,7 +29,7 @@ public final class AutoRequestsSignedInDependencyContainer {
         }
 
         func makeTransportRequestsRemoteAPI() -> TransportRequestsRemoteAPI {
-            return FakeTransportRequestsRemoteAPI(userSession: userSession)
+            return AutoRequestsCloudTransportRequestsRemoteAPI(userSession: userSession)
         }
 
         func makeSignedInViewModel() -> SignedInViewModel {
@@ -73,7 +73,7 @@ public final class AutoRequestsSignedInDependencyContainer {
     }
 
     private func makePassengerDependencyContainer() -> AutoRequestsPassengerDependencyContainer {
-        return AutoRequestsPassengerDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
+        return AutoRequestsPassengerDependencyContainer(userSession: userSession, transportRequestsRepository: sharedTransportRequestsRepository)
     }
 
 }

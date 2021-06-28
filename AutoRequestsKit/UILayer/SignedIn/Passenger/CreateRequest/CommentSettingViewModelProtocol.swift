@@ -7,9 +7,10 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 public protocol CommentSettingViewModelProtocol {
 
-    var comment: BehaviorSubject<String?> { get }
+    var comment: BehaviorRelay<String?> { get }
 
 }

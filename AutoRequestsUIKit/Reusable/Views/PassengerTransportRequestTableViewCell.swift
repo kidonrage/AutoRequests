@@ -42,7 +42,7 @@ public final class PassengerTransportRequestTableViewCell: UITableViewCell {
     }
 
     // MARK: - Public Methods
-    public func configure(with transportRequest: TransportRequest) {
+    public func configure(with transportRequest: TransportApplication) {
         driverView.value = transportRequest.driver.displayName
         phoneView.value = transportRequest.driver.mobileNumber
         carView.value = transportRequest.driver.car.name

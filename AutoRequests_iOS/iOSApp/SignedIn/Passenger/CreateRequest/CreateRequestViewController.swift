@@ -83,6 +83,8 @@ public final class CreateRequestViewController: UIViewController {
 
         setupUI()
         bindViewModel()
+
+        saveButton.addTarget(viewModel, action: #selector(CreateRequestViewModel.saveTransportRequest), for: .touchUpInside)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +130,6 @@ public final class CreateRequestViewController: UIViewController {
             saveButtonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             saveButtonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             saveButtonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            saveButtonContainer.heightAnchor.constraint(equalToConstant: 80),
 
             saveButtonDivider.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
             saveButtonDivider.trailingAnchor.constraint(equalTo: saveButtonContainer.trailingAnchor),
@@ -139,6 +140,7 @@ public final class CreateRequestViewController: UIViewController {
             saveButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             saveButton.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor, constant: 16),
+            saveButton.heightAnchor.constraint(equalToConstant: 48),
 
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -299,8 +301,7 @@ extension CreateRequestViewController: UITableViewDelegate {
 
         guard
             setting == SettingSection.driver,
-            let shouldOpenOptions = try? viewModel.driverSettingViewModel.driverOptions.value().count > 0,
-            shouldOpenOptions
+            viewModel.driverSettingViewModel.driverOptions.value.count > 0
         else {
             return
         }

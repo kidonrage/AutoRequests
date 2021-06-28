@@ -20,7 +20,7 @@ public final class TransportsListViewModel: UserTransportRequestsViewModel {
         super.init(transportRequestsRepository: transportRequestsRepository)
 
         selectedRequestIndexPath
-            .map { [weak self] (indexPath) -> TransportRequest? in
+            .map { [weak self] (indexPath) -> TransportApplication? in
                 guard let index = indexPath?.row else {
                     return nil
                 }

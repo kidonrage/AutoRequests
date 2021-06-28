@@ -10,10 +10,13 @@ import AutoRequestsKit
 
 public final class AutoRequestsPassengerDependencyContainer {
 
+    private let userSession: UserSession
     private let transportRequestsRepository: TransportRequestsRepository
 
     // MARK: - Initializers
-    public init(transportRequestsRepository: TransportRequestsRepository) {
+    public init(userSession: UserSession,
+                transportRequestsRepository: TransportRequestsRepository) {
+        self.userSession = userSession
         self.transportRequestsRepository = transportRequestsRepository
     }
 
@@ -46,7 +49,7 @@ public final class AutoRequestsPassengerDependencyContainer {
     }
 
     private func makeCreateRequestViewModel() -> CreateRequestViewModel {
-        return CreateRequestViewModel()
+        return CreateRequestViewModel(userSession: userSession, autoRequestsRepository: transportRequestsRepository)
     }
 
 }

@@ -37,13 +37,13 @@ final class AutoRequestsDriverDependencyContainer {
         return TransportsListViewModel(transportRequestsRepository: transportRequestsRepository)
     }
 
-    private func makeRequestDetailsViewController(request: TransportRequest) -> RequestDetailsViewController {
+    private func makeRequestDetailsViewController(request: TransportApplication) -> RequestDetailsViewController {
         let viewModel = makeRequestDetailsViewModel(request: request)
 
         return RequestDetailsViewController(viewModel: viewModel)
     }
 
-    private func makeRequestDetailsViewModel(request: TransportRequest) -> RequestDetailsViewModel {
+    private func makeRequestDetailsViewModel(request: TransportApplication) -> RequestDetailsViewModel {
         return RequestDetailsViewModel(request: request)
     }
 

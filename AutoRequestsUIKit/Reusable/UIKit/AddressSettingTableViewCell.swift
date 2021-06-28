@@ -87,7 +87,7 @@ public final class AddressSettingTableViewCell: SettingTableViewCell {
     // MARK: - Private Methods
     private func bindViewModel() {
         viewModel.selectedAddress.bind(to: addressField.rx.text).disposed(by: bag)
-        addressField.rx.text.bind(to: viewModel.selectedAddress).disposed(by: bag)
+        addressField.rx.text.compactMap({ $0 }).bind(to: viewModel.selectedAddress).disposed(by: bag)
     }
 
     // MARK: - Constants

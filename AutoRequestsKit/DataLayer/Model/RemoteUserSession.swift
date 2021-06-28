@@ -10,6 +10,12 @@ import Foundation
 public struct RemoteUserSession {
 
     // MARK: - Public Properties
-    public let token: String
+    public let accessToken: String
+    public let refreshToken: String
+
+    // MARK: - Public Methods
+    public static func getFake() -> RemoteUserSession {
+        return RemoteUserSession(accessToken: "000000", refreshToken: "111111")
+    }
 
 }

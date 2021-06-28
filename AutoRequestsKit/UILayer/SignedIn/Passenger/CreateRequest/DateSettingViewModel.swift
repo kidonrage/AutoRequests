@@ -7,9 +7,10 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 public final class DateSettingViewModel {
 
-    public let selectedDate = BehaviorSubject<Date>(value: Date())
+    public let selectedDate = BehaviorRelay<Date>(value: Date())
 
 }

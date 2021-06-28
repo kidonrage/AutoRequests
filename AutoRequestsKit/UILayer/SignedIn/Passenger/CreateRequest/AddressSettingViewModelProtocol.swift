@@ -7,9 +7,10 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 public protocol AddressSettingViewModelProtocol {
 
-    var selectedAddress: BehaviorSubject<String?> { get }
+    var selectedAddress: BehaviorRelay<String> { get }
 
 }

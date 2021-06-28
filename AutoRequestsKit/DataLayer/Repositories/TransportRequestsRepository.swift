@@ -10,6 +10,7 @@ import PromiseKit
 
 public protocol TransportRequestsRepository {
 
-    func getTransportRequestsForCurrentUser() -> Promise<[TransportRequest]>
+    func getTransportRequestsForCurrentUser() -> Promise<[TransportApplication]>
+    func saveTransportRequest(request: TransportApplicationRequest) -> Promise<Void>
 
 }

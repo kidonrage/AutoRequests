@@ -10,7 +10,7 @@ import Foundation
 public struct Passenger: Decodable {
 
     // MARK: - Public Properties
-    public let id: String
+    public let id: String?
     public let firstName: String
     public let lastName: String
     public let patronymic: String?

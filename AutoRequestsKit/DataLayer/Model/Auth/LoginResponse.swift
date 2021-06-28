@@ -5,11 +5,10 @@
 // https://github.com/swagger-api/swagger-codegen
 //
 
-import Foundation
-
-public struct LoginResponse: Codable {
+public struct LoginResponse: Decodable {
 
     public let accessToken: String
     public let refreshToken: String
+    public let user: User
 
 }

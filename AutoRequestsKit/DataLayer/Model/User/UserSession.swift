@@ -10,11 +10,11 @@ import Foundation
 public class UserSession {
 
     // MARK: - Public Properties
-    public let profile: UserProfile
+    public let profile: User
     public let remoteSession: RemoteUserSession
 
     // MARK: - Initializers
-    public init(profile: UserProfile, remoteSession: RemoteUserSession) {
+    public init(profile: User, remoteSession: RemoteUserSession) {
         self.profile = profile
         self.remoteSession = remoteSession
     }
