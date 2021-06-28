@@ -9,13 +9,14 @@ import Foundation
 import RxSwift
 import RxRelay
 
-public final class CreateRequestViewModel: AddressSettingViewModelProtocol, CommentSettingViewModelProtocol {
+public final class CreateRequestViewModel: DriverSettingViewModelProtocol, DateSettingViewModelProtocol, AddressSettingViewModelProtocol, CommentSettingViewModelProtocol {
 
     // MARK: - Public Properties
-    public let dateSettingViewModel = DateSettingViewModel()
-    public let driverSettingViewModel = DriverSettingViewModel()
     public let timeSettingViewModel = TimeSettingViewModel()
 
+    public let selectedDate = BehaviorRelay<Date>(value: Date())
+    public var selectedDriver = BehaviorRelay<Driver?>(value: nil)
+    public var driverOptions = BehaviorRelay<[Driver]>(value: [])
     public let selectedAddress = BehaviorRelay<String>(value: "")
     public let comment = BehaviorRelay<String?>(value: nil)
 
@@ -23,15 +24,25 @@ public final class CreateRequestViewModel: AddressSettingViewModelProtocol, Comm
 
     // MARK: - Private Properties
     private let userSession: UserSession
+    private let driversRepository: DriversRepository
     private let autoRequestsRepository: TransportRequestsRepository
     private let bag = DisposeBag()
+    private let dateFormatter: DateFormatter
 
     // MARK: - Initializers
-    public init(userSession: UserSession, autoRequestsRepository: TransportRequestsRepository) {
+    public init(userSession: UserSession, driversRepository: DriversRepository, autoRequestsRepository: TransportRequestsRepository) {
         self.userSession = userSession
+        self.driversRepository = driversRepository
         self.autoRequestsRepository = autoRequestsRepository
 
-        Observable.combineLatest(driverSettingViewModel.selectedDriver, selectedAddress)
+        self.dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+
+        selectedDate.subscribe(onNext: { [weak self] (selectedDate) in
+            self?.refreshAvailableDrivers()
+        }).disposed(by: bag)
+
+        Observable.combineLatest(selectedDriver, selectedAddress)
             .map { $0 != nil && !($1.isEmpty) }
             .subscribe(onNext: { [weak self] in self?.isRequestAvailableToSave.onNext($0) })
             .disposed(by: bag)
@@ -40,14 +51,11 @@ public final class CreateRequestViewModel: AddressSettingViewModelProtocol, Comm
     // MARK: - Public Methods
     @objc
     public func saveTransportRequest() {
-        guard let driverId = driverSettingViewModel.selectedDriver.value?.id else {
+        guard let driverId = selectedDriver.value?.id else {
             return
         }
 
-        let date = dateSettingViewModel.selectedDate.value
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let date = selectedDate.value
         let dateString = dateFormatter.string(from: date)
 
         let request = TransportApplicationRequest(passengerId: userSession.profile.id,
@@ -64,6 +72,23 @@ public final class CreateRequestViewModel: AddressSettingViewModelProtocol, Comm
             }
             .catch { (error) in
                 print("not ok \(error.localizedDescription)")
+            }
+    }
+
+    public func handleSelectDriver(on indexPath: IndexPath) {
+
+    }
+
+    // MARK: - Private Methods
+    private func refreshAvailableDrivers() {
+        let formattedDateString = dateFormatter.string(from: selectedDate.value)
+
+        driversRepository.getAvailableDrivers(dateString: formattedDateString)
+            .done { [weak self] (availableDrivers) in
+                self?.driverOptions.accept(availableDrivers)
+            }
+            .catch { (error) in
+                print(error.localizedDescription)
             }
     }
 

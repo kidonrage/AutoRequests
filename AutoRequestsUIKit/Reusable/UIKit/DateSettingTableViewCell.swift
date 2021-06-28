@@ -65,7 +65,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     }()
 
     // MARK: - Private Properties
-    private var viewModel: DateSettingViewModel!
+    private var viewModel: DateSettingViewModelProtocol!
     private let bag = DisposeBag()
 
     // MARK: - Initializers
@@ -95,7 +95,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     }
 
     // MARK: - Public Methods
-    public func configure(with viewModel: DateSettingViewModel) {
+    public func configure(with viewModel: DateSettingViewModelProtocol) {
         self.viewModel = viewModel
 
         bindViewModel()

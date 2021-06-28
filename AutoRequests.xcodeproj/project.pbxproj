@@ -13,6 +13,10 @@
 		BAAFF30AEC3C97FDE0CD1AB3 /* Pods_AutoRequestsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887F054FC5E996658F2FA521 /* Pods_AutoRequestsKit.framework */; };
 		E108FBAA2684517E003C06A7 /* AutoRequestsCloudAuthenticationRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108FBA92684517E003C06A7 /* AutoRequestsCloudAuthenticationRemoteAPI.swift */; };
 		E12DF2A92688F6D000578E70 /* AutoRequestsCloudTransportRequestsRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2A82688F6D000578E70 /* AutoRequestsCloudTransportRequestsRemoteAPI.swift */; };
+		E12DF2AD2689F55C00578E70 /* DriversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2AC2689F55C00578E70 /* DriversRepository.swift */; };
+		E12DF2B02689F5CD00578E70 /* AutoRequestsDriversRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2AF2689F5CD00578E70 /* AutoRequestsDriversRepository.swift */; };
+		E12DF2B42689F60D00578E70 /* DriversRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2B32689F60D00578E70 /* DriversRemoteAPI.swift */; };
+		E12DF2B92689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12DF2B82689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift */; };
 		E130C85B267864A50026042E /* DriverNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAED52678623700208CD1 /* DriverNavigationController.swift */; };
 		E130C85F267864F40026042E /* PassengerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C85E267864F40026042E /* PassengerNavigationController.swift */; };
 		E130C86326786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */; };
@@ -204,6 +208,10 @@
 		DBA746BF128718D1044A45A5 /* Pods-AutoRequests_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoRequests_iOS.release.xcconfig"; path = "Target Support Files/Pods-AutoRequests_iOS/Pods-AutoRequests_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E108FBA92684517E003C06A7 /* AutoRequestsCloudAuthenticationRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsCloudAuthenticationRemoteAPI.swift; sourceTree = "<group>"; };
 		E12DF2A82688F6D000578E70 /* AutoRequestsCloudTransportRequestsRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsCloudTransportRequestsRemoteAPI.swift; sourceTree = "<group>"; };
+		E12DF2AC2689F55C00578E70 /* DriversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversRepository.swift; sourceTree = "<group>"; };
+		E12DF2AF2689F5CD00578E70 /* AutoRequestsDriversRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsDriversRepository.swift; sourceTree = "<group>"; };
+		E12DF2B32689F60D00578E70 /* DriversRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversRemoteAPI.swift; sourceTree = "<group>"; };
+		E12DF2B82689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsCloudDriversRemoteAPI.swift; sourceTree = "<group>"; };
 		E130C85E267864F40026042E /* PassengerNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerNavigationController.swift; sourceTree = "<group>"; };
 		E130C86226786CAB0026042E /* AutoRequestsSignedInDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequestsSignedInDependencyContainer.swift; sourceTree = "<group>"; };
 		E130C86F2678721E0026042E /* TransportRequestsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportRequestsRepository.swift; sourceTree = "<group>"; };
@@ -347,6 +355,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E12DF2B22689F60400578E70 /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				E12DF2B32689F60D00578E70 /* DriversRemoteAPI.swift */,
+				E12DF2B72689F61200578E70 /* Implementations */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
+		E12DF2B72689F61200578E70 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				E12DF2B82689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
 		E130C877267874040026042E /* TransportRequests */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,8 +420,10 @@
 		E16DAE46267773F200208CD1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				E12DF2AF2689F5CD00578E70 /* AutoRequestsDriversRepository.swift */,
 				E130C872267873830026042E /* AutoRequestsTransportRequestsRepository.swift */,
 				E16DAE702677791400208CD1 /* AutoRequestsUserSessionRepository.swift */,
+				E12DF2AC2689F55C00578E70 /* DriversRepository.swift */,
 				E130C86F2678721E0026042E /* TransportRequestsRepository.swift */,
 				E16DAE472677740D00208CD1 /* UserSessionRepository.swift */,
 				E16DAE732677797A00208CD1 /* Persistence */,
@@ -416,6 +443,7 @@
 		E16DAE742677797F00208CD1 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				E12DF2B22689F60400578E70 /* Drivers */,
 				E130C877267874040026042E /* TransportRequests */,
 				E16DAE7926777A6A00208CD1 /* Auth */,
 			);
@@ -1172,6 +1200,7 @@
 				E12DF2A92688F6D000578E70 /* AutoRequestsCloudTransportRequestsRemoteAPI.swift in Sources */,
 				E18700E02675C21700BF6D82 /* CreateRequestViewModel.swift in Sources */,
 				E1BEE8F9267C915900606FA0 /* User.swift in Sources */,
+				E12DF2B02689F5CD00578E70 /* AutoRequestsDriversRepository.swift in Sources */,
 				E16DAE8426777B0C00208CD1 /* FakeAuthRemoteAPI.swift in Sources */,
 				E16DAEBB2677B09200208CD1 /* SignedInResponder.swift in Sources */,
 				E14630F0267C95620042BB2D /* TransportApplicationRequest.swift in Sources */,
@@ -1180,14 +1209,17 @@
 				E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */,
 				E1BEE8F3267C609F00606FA0 /* TransportsListViewModel.swift in Sources */,
 				E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */,
+				E12DF2AD2689F55C00578E70 /* DriversRepository.swift in Sources */,
 				E16DAE8726777DB100208CD1 /* SignInViewModel.swift in Sources */,
 				E13EB8282677297E00D39B55 /* AddressSettingViewModelProtocol.swift in Sources */,
 				E16DAED22678612800208CD1 /* UserType.swift in Sources */,
 				E16DAEB82677AFE600208CD1 /* MainView.swift in Sources */,
+				E12DF2B42689F60D00578E70 /* DriversRemoteAPI.swift in Sources */,
 				E130C87E2678744E0026042E /* FakeTransportRequestsRemoteAPI.swift in Sources */,
 				E16DAE77267779D400208CD1 /* UserSessionDataStore.swift in Sources */,
 				E1BEE8EB267C5B6E00606FA0 /* RequestDetailsViewModel.swift in Sources */,
 				E187011D2675C48C00BF6D82 /* SettingSection.swift in Sources */,
+				E12DF2B92689F62700578E70 /* AutoRequestsCloudDriversRemoteAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

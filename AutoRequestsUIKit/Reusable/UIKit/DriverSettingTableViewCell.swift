@@ -86,7 +86,7 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
     }()
 
     // MARK: - Private Properties
-    private var viewModel: DriverSettingViewModel!
+    private var viewModel: DriverSettingViewModelProtocol!
     private let bag = DisposeBag()
 
     // MARK: - Initializers
@@ -127,7 +127,7 @@ public final class DriverSettingTableViewCell: SettingTableViewCell {
     }
 
     // MARK: - Public Methods
-    public func configure(with viewModel: DriverSettingViewModel) {
+    public func configure(with viewModel: DriverSettingViewModelProtocol) {
         self.viewModel = viewModel
 
         bindViewModel()

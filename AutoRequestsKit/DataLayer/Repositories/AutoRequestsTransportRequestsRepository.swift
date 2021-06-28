@@ -27,5 +27,4 @@ public final class AutoRequestsTransportRequestsRepository: TransportRequestsRep
         return remoteAPI.saveTransportRequest(request: request)
     }
 
-
 }

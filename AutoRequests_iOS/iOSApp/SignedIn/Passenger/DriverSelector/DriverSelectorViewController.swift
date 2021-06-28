@@ -26,11 +26,11 @@ public final class DriverSelectorViewController: UIViewController {
     }()
 
     // MARK: - Private Properties
-    private let viewModel: DriverSettingViewModel
+    private let viewModel: DriverSettingViewModelProtocol
     private let bag = DisposeBag()
 
     // MARK: - Initializers
-    public init(viewModel: DriverSettingViewModel) {
+    public init(viewModel: DriverSettingViewModelProtocol) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)

@@ -27,3 +27,16 @@ public struct Driver: Decodable {
     }
 
 }
+
+extension Driver {
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case firstName
+        case lastName
+        case patronymic
+        case mobileNumber
+        case car
+    }
+
+}

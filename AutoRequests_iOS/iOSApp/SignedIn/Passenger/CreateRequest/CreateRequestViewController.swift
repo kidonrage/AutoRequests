@@ -66,7 +66,7 @@ public final class CreateRequestViewController: UIViewController {
     // MARK: - Initializers
     init(viewModel: CreateRequestViewModel) {
         self.viewModel = viewModel
-        self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel.driverSettingViewModel)
+        self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -157,7 +157,7 @@ public final class CreateRequestViewController: UIViewController {
             })
             .disposed(by: bag)
 
-        viewModel.driverSettingViewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
+        viewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
         }).disposed(by: bag)
     }
@@ -167,7 +167,7 @@ public final class CreateRequestViewController: UIViewController {
             return UITableViewCell()
         }
 
-        dateSettingCell.configure(with: viewModel.dateSettingViewModel)
+        dateSettingCell.configure(with: viewModel)
 
         return dateSettingCell
     }
@@ -187,7 +187,7 @@ public final class CreateRequestViewController: UIViewController {
             return UITableViewCell()
         }
 
-        driverSettingCell.configure(with: viewModel.driverSettingViewModel)
+        driverSettingCell.configure(with: viewModel)
 
         return driverSettingCell
     }
@@ -301,7 +301,7 @@ extension CreateRequestViewController: UITableViewDelegate {
 
         guard
             setting == SettingSection.driver,
-            viewModel.driverSettingViewModel.driverOptions.value.count > 0
+            viewModel.driverOptions.value.count > 0
         else {
             return
         }

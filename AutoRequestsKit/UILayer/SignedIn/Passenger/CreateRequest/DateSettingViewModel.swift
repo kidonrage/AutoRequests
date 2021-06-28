@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import RxSwift
 import RxRelay
 
-public final class DateSettingViewModel {
+public protocol DateSettingViewModelProtocol {
 
-    public let selectedDate = BehaviorRelay<Date>(value: Date())
+    var selectedDate: BehaviorRelay<Date> { get }
 
 }

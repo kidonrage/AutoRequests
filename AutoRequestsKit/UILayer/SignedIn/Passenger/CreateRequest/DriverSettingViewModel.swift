@@ -9,17 +9,11 @@ import Foundation
 import RxSwift
 import RxRelay
 
-public final class DriverSettingViewModel {
+public protocol DriverSettingViewModelProtocol {
 
-    public let selectedDriver = BehaviorRelay<Driver?>(value: nil)
-    public let driverOptions = BehaviorRelay<[Driver]>(value: [
-        Driver.getFake()
-    ])
+    var selectedDriver: BehaviorRelay<Driver?> { get }
+    var driverOptions: BehaviorRelay<[Driver]> { get }
 
-    public func handleSelectDriver(on indexPath: IndexPath) {
-        let updatedSelectedDriver = driverOptions.value[indexPath.row]
-
-        selectedDriver.accept(updatedSelectedDriver)
-    }
+    func handleSelectDriver(on indexPath: IndexPath)
 
 }
