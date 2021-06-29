@@ -18,6 +18,7 @@ public final class AutoRequestsSignedInDependencyContainer {
     private let userSession: UserSession
     // Long-lived dependencies
     private let signedInViewModel: SignedInViewModel
+    private let sharedDriversRepository: DriversRepository
     private let sharedTransportRequestsRepository: TransportRequestsRepository
 
     // MARK: - Initializers
@@ -28,8 +29,18 @@ public final class AutoRequestsSignedInDependencyContainer {
             return AutoRequestsTransportRequestsRepository(remoteAPI: remoteAPI)
         }
 
+        func makeDriversRepository() -> DriversRepository {
+            let remoteAPI = makeDriversRemoteAPI()
+
+            return AutoRequestsDriversRepository(remoteAPI: remoteAPI)
+        }
+
+        func makeDriversRemoteAPI() -> DriversRemoteAPI {
+            return AutoRequestsCloudDriversRemoteAPI(userSession: userSession)
+        }
+
         func makeTransportRequestsRemoteAPI() -> TransportRequestsRemoteAPI {
-            return FakeTransportRequestsRemoteAPI(userSession: userSession)
+            return AutoRequestsCloudTransportRequestsRemoteAPI(userSession: userSession)
         }
 
         func makeSignedInViewModel() -> SignedInViewModel {
@@ -37,6 +48,7 @@ public final class AutoRequestsSignedInDependencyContainer {
         }
 
         self.sharedTransportRequestsRepository = makeTransportRequestsRepository()
+        self.sharedDriversRepository = makeDriversRepository()
         self.signedInViewModel = makeSignedInViewModel()
 
         self.userSession = userSession
@@ -73,7 +85,10 @@ public final class AutoRequestsSignedInDependencyContainer {
     }
 
     private func makePassengerDependencyContainer() -> AutoRequestsPassengerDependencyContainer {
-        return AutoRequestsPassengerDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
+        return AutoRequestsPassengerDependencyContainer(
+            userSession: userSession,
+            transportRequestsRepository: sharedTransportRequestsRepository,
+            driversRepository: sharedDriversRepository)
     }
 
 }

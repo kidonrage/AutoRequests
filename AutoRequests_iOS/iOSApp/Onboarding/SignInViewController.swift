@@ -71,16 +71,16 @@ public class SignInViewController: NiblessViewController {
     }()
 
 
-    // MARK: - Private Properties
-    private let viewModel: SignInViewModel
-    private let bag = DisposeBag()
+// MARK: - Private Properties
+private let viewModel: SignInViewModel
+private let bag = DisposeBag()
 
-    // MARK: - Initializers
-    public init(viewModel: SignInViewModel) {
-        self.viewModel = viewModel
+// MARK: - Initializers
+public init(viewModel: SignInViewModel) {
+    self.viewModel = viewModel
 
-        super.init()
-    }
+    super.init()
+}
 
     // MARK: - UIViewController
     public override func viewDidLoad() {

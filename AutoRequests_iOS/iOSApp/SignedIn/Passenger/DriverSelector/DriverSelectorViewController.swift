@@ -26,11 +26,11 @@ public final class DriverSelectorViewController: UIViewController {
     }()
 
     // MARK: - Private Properties
-    private let viewModel: DriverSettingViewModel
+    private let viewModel: DriverSettingViewModelProtocol
     private let bag = DisposeBag()
 
     // MARK: - Initializers
-    public init(viewModel: DriverSettingViewModel) {
+    public init(viewModel: DriverSettingViewModelProtocol) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -66,10 +66,12 @@ public final class DriverSelectorViewController: UIViewController {
                 cellIdentifier:  DriverOptionTableViewCell.cellId,
                 cellType: UITableViewCell.self)) { [weak self] row, model, cell in
             cell.textLabel?.text = model.displayName
-            cell.detailTextLabel?.text = "Toyota Corolla 2017"
+            cell.detailTextLabel?.text = model.car.name
 
-            if let selectedDriver = try? self?.viewModel.selectedDriver.value() {
-                cell.accessoryType = model._id == selectedDriver._id ? .checkmark : .none
+            if let selectedDriver = self?.viewModel.selectedDriver.value {
+                cell.accessoryType = model.id == selectedDriver.id ? .checkmark : .none
+            } else {
+                cell.accessoryType = .none
             }
         }.disposed(by: bag)
 

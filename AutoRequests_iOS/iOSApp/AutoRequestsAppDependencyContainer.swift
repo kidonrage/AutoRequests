@@ -25,11 +25,11 @@ public final class AutoRequestsAppDependencyContainer {
         }
 
         func makeUserSessionDataStore() -> UserSessionDataStore {
-            return FakeUserSessionDataStore(tokenSavedForUserType: .driver)
+            return FakeUserSessionDataStore(tokenSavedForUserType: nil)
         }
 
         func makeAuthRemoteAPI() -> AuthRemoteAPI {
-            return FakeAuthRemoteAPI()
+            return AutoRequestsCloudAuthRemoteAPI()
         }
 
         func makeViewModel() -> MainViewModel {

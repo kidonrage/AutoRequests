@@ -19,7 +19,7 @@ public final class FakeTransportRequestsRemoteAPI: TransportRequestsRemoteAPI {
     }
 
     // MARK: - Public Methods
-    public func getTransportRequestsForCurrentUser() -> Promise<[TransportRequest]> {
+    public func getTransportRequestsForCurrentUser() -> Promise<[TransportApplication]> {
         switch userSession.profile.type {
         case .driver:
             return getTransportRequestsForDriver()
@@ -28,25 +28,32 @@ public final class FakeTransportRequestsRemoteAPI: TransportRequestsRemoteAPI {
         }
     }
 
-    private func getTransportRequestsForDriver() -> Promise<[TransportRequest]> {
-        return Promise<[TransportRequest]> { seal in
+    public func saveTransportRequest(request: TransportApplicationRequest) -> Promise<Void> {
+        return Promise<Void> { seal in
+            seal.fulfill(())
+        }
+    }
+
+    // MARK: - Private Methods
+    private func getTransportRequestsForDriver() -> Promise<[TransportApplication]> {
+        return Promise<[TransportApplication]> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 seal.fulfill([
-                    TransportRequest(passengerId: 0, address: ""),
-                    TransportRequest(passengerId: 1, address: ""),
+                    TransportApplication.getFake(),
+                    TransportApplication.getFake(),
                 ])
             }
         }
     }
 
-    private func getTransportRequestsForPassenger() -> Promise<[TransportRequest]> {
-        return Promise<[TransportRequest]> { seal in
+    private func getTransportRequestsForPassenger() -> Promise<[TransportApplication]> {
+        return Promise<[TransportApplication]> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 seal.fulfill([
-                    TransportRequest(passengerId: 0, address: ""),
-                    TransportRequest(passengerId: 1, address: ""),
-                    TransportRequest(passengerId: 2, address: ""),
-                    TransportRequest(passengerId: 3, address: ""),
+                    TransportApplication.getFake(),
+                    TransportApplication.getFake(),
+                    TransportApplication.getFake(),
+                    TransportApplication.getFake(),
                 ])
             }
         }

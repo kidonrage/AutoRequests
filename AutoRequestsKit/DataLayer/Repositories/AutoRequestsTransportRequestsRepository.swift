@@ -19,9 +19,12 @@ public final class AutoRequestsTransportRequestsRepository: TransportRequestsRep
     }
 
     // MARK: - Public Methods
-    public func getTransportRequestsForCurrentUser() -> Promise<[TransportRequest]> {
+    public func getTransportRequestsForCurrentUser() -> Promise<[TransportApplication]> {
         return remoteAPI.getTransportRequestsForCurrentUser()
     }
 
+    public func saveTransportRequest(request: TransportApplicationRequest) -> Promise<Void> {
+        return remoteAPI.saveTransportRequest(request: request)
+    }
 
 }

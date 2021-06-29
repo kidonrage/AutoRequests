@@ -12,13 +12,16 @@ public final class DriverTransportRequestTableViewCell: UITableViewCell {
 
     // MARK: - Visual Components
     private let passengerView = TransportRequestValueView(valueName: "Пассажир", value: nil)
+    private let phoneView = TransportRequestValueView(valueName: "Телефон", value: nil)
     private let dateView = TransportRequestValueView(valueName: "Дата", value: nil)
     private let timeView = TransportRequestValueView(valueName: "Время", value: nil)
+    private let commentView = TransportRequestValueView(valueName: "Комментарий", value: nil)
     private lazy var contentStack: UIStackView = {
         let dateTimeView = UIStackView(arrangedSubviews: [dateView, timeView])
         dateTimeView.spacing = 8
+        dateTimeView.distribution = .fillEqually
 
-        let stackView = UIStackView(arrangedSubviews: [passengerView, dateTimeView])
+        let stackView = UIStackView(arrangedSubviews: [passengerView, phoneView, commentView, dateTimeView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         stackView.axis = .vertical
@@ -39,10 +42,12 @@ public final class DriverTransportRequestTableViewCell: UITableViewCell {
     }
 
     // MARK: - Public Methods
-    public func configure(with transportRequest: TransportRequest) {
-        passengerView.value = "Passenger Passangerov"
-        dateView.value = "07.05.1999"
-        timeView.value = "10:00-11:00"
+    public func configure(with transportRequest: TransportApplication) {
+        passengerView.value = transportRequest.passenger.displayName
+        phoneView.value = transportRequest.passenger.mobileNumber
+        commentView.value = transportRequest.comment
+        dateView.value = transportRequest.date
+        timeView.value = transportRequest.timeRange
     }
 
     // MARK: - Private Methods

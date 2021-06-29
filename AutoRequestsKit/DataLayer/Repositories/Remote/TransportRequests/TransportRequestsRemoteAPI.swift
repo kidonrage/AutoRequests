@@ -10,6 +10,7 @@ import PromiseKit
 
 public protocol TransportRequestsRemoteAPI {
 
-    func getTransportRequestsForCurrentUser() -> Promise<[TransportRequest]>
+    func getTransportRequestsForCurrentUser() -> Promise<[TransportApplication]>
+    func saveTransportRequest(request: TransportApplicationRequest) -> Promise<Void>
 
 }

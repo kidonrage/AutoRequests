@@ -19,6 +19,11 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
         tableView.register(PassengerTransportRequestTableViewCell.self, forCellReuseIdentifier: PassengerTransportRequestTableViewCell.cellId)
         return tableView
     }()
+    private let activityIndicatory: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
 
     // MARK: - Private Properties
     // ViewModel
@@ -45,11 +50,17 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
         setupUI()
         bindViewModel()
 
-        viewModel.getUserRequests()
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicatory)
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        viewModel.getUserRequests()
+    }
+
+    // MARK: - Private Methods
     private func setupUI() {
         title = "Мои заявки"
 
@@ -72,6 +83,8 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
                 cellType: PassengerTransportRequestTableViewCell.self)) { [weak self] row, model, cell in
             cell.configure(with: model)
         }.disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress.bind(to: activityIndicatory.rx.isAnimating)
 
         //        optionsTable.rx.itemSelected.subscribe(onNext: { [weak self] (selectedIndexPath) in
         //            self?.viewModel.handleSelectDriver(on: selectedIndexPath)

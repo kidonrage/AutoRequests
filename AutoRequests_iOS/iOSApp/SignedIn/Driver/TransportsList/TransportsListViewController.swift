@@ -28,11 +28,11 @@ public final class TransportsListViewController: NiblessViewController {
     // Child View Controllers
     private var requestDetailsViewController: RequestDetailsViewController?
     // Factories
-    private var makeRequestDetailsViewController: (TransportRequest) -> RequestDetailsViewController
+    private var makeRequestDetailsViewController: (TransportApplication) -> RequestDetailsViewController
 
     // MARK: - Initializers
     public init(viewModel: TransportsListViewModel,
-                requestDetailsViewControllerFactory: @escaping (TransportRequest) -> RequestDetailsViewController) {
+                requestDetailsViewControllerFactory: @escaping (TransportApplication) -> RequestDetailsViewController) {
         self.viewModel = viewModel
         self.makeRequestDetailsViewController = requestDetailsViewControllerFactory
 
@@ -61,7 +61,7 @@ public final class TransportsListViewController: NiblessViewController {
         }
     }
 
-    private func presentRequestDetails(of request: TransportRequest) {
+    private func presentRequestDetails(of request: TransportApplication) {
         let requestDetailsViewController = makeRequestDetailsViewController(request)
         self.requestDetailsViewController = requestDetailsViewController
 

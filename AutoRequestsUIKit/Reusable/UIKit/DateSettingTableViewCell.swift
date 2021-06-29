@@ -65,7 +65,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     }()
 
     // MARK: - Private Properties
-    private var viewModel: DateSettingViewModel!
+    private var viewModel: DateSettingViewModelProtocol!
     private let bag = DisposeBag()
 
     // MARK: - Initializers
@@ -95,7 +95,7 @@ public class DateSettingTableViewCell: SettingTableViewCell {
     }
 
     // MARK: - Public Methods
-    public func configure(with viewModel: DateSettingViewModel) {
+    public func configure(with viewModel: DateSettingViewModelProtocol) {
         self.viewModel = viewModel
 
         bindViewModel()
@@ -103,8 +103,8 @@ public class DateSettingTableViewCell: SettingTableViewCell {
 
     // MARK: - Private Methods
     private func bindViewModel() {
-        datePicker.rx.date.bind(to: viewModel.selectedDate).disposed(by: bag)
         viewModel.selectedDate.bind(to: datePicker.rx.date).disposed(by: bag)
+        datePicker.rx.date.skip(1).bind(to: viewModel.selectedDate).disposed(by: bag)
 
         viewModel.selectedDate.map { (date) -> String in
             let formatter = DateFormatter()

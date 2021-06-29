@@ -9,5 +9,5 @@ import Foundation
 
 public enum DriverView {
     case transportsList
-    case requestDetails(request: TransportRequest)
+    case requestDetails(request: TransportApplication)
 }

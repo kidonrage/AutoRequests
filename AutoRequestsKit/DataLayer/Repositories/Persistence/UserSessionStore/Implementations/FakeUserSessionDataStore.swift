@@ -14,7 +14,7 @@ public class FakeUserSessionDataStore: UserSessionDataStore {
     let tokenSavedForUserType: UserType?
 
     // MARK: - Methods
-    public init(tokenSavedForUserType: UserType) {
+    public init(tokenSavedForUserType: UserType?) {
         self.tokenSavedForUserType = tokenSavedForUserType
     }
 
@@ -40,14 +40,14 @@ public class FakeUserSessionDataStore: UserSessionDataStore {
     }
 
     public func runPassengerHasToken() -> Promise<UserSession?> {
-        let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .passenger)
-        let remoteSession = RemoteUserSession(token: "000000")
+        let profile = User(id: "passenger", firstName: "Test", lastName: "User", patronymic: "Passenger", mobileNumber: "+9 (999) 999-99-99", type: .passenger)
+        let remoteSession = RemoteUserSession.getFake()
         return .value(UserSession(profile: profile, remoteSession: remoteSession))
     }
 
     public func runDriverHasToken() -> Promise<UserSession?> {
-        let profile = UserProfile(id: "test", name: "Test User", mobileNumber: "+9 (999) 999-99-99", type: .driver)
-        let remoteSession = RemoteUserSession(token: "000000")
+        let profile = User(id: "driver", firstName: "Test", lastName: "User", patronymic: "Driver", mobileNumber: "+9 (999) 999-99-99", type: .driver)
+        let remoteSession = RemoteUserSession.getFake()
         return .value(UserSession(profile: profile, remoteSession: remoteSession))
     }
 

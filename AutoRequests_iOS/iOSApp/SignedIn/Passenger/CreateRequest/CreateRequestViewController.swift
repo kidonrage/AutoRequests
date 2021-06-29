@@ -10,7 +10,7 @@ import RxSwift
 import AutoRequestsKit
 import AutoRequestsUIKit
 
-public final class CreateRequestViewController: UIViewController {
+public final class CreateRequestViewController: NiblessViewController, AlertDisplayer {
 
     // MARK: - Visual Components
     private lazy var tableView: UITableView = {
@@ -48,8 +48,8 @@ public final class CreateRequestViewController: UIViewController {
 
         return view
     }()
-    private let saveButton: UIButton = {
-        let button = UIButton()
+    private let saveButton: NetworkActivityButton = {
+        let button = NetworkActivityButton()
         button.translatesAutoresizingMaskIntoConstraints = false
 
         button.layer.cornerRadius = 4
@@ -66,13 +66,9 @@ public final class CreateRequestViewController: UIViewController {
     // MARK: - Initializers
     init(viewModel: CreateRequestViewModel) {
         self.viewModel = viewModel
-        self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel.driverSettingViewModel)
+        self.driverSelectorVC = DriverSelectorViewController(viewModel: viewModel)
 
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init()
     }
 
     // MARK: - UIViewController
@@ -83,6 +79,8 @@ public final class CreateRequestViewController: UIViewController {
 
         setupUI()
         bindViewModel()
+
+        saveButton.addTarget(viewModel, action: #selector(CreateRequestViewModel.saveTransportRequest), for: .touchUpInside)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +109,15 @@ public final class CreateRequestViewController: UIViewController {
 
 
     // MARK: - Private Methods
+    private func present(view: CreateRequestView) {
+        switch view {
+        case .createRequest:
+            return
+        case .requestCreated:
+            navigationController?.popViewController(animated: true)
+        }
+    }
+
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -128,7 +135,6 @@ public final class CreateRequestViewController: UIViewController {
             saveButtonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             saveButtonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             saveButtonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            saveButtonContainer.heightAnchor.constraint(equalToConstant: 80),
 
             saveButtonDivider.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor),
             saveButtonDivider.trailingAnchor.constraint(equalTo: saveButtonContainer.trailingAnchor),
@@ -139,6 +145,7 @@ public final class CreateRequestViewController: UIViewController {
             saveButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             saveButton.topAnchor.constraint(equalTo: saveButtonContainer.topAnchor, constant: 16),
+            saveButton.heightAnchor.constraint(equalToConstant: 48),
 
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -155,8 +162,26 @@ public final class CreateRequestViewController: UIViewController {
             })
             .disposed(by: bag)
 
-        viewModel.driverSettingViewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
+        viewModel.selectedDriver.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
+        }).disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress.subscribe(onNext: { [weak self] inProgress in
+//            self?.loginField.isEnabled = !inProgress
+//            self?.passwordField.isEnabled = !inProgress
+            self?.saveButton.setActivityIndicatorActive(inProgress)
+        }).disposed(by: bag)
+
+        viewModel.errorMessage.subscribe(onNext: { [weak self] message in
+            guard let errorMessage = message else {
+                return
+            }
+
+            self?.display(title: "Ошибка", message: errorMessage, actions: nil)
+        }).disposed(by: bag)
+
+        viewModel.view.subscribe(onNext: { [weak self] updatedView in
+            self?.present(view: updatedView)
         }).disposed(by: bag)
     }
 
@@ -165,7 +190,7 @@ public final class CreateRequestViewController: UIViewController {
             return UITableViewCell()
         }
 
-        dateSettingCell.configure(with: viewModel.dateSettingViewModel)
+        dateSettingCell.configure(with: viewModel)
 
         return dateSettingCell
     }
@@ -185,7 +210,7 @@ public final class CreateRequestViewController: UIViewController {
             return UITableViewCell()
         }
 
-        driverSettingCell.configure(with: viewModel.driverSettingViewModel)
+        driverSettingCell.configure(with: viewModel)
 
         return driverSettingCell
     }
@@ -299,8 +324,7 @@ extension CreateRequestViewController: UITableViewDelegate {
 
         guard
             setting == SettingSection.driver,
-            let shouldOpenOptions = try? viewModel.driverSettingViewModel.driverOptions.value().count > 0,
-            shouldOpenOptions
+            viewModel.driverOptions.value.count > 0
         else {
             return
         }

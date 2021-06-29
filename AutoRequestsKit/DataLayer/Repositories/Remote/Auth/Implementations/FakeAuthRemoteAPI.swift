@@ -31,13 +31,15 @@ public class FakeAuthRemoteAPI: AuthRemoteAPI {
     private func signInAsDriver() -> Promise<UserSession> {
         return Promise<UserSession> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                let profile = UserProfile(id: "driver",
-                                          name: "Driver Driverov",
-                                          mobileNumber: "+9 (999) 99-99-99",
-                                          type: .driver)
-              let remoteUserSession = RemoteUserSession(token: "000000")
-              let userSession = UserSession(profile: profile, remoteSession: remoteUserSession)
-              seal.fulfill(userSession)
+                let profile = User(id: "driver",
+                                   firstName: "Driver",
+                                   lastName: "Driverov",
+                                   patronymic: "Driverovich",
+                                   mobileNumber: "+9 (999) 99-99-99",
+                                   type: .driver)
+                let remoteUserSession = RemoteUserSession.getFake()
+                let userSession = UserSession(profile: profile, remoteSession: remoteUserSession)
+                seal.fulfill(userSession)
             }
         }
     }
@@ -45,13 +47,15 @@ public class FakeAuthRemoteAPI: AuthRemoteAPI {
     private func signInAsPassenger() -> Promise<UserSession> {
         return Promise<UserSession> { seal in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                let profile = UserProfile(id: "passenger",
-                                          name: "Passenger Passengerov",
-                                          mobileNumber: "+9 (999) 99-99-99",
-                                          type: .passenger)
-              let remoteUserSession = RemoteUserSession(token: "111111")
-              let userSession = UserSession(profile: profile, remoteSession: remoteUserSession)
-              seal.fulfill(userSession)
+                let profile = User(id: "passenger",
+                                   firstName: "Passenger",
+                                   lastName: "Passengerov",
+                                   patronymic: "Passengerovich",
+                                   mobileNumber: "+9 (999) 99-99-99",
+                                   type: .passenger)
+                let remoteUserSession = RemoteUserSession.getFake()
+                let userSession = UserSession(profile: profile, remoteSession: remoteUserSession)
+                seal.fulfill(userSession)
             }
         }
     }

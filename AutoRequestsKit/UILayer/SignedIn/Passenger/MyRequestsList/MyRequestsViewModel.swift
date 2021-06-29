@@ -11,7 +11,7 @@ import RxRelay
 public class UserTransportRequestsViewModel {
 
     // MARK: - Public Properties
-    public let myRequests = BehaviorRelay<[TransportRequest]>(value: [])
+    public let myRequests = BehaviorRelay<[TransportApplication]>(value: [])
     public let isNetworkActivityInProgress = BehaviorRelay<Bool>(value: false)
     public let errorMessage = BehaviorRelay<String?>(value: nil)
 
