@@ -10,6 +10,7 @@ import AutoRequestsKit
 
 public final class AutoRequestsPassengerDependencyContainer {
 
+    private let sharedMainViewModel: MainViewModel
     private let userSession: UserSession
     private let transportRequestsRepository: TransportRequestsRepository
     private let driversRepository: DriversRepository
@@ -17,10 +18,12 @@ public final class AutoRequestsPassengerDependencyContainer {
     // MARK: - Initializers
     public init(userSession: UserSession,
                 transportRequestsRepository: TransportRequestsRepository,
-                driversRepository: DriversRepository) {
+                driversRepository: DriversRepository,
+                sharedMainViewModel: MainViewModel) {
         self.userSession = userSession
         self.transportRequestsRepository = transportRequestsRepository
         self.driversRepository = driversRepository
+        self.sharedMainViewModel = sharedMainViewModel
     }
 
     // MARK: - Public Methods
@@ -42,7 +45,8 @@ public final class AutoRequestsPassengerDependencyContainer {
     }
 
     private func makeUserTransportRequestsViewModel() -> UserTransportRequestsViewModel {
-        return UserTransportRequestsViewModel(transportRequestsRepository: transportRequestsRepository)
+        return UserTransportRequestsViewModel(transportRequestsRepository: transportRequestsRepository,
+                                              notSignedInResponder: sharedMainViewModel)
     }
 
     private func makeCreateRequestViewController() -> CreateRequestViewController {

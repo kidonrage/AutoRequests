@@ -16,16 +16,15 @@ public final class TransportsListViewModel: UserTransportRequestsViewModel {
 
     private let bag = DisposeBag()
 
-    public override init(transportRequestsRepository: TransportRequestsRepository) {
-        super.init(transportRequestsRepository: transportRequestsRepository)
+    public override init(transportRequestsRepository: TransportRequestsRepository,
+                         notSignedInResponder: NotSignedInResponder) {
+        super.init(transportRequestsRepository: transportRequestsRepository,
+                   notSignedInResponder: notSignedInResponder)
 
         selectedRequestIndexPath
+            .compactMap({ return $0 })
             .map { [weak self] (indexPath) -> TransportApplication? in
-                guard let index = indexPath?.row else {
-                    return nil
-                }
-
-                return self?.myRequests.value[index]
+                return self?.sections.value[indexPath.section].items[indexPath.row]
             }
             .subscribe(onNext: { [weak self] (selectedRequest) in
                 guard let selectedRequest = selectedRequest else {

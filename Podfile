@@ -6,6 +6,7 @@ def common_pods
   pod 'RealmSwift'
   pod 'RxSwift'
   pod 'RxRelay'
+  pod 'RxDataSources'
   pod 'RxCocoa'
   pod 'PromiseKit'
 end

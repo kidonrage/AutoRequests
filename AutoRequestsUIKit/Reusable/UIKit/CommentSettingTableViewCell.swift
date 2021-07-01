@@ -80,6 +80,8 @@ public final class CommentSettingTableViewCell: SettingTableViewCell {
     // MARK: - Public Methods
     public func configure(with viewModel: CommentSettingViewModelProtocol) {
         self.viewModel = viewModel
+
+        bindViewModel()
     }
 
     // MARK: - Private Methods

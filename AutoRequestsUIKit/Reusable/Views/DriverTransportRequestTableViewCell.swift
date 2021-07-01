@@ -13,6 +13,7 @@ public final class DriverTransportRequestTableViewCell: UITableViewCell {
     // MARK: - Visual Components
     private let passengerView = TransportRequestValueView(valueName: "Пассажир", value: nil)
     private let phoneView = TransportRequestValueView(valueName: "Телефон", value: nil)
+    private let addressView = TransportRequestValueView(valueName: "Адрес", value: nil)
     private let dateView = TransportRequestValueView(valueName: "Дата", value: nil)
     private let timeView = TransportRequestValueView(valueName: "Время", value: nil)
     private let commentView = TransportRequestValueView(valueName: "Комментарий", value: nil)
@@ -21,7 +22,7 @@ public final class DriverTransportRequestTableViewCell: UITableViewCell {
         dateTimeView.spacing = 8
         dateTimeView.distribution = .fillEqually
 
-        let stackView = UIStackView(arrangedSubviews: [passengerView, phoneView, commentView, dateTimeView])
+        let stackView = UIStackView(arrangedSubviews: [passengerView, phoneView, addressView, commentView, dateTimeView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         stackView.axis = .vertical
@@ -45,6 +46,7 @@ public final class DriverTransportRequestTableViewCell: UITableViewCell {
     public func configure(with transportRequest: TransportApplication) {
         passengerView.value = transportRequest.passenger.displayName
         phoneView.value = transportRequest.passenger.mobileNumber
+        addressView.value = transportRequest.address
         commentView.value = transportRequest.comment
         dateView.value = transportRequest.date
         timeView.value = transportRequest.timeRange

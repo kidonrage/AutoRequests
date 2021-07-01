@@ -45,6 +45,7 @@
 		E14FD0072675DA7B0003CDDE /* TimeSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */; };
 		E14FD00F2675EB590003CDDE /* DriverSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */; };
 		E14FD0202675EF190003CDDE /* DriverSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */; };
+		E154FF1B268B876D008B086D /* Date+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E154FF1A268B876D008B086D /* Date+ext.swift */; };
 		E16DAE482677740D00208CD1 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE472677740D00208CD1 /* UserSessionRepository.swift */; };
 		E16DAE582677766A00208CD1 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE572677766A00208CD1 /* UserSession.swift */; };
 		E16DAE6D2677781D00208CD1 /* RemoteUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */; };
@@ -234,6 +235,7 @@
 		E14FD0062675DA7B0003CDDE /* TimeSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD00E2675EB590003CDDE /* DriverSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSettingViewModel.swift; sourceTree = "<group>"; };
 		E14FD01F2675EF190003CDDE /* DriverSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSelectorViewController.swift; sourceTree = "<group>"; };
+		E154FF1A268B876D008B086D /* Date+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ext.swift"; sourceTree = "<group>"; };
 		E16DAE472677740D00208CD1 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
 		E16DAE572677766A00208CD1 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		E16DAE6C2677781D00208CD1 /* RemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserSession.swift; sourceTree = "<group>"; };
@@ -419,6 +421,14 @@
 			path = DriverSelector;
 			sourceTree = "<group>";
 		};
+		E154FF19268B875B008B086D /* Took */ = {
+			isa = PBXGroup;
+			children = (
+				E154FF1A268B876D008B086D /* Date+ext.swift */,
+			);
+			path = Took;
+			sourceTree = "<group>";
+		};
 		E16DAE46267773F200208CD1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +578,7 @@
 		E18700C52675C18000BF6D82 /* AutoRequestsKit */ = {
 			isa = PBXGroup;
 			children = (
+				E154FF19268B875B008B086D /* Took */,
 				E18700C62675C18000BF6D82 /* AutoRequestsKit.h */,
 				E18700C72675C18000BF6D82 /* Info.plist */,
 				E18700D42675C1A300BF6D82 /* DataLayer */,
@@ -1180,6 +1191,7 @@
 				E16DAE7B26777A7400208CD1 /* AuthRemoteAPI.swift in Sources */,
 				E14630F4267C95620042BB2D /* TransportApplication.swift in Sources */,
 				E14630F7267C95620042BB2D /* LoginResponse.swift in Sources */,
+				E154FF1B268B876D008B086D /* Date+ext.swift in Sources */,
 				E130C8702678721E0026042E /* TransportRequestsRepository.swift in Sources */,
 				E13EB82D26772B7C00D39B55 /* CommentSettingViewModelProtocol.swift in Sources */,
 				E16DAE582677766A00208CD1 /* UserSession.swift in Sources */,

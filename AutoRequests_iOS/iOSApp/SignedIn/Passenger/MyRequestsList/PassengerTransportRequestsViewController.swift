@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 import AutoRequestsUIKit
 import AutoRequestsKit
 
@@ -19,6 +20,7 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
         tableView.register(PassengerTransportRequestTableViewCell.self, forCellReuseIdentifier: PassengerTransportRequestTableViewCell.cellId)
         return tableView
     }()
+    
     private let activityIndicatory: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.hidesWhenStopped = true
@@ -51,7 +53,10 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
         bindViewModel()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicatory)
+        navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "arrow.left.to.line"), style: .plain, target: viewModel, action: #selector(UserTransportRequestsViewModel.logout)),
+            UIBarButtonItem(customView: activityIndicatory)
+        ]
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -77,14 +82,31 @@ public final class PassengerTransportRequestsViewController: NiblessViewControll
     }
 
     private func bindViewModel() {
-        viewModel.myRequests.bind(
-            to: myRequestsTableView.rx.items(
-                cellIdentifier:  PassengerTransportRequestTableViewCell.cellId,
-                cellType: PassengerTransportRequestTableViewCell.self)) { [weak self] row, model, cell in
-            cell.configure(with: model)
-        }.disposed(by: bag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TransportApplication>> { (dataSource, table, indexPath, item) -> UITableViewCell in
+            let cell = table.dequeueReusableCell(withIdentifier: PassengerTransportRequestTableViewCell.cellId) as! PassengerTransportRequestTableViewCell
 
-        viewModel.isNetworkActivityInProgress.bind(to: activityIndicatory.rx.isAnimating)
+            cell.configure(with: item)
+
+            return cell
+        }
+
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].model
+        }
+
+        viewModel.sections
+            .bind(to: myRequestsTableView.rx.items(dataSource: dataSource))
+            .disposed(by: bag)
+//        viewModel.myRequests.bind(
+//            to: myRequestsTableView.rx.items(
+//                cellIdentifier:  PassengerTransportRequestTableViewCell.cellId,
+//                cellType: PassengerTransportRequestTableViewCell.self)) { [weak self] row, model, cell in
+//            cell.configure(with: model)
+//        }.disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress
+            .bind(to: activityIndicatory.rx.isAnimating)
+            .disposed(by: bag)
 
         //        optionsTable.rx.itemSelected.subscribe(onNext: { [weak self] (selectedIndexPath) in
         //            self?.viewModel.handleSelectDriver(on: selectedIndexPath)

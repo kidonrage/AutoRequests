@@ -74,7 +74,7 @@ public final class AutoRequestsSignedInDependencyContainer {
     }
 
     private func makeDriverDependencyContainer() -> AutoRequestsDriverDependencyContainer {
-        return AutoRequestsDriverDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository)
+        return AutoRequestsDriverDependencyContainer(transportRequestsRepository: sharedTransportRequestsRepository, sharedMainViewModel: mainViewModel)
     }
 
     // Passenger
@@ -88,7 +88,7 @@ public final class AutoRequestsSignedInDependencyContainer {
         return AutoRequestsPassengerDependencyContainer(
             userSession: userSession,
             transportRequestsRepository: sharedTransportRequestsRepository,
-            driversRepository: sharedDriversRepository)
+            driversRepository: sharedDriversRepository, sharedMainViewModel: mainViewModel)
     }
 
 }

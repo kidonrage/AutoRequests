@@ -12,10 +12,13 @@ final class AutoRequestsDriverDependencyContainer {
 
     // MARK: - Private Properties
     private let transportRequestsRepository: TransportRequestsRepository
+    private let sharedMainViewModel: MainViewModel
 
     // MARK: - Initializers
-    public init(transportRequestsRepository: TransportRequestsRepository) {
+    public init(transportRequestsRepository: TransportRequestsRepository,
+                sharedMainViewModel: MainViewModel) {
         self.transportRequestsRepository = transportRequestsRepository
+        self.sharedMainViewModel = sharedMainViewModel
     }
 
     // MARK: - Public Methods
@@ -34,7 +37,8 @@ final class AutoRequestsDriverDependencyContainer {
     }
 
     private func makeTransportsListViewModel() -> TransportsListViewModel {
-        return TransportsListViewModel(transportRequestsRepository: transportRequestsRepository)
+        return TransportsListViewModel(transportRequestsRepository: transportRequestsRepository,
+                                       notSignedInResponder: sharedMainViewModel)
     }
 
     private func makeRequestDetailsViewController(request: TransportApplication) -> RequestDetailsViewController {

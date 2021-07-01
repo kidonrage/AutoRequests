@@ -24,7 +24,7 @@ public final class RequestDetailsViewController: NiblessViewController {
     private let timeRangeView = TransportRequestValueView(valueName: "Время", value: nil)
     private let commentView = TransportRequestValueView(valueName: "Комментарий", value: nil)
     private lazy var contentStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [passengerNameView, passengerPhoneView, dateView, timeRangeView, commentView, UIView()])
+        let stackView = UIStackView(arrangedSubviews: [passengerNameView, passengerPhoneView, addressView, dateView, timeRangeView, commentView, UIView()])
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         stackView.axis = .vertical
