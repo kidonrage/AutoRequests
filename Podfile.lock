@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - Differentiator (5.0.0)
   - PromiseKit (6.15.3):
     - PromiseKit/CorePromise (= 6.15.3)
     - PromiseKit/Foundation (= 6.15.3)
@@ -17,6 +18,10 @@ PODS:
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.1.0):
     - RxSwift (= 6.1.0)
   - RxSwift (6.1.0)
@@ -26,28 +31,33 @@ DEPENDENCIES:
   - PromiseKit
   - RealmSwift
   - RxCocoa
+  - RxDataSources
   - RxRelay
   - RxSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Differentiator
     - PromiseKit
     - Realm
     - RealmSwift
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
 
-PODFILE CHECKSUM: 1ab6b1d185c6f9fd7910eb632c3e708e5b2cc8e8
+PODFILE CHECKSUM: 0571c7a190afd7d2d73659fdc070f5efd7eee941
 
 COCOAPODS: 1.10.1

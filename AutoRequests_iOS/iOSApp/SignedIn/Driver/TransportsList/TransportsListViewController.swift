@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxDataSources
 import AutoRequestsUIKit
 import AutoRequestsKit
 
@@ -19,6 +20,11 @@ public final class TransportsListViewController: NiblessViewController {
         tableView.register(DriverTransportRequestTableViewCell.self,
                            forCellReuseIdentifier: DriverTransportRequestTableViewCell.cellId)
         return tableView
+    }()
+    private let activityIndicatory: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.hidesWhenStopped = true
+        return indicator
     }()
 
     // MARK: - Private Properties
@@ -47,6 +53,10 @@ public final class TransportsListViewController: NiblessViewController {
         bindViewModel()
 
         title = "Мои заявки"
+        navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "arrow.left.to.line"), style: .plain, target: viewModel, action: #selector(UserTransportRequestsViewModel.logout)),
+            UIBarButtonItem(customView: activityIndicatory)
+        ]
 
         viewModel.getUserRequests()
     }
@@ -82,15 +92,28 @@ public final class TransportsListViewController: NiblessViewController {
     }
 
     private func bindViewModel() {
-        viewModel.myRequests.bind(
-            to: tableView.rx.items(
-                cellIdentifier:  DriverTransportRequestTableViewCell.cellId,
-                cellType: DriverTransportRequestTableViewCell.self)) { [weak self] row, model, cell in
-            cell.configure(with: model)
-        }.disposed(by: bag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TransportApplication>> { (dataSource, table, indexPath, item) -> UITableViewCell in
+            let cell = table.dequeueReusableCell(withIdentifier: DriverTransportRequestTableViewCell.cellId) as! DriverTransportRequestTableViewCell
+
+            cell.configure(with: item)
+
+            return cell
+        }
+
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].model
+        }
+
+        viewModel.sections
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: bag)
 
         tableView.rx.itemSelected
             .bind(to: viewModel.selectedRequestIndexPath)
+            .disposed(by: bag)
+
+        viewModel.isNetworkActivityInProgress
+            .bind(to: activityIndicatory.rx.isAnimating)
             .disposed(by: bag)
 
         viewModel.presentedView.subscribe(onNext: { [weak self] view in
