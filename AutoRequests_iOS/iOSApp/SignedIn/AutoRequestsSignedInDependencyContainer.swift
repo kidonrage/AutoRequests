@@ -36,11 +36,13 @@ public final class AutoRequestsSignedInDependencyContainer {
         }
 
         func makeDriversRemoteAPI() -> DriversRemoteAPI {
-            return AutoRequestsCloudDriversRemoteAPI(userSession: userSession)
+//            return AutoRequestsCloudDriversRemoteAPI(userSession: userSession)
+            return FakeDriversRemoteAPI()
         }
 
         func makeTransportRequestsRemoteAPI() -> TransportRequestsRemoteAPI {
-            return AutoRequestsCloudTransportRequestsRemoteAPI(userSession: userSession)
+//            return AutoRequestsCloudTransportRequestsRemoteAPI(userSession: userSession)
+            return FakeTransportRequestsRemoteAPI(userSession: userSession)
         }
 
         func makeSignedInViewModel() -> SignedInViewModel {
